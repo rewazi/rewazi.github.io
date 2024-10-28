@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <meta name="description" content="ИгрыБаза это портал о Игры">
+    <meta name="keywords" content="Игры, Игры онлайн, hd" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo_text">
+                <h1><a href="index.html">ИгрыБаза</a></h1>
+                <h2>Игры наша страсть!</h2>
+            </div>
+        </div>
+
+        <nav class="menubar">
+            <ul class="menu">
+                
+                <li class="selected"><a href="index.html">Главная</a></li>
+                <li><a href="Games.html">Игры</a></li>
+                <li><a href="rating.html">Рейтинг игр</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li class="selected"><a href="index eng.html">eng</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="site_content">
+        <aside class="sidebar_container">
+            <section class="sidebar">
+                <h2>Поиск</h2>
+                <form method="post" action="#" id="search_form">
+                    <input type="search" name="search_field" placeholder="ваш запрос" />
+                    <input type="submit" class="btn" value="найти" />
+                </form>
+            </section>
+
+            <section class="sidebar">
+                <h2>Вход</h2>
+                <form method="post" action="#" id="login">
+                    <input type="text" name="login_field" placeholder="логин" />
+                    <input type="password" name="password_field" placeholder="пароль" />
+                    <input type="submit" class="btn" value="вход" />
+                    <div class="lables_passreg_text">
+                        <span><a href="#">забыли пароль?</a></span> | 
+                        <span><a href="#">регистрация</a></span>
+                    </div>
+                </form>
+            </section>
+
+            <section class="sidebar">
+                <h2>Новости</h2>
+                <span>31.02.2018</span>
+                <p>Мы запустили расширенный поиск</p>
+                <a href="#">читать</a>
+            </section>
+    
+            <section class="sidebar">
+                <h2>Рейтинг игр</h2>
+                <ul>
+                    <li>
+                        <a href="Cyberpank.html">Киберпанк</a>
+                        <span class="rating_sidebar">8.1</span>
+                    </li>
+                    <li>
+                        <a href="smuta.html">Смута</a>
+                        <span class="rating_sidebar">8.0</span>
+                    </li>
+                    <li>
+                        <a href="gtaV.html">Гта 5</a>
+                        <span class="rating_sidebar">7.5</span>
+                    </li>
+                    <li>
+                        <a href="minecraft.html">Майнкрафт</a>
+                        <span class="rating_sidebar">7.4</span>
+                    </li>
+                </ul>
+            </section>
+        </aside> 
+        
+        <section class="content">
+            <h1>Новые игры</h1>
+            <div class="Games_block">
+                <a href="smuta.html"><img src="smuta.jpg" alt="Смута"></a>
+                <a href="gtaV.html"><img src="gtav.png" alt="Гта 5"></a>
+                <a href="Cyberpank.html"><img src="cyberpunk.jpg" alt="Киберпанк"></a>
+                <a href="minecraft.html"><img src="minecraft.jpg" alt="Майнкрафт"></a>
+            </div>
+
+            
+            <article class="posts">
+                <hr>
+                <h2><a href="#">Как создавали Minecraft</a></h2> <div class="posts_content"> <p>35 лет исполнилось Маркусу Перссону, создателю Minecraft, одной из самых популярных игр нашего времени, которую обожают как опытные геймеры, так и новички. Изначально игра была независимым проектом, разработанным небольшой студией Mojang. Когда интерес к Minecraft вырос, компания Microsoft, известная своими проектами, приобрела Mojang и обеспечила игре глобальный успех.</p> 
+                </div>
+                <p><a href="#">читать</a></p>
+                <hr>
+                <h2><a href="#">CD Projekt RED поделилась впечатлениями о фестивале</a></h2>
+                <div class="posts_content">
+                    <p>16 февраля в Варшаве прошла ежегодная церемония вручения наград в игровой индустрии. На мероприятии присутствовали ключевые представители CD Projekt RED, а также известные разработчики и создатели игр, такие как Хидео Кодзима, Тодд Говард, Кори Барлог, Эми Хенниг, Майк Пондсмит и другие гости и победители премии. Полный репортаж о событии читайте у нас.</p>
+                </div>
+                <p><a href="#">читать</a></p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <a href="index.html">Главная</a> |
+            <a href="Games.html">игры</a> |
+    
+            <a href="rating.html">Рейтинг игр</a> |
+            <a href="contact.html">Контакты</a>
+        </p>
+        <p>eatracker.ee</p>
+    </footer>
+</body>
+</html>

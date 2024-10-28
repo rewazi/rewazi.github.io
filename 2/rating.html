@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Рейтинг Игр</title>
+    <meta name="description" content="ИгрыБаза - это портал о Игры">
+    <meta name="keywords" content="Игры, Игры онлайн, HD">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo_text">
+                <h1><a href="index.html">ИгрыБаза</a></h1>
+                <h2>Игры - наша страсть!</h2>
+            </div>
+        </div>
+
+        <nav class="menubar">
+            <ul class="menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="Games.html">Игры</a></li>
+
+                <li class="selected"><a href="rating.html">Рейтинг Игр</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li class="selected"><a href="rating eng.html">eng</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="site_content">
+        <aside class="sidebar_container">
+            <section class="sidebar">
+                <h2>Поиск</h2>
+                <form method="post" action="#" id="search_form">
+                    <input type="search" name="search_field" placeholder="ваш запрос" />
+                    <input type="submit" class="btn" value="найти" />
+                </form>
+            </section>
+
+            <section class="sidebar">
+                <h2>Вход</h2>
+                <form method="post" action="#" id="login">
+                    <input type="text" name="login_field" placeholder="логин" required />
+                    <input type="password" name="password_field" placeholder="пароль" required />
+                    <input type="submit" class="btn" value="вход" />
+                    <div class="lables_passreg_text">
+                        <span><a href="#">забыл пароль?</a></span> | <span><a href="#">регистрация</a></span>
+                    </div>
+                </form>
+            </section>
+
+            <section class="sidebar">
+                <h2>Новости</h2>
+                <span>31.02.2018</span>
+                <p>Мы запустили расширенный поиск</p>
+                <a href="#">Читать</a>
+            </section>
+
+            <section class="sidebar">
+                <h2>Рейтинг Игр</h2>
+                <ul>
+                    <li><a href="Cyberpank.html">Киберпанк</a><span class="rating_sidebar"> 8.1</span></li>
+                    <li><a href="smuta.html">Смута</a><span class="rating_sidebar"> 8.0</span></li>
+                    <li><a href="gtaV.html">Гта 5</a><span class="rating_sidebar"> 7.5</span></li>
+                    <li><a href="minecraft.html">Майнкрафт</a><span class="rating_sidebar"> 7.4</span></li>
+                </ul>
+            </section>
+        </aside>
+
+        <section class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Фильм</th>
+                        <th class="center">Год</th>
+                        <th class="center">Рейтинг</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center"><img src="cyberpunk.jpg" alt="Киберпанк"></td>
+                        <td>1. <a href="Cyberpank.html">Киберпанк</a></td>
+                        <td class="center">2014</td>
+                        <td class="center rating">8.1</td>
+                    </tr>
+                    <tr>
+                        <td class="center"><img src="smuta.jpg" alt="Смута"></td>
+                        <td>2. <a href="smuta.html">Смута</a></td>
+                        <td class="center">1999</td>
+                        <td class="rating center">8.0</td>
+                    </tr>
+                    <tr>
+                        <td class="center"><img src="gtav.png" alt="Гта 5"></td>
+                        <td>3. <a href="gtaV.html">Гта 5</a></td>
+                        <td class="center">2015</td>
+                        <td class="rating center">7.5</td>
+                    </tr>
+                    <tr>
+                        <td class="center"><img src="minecraft.jpg" alt="Майнкрафт"></td>
+                        <td>4. <a href="minecraft.html">Майнкрафт</a></td>
+                        <td class="center">2013</td>
+                        <td class="rating center">7.4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <a href="index.html">Главная</a> |
+            <a href="Games.html">Игры</a> |
+        
+            <a href="rating.html">Рейтинг Игр</a> |
+            <a href="contact.html">Контакты</a>
+        </p>
+        <p>eatracker.ee</p>
+    </footer>
+</body>
+</html>
