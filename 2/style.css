@@ -100,7 +100,7 @@ nav.menubar {
     line-height: 2;
 }
 
-game_details ul li {
+.game_details ul li {
     background: url('images/icon-check.png') left center no-repeat;
     padding-left: 30px;
     color: #d4d4d4;
@@ -174,7 +174,6 @@ footer.footer {
 }
 .sidebar a{
 text-decoration: none;
-
 }
 
 a:-webkit-any-link {
@@ -190,4 +189,47 @@ li{
 img {
 height: 200px;
 width: 200px;
+}
+
+
+
+.sidebar_container{
+    text-align: right;          /* Aligns the entire container to the right */
+    display: inline-block;      /* Shrinks to the content width */
+    margin: 0;
+    padding: 0;
+    vertical-align: top; 
+    width: 400px;
+}
+
+.sidebar {
+    text-align: left;           /* Align text inside each sidebar section to the left */
+    margin-bottom: 20px;        /* Adds some spacing between sections */
+    padding: 10px;
+    background-color: #333;     /* Optional: background color for contrast */
+    border-radius: 5px;         /* Optional: rounded corners */
+    width: 100%;   
+    margin-left: 185%;             /* Ensures each section fills the sidebar width */
+}
+
+.sitebar:hover{
+    position: relative;
+    margin-left: 40%;
+}
+
+.click-img{
+    position: absolute;
+    top:30%;
+    left: 19.5%
+    
+}
+.sidebar_container img{
+    width: 720px;
+    height: 480px;
+    border-radius: 10px;
+}
+
+.click-img h1{
+    text-align: left;
+    font-size: 2em;
 }
