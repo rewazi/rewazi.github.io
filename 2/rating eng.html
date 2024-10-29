@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header>
         <div class="logo">
             <div class="logo_text">
                 <h1><a href="index.html">GamesBase</a></h1>
@@ -25,13 +25,51 @@
            
                 <li class="selected"><a href="rating eng.html">Game Ratings</a></li>
                 <li><a href="contact eng.html">Contacts</a></li>
-                <li class="selected"><a href="rating .html">ru</a></li>
+                <li class="selected"><a href="rating.html">ru</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="site_content">
         <aside class="sidebar_container">
+            <section class="rating_games">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Game</th>
+                            <th class="center">Year</th>
+                            <th class="center">Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="center"><img src="cyberpunk.jpg" alt="Cyberpunk"></td>
+                            <td>1. <a href="Cyberpank eng.html">Cyberpunk</a></td>
+                            <td class="center">2014</td>
+                            <td class="center rating">8.1</td>
+                        </tr>
+                        <tr>
+                            <td class="center"><img src="smuta.jpg" alt="Smuta"></td>
+                            <td>2. <a href="smuta eng.html">Smuta</a></td>
+                            <td class="center">1999</td>
+                            <td class="rating center">8.0</td>
+                        </tr>
+                        <tr>
+                            <td class="center"><img src="gtav.png" alt="GTA 5"></td>
+                            <td>3. <a href="gtaV eng.html">GTA 5</a></td>
+                            <td class="center">2015</td>
+                            <td class="rating center">7.5</td>
+                        </tr>
+                        <tr>
+                            <td class="center"><img src="minecraft.jpg" alt="Minecraft"></td>
+                            <td>4. <a href="minecraft eng.html">Minecraft</a></td>
+                            <td class="center">2013</td>
+                            <td class="rating center">7.4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
             <section class="sidebar">
                 <h2>Search</h2>
                 <form method="post" action="#" id="search_form">
@@ -51,7 +89,7 @@
                     </div>
                 </form>
             </section>
-
+           
             <section class="sidebar">
                 <h2>News</h2>
                 <span>02/31/2018</span>
@@ -70,47 +108,10 @@
             </section>
         </aside>
 
-        <section class="content">
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Game</th>
-                        <th class="center">Year</th>
-                        <th class="center">Rating</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="center"><img src="cyberpunk.jpg" alt="Cyberpunk"></td>
-                        <td>1. <a href="Cyberpank eng.html">Cyberpunk</a></td>
-                        <td class="center">2014</td>
-                        <td class="center rating">8.1</td>
-                    </tr>
-                    <tr>
-                        <td class="center"><img src="smuta.jpg" alt="Smuta"></td>
-                        <td>2. <a href="smuta eng.html">Smuta</a></td>
-                        <td class="center">1999</td>
-                        <td class="rating center">8.0</td>
-                    </tr>
-                    <tr>
-                        <td class="center"><img src="gtav.png" alt="GTA 5"></td>
-                        <td>3. <a href="gtaV eng.html">GTA 5</a></td>
-                        <td class="center">2015</td>
-                        <td class="rating center">7.5</td>
-                    </tr>
-                    <tr>
-                        <td class="center"><img src="minecraft.jpg" alt="Minecraft"></td>
-                        <td>4. <a href="minecraft eng.html">Minecraft</a></td>
-                        <td class="center">2013</td>
-                        <td class="rating center">7.4</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        
     </main>
 
-    <footer class="footer">
+    <footer  >
         <p>
             <a href="index.html">Home</a> |
             <a href="Games.html">Games</a> |

@@ -50,8 +50,21 @@
                         <span><a href="#">Забыли пароль?</a></span> | <span><a href="#">Регистрация</a></span>
                     </div>
                 </form>
-            </section>
 
+            </section>
+            <section class="contact">
+                <h1>Контакты</h1>
+                <p>Отправьте ваш отзыв о портале ИгрыБаза</p>
+    
+                <div class="send send_contact">
+                    <form method="post" action="#" id="contact">
+                        <input id="name" type="text" name="review_name" placeholder="Ваше имя" required>
+                        <input id="email" type="email" name="review_email" placeholder="Ваша почта" required>
+                        <textarea id="feedback" name="review_text" placeholder="Ваш отзыв" required></textarea>
+                        <input class="btn" type="submit" value="Send">
+                    </form>
+                </div>
+            </section>
             <section class="sidebar">
                 <h2>Новости</h2>
                 <span>31.02.2018</span>
@@ -70,22 +83,10 @@
             </section>
         </aside>
 
-        <section class="content">
-            <h1>Контакты</h1>
-            <p>Отправьте ваш отзыв о портале ИгрыБаза</p>
-
-            <div class="send send_contact">
-                <form method="post" action="#" id="contact">
-                    <input type="text" name="review_name" placeholder="Ваше имя" required>
-                    <input type="email" name="review_email" placeholder="Ваш email" required>
-                    <textarea name="review_text" placeholder="Ваш отзыв" required></textarea>
-                    <input class="btn" type="submit" value="Отправить">
-                </form>
-            </div>
-        </section>
+       
     </main>
 
-    <footer class="footer">
+    <footer  >
         <p>
             <a href="index.html">Главная</a> |
             <a href="Games.html">Игры</a> |

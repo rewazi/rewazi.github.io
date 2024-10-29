@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header>
         <div class="logo">
             <div class="logo_text">
                 <h1><a href="index eng.html">GameBase</a></h1>
@@ -51,7 +51,19 @@
                     </div>
                 </form>
             </section>
-
+            <section class="contact">
+                <h1>Contact</h1>
+                <p>Send your feedback about the CineBase portal</p>
+    
+                <div class="send send_contact">
+                    <form method="post" action="#" id="contact">
+                        <input id="name" type="text" name="review_name" placeholder="Your Name" required>
+                        <input id="email" type="email" name="review_email" placeholder="Your Email" required>
+                        <textarea id="feedback" name="review_text" placeholder="Your Feedback" required></textarea>
+                        <input class="btn" type="submit" value="Send">
+                    </form>
+                </div>
+            </section>
             <section class="sidebar">
                 <h2>News</h2>
                 <span>31.02.2018</span>
@@ -70,22 +82,10 @@
             </section>
         </aside>
 
-        <section class="content">
-            <h1>Contact</h1>
-            <p>Send your feedback about the CineBase portal</p>
-
-            <div class="send send_contact">
-                <form method="post" action="#" id="contact">
-                    <input type="text" name="review_name" placeholder="Your Name" required>
-                    <input type="email" name="review_email" placeholder="Your Email" required>
-                    <textarea name="review_text" placeholder="Your Feedback" required></textarea>
-                    <input class="btn" type="submit" value="Send">
-                </form>
-            </div>
-        </section>
+        
     </main>
 
-    <footer class="footer">
+    <footer  >
         <p>
             <a href="index eng.html">Home</a> |
             <a href="Games eng.html">Movies</a> |
