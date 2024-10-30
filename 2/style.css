@@ -216,12 +216,16 @@ width: 200px;
     position: relative;
     margin-left: 40%;
 }
-
+.god_div{
+    position: relative;
+}
 .click-img{
     position: absolute;
-    top:30%;
-    left: 19.5%
-    
+    display: flex;
+    top:10%;
+}
+.top-sell{
+    position: absolute;
 }
 .sidebar_container img{
     width: 720px;
