@@ -46,6 +46,9 @@ nav.menubar {
     justify-content: center;
     gap: 30px;
 }
+.contact{
+    position: absolute;
+}
 
 .menu li a {
     color: #d4d4d4;
@@ -162,14 +165,14 @@ footer.footer {
     border-top: 2px solid #444;
 }
 
-.footer a {
+footer a {
     color: #f0c040;
     text-decoration: none;
     margin: 0 10px;
     transition: color 0.3s;
 }
 
-.footer a:hover {
+footer a:hover {
     color: #ffffff;
 }
 .sidebar a{
@@ -202,6 +205,27 @@ object-fit: cover;
     vertical-align: top; 
     width: 400px;
 }
+.sideba {
+    text-align: left;           /* Align text inside each sidebar section to the left */
+    margin-bottom: 20px;        /* Adds some spacing between sections */
+    padding: 10px;
+    background-color: #333;     /* Optional: background color for contrast */
+    border-radius: 5px;         /* Optional: rounded corners */
+    width: 300;   
+    margin-left: 65%;             /* Ensures each section fills the sidebar width */
+}
+
+
+.sidebar_r {
+    text-align: left;           /* Align text inside each sidebar section to the left */
+    margin-bottom: 20px;        /* Adds some spacing between sections */
+    padding: 10px;
+    background-color: #333;     /* Optional: background color for contrast */
+    border-radius: 5px;         /* Optional: rounded corners */
+    width: 300;   
+    margin-left: 65%;             /* Ensures each section fills the sidebar width */
+}
+
 
 .sidebar {
     text-align: left;           /* Align text inside each sidebar section to the left */
@@ -217,6 +241,11 @@ object-fit: cover;
     position: relative;
     margin-left: 40%;
 }
+
+.god {
+    position: relative;
+}
+
 .god_div{
     position: relative;
 }
@@ -241,7 +270,7 @@ object-fit: cover;
 .contact{
     
     text-align: left;
-    position: absolute;
+
     top:30%
 }
 .send {
@@ -258,14 +287,14 @@ object-fit: cover;
 }
 
 .send textarea {
-    position: absolute;
+  
     width: 300px;
     height: 200px;
     left: 20px;
     top: 150px;
 }
 .send input[type="submit"] {
-    position: absolute;
+ 
     background-color: #7268AD;
     padding: 5%;
     width: 150px;
@@ -276,7 +305,7 @@ object-fit: cover;
 }
 
 #feedback{
-    position: absolute;
+  
     width: 400px;
     height: 200px;
     left: 150px;
@@ -284,14 +313,14 @@ object-fit: cover;
 }
 
 #name{
-    position: absolute;
+   
     top: 70px;
     left: 150px; 
     width: 400px;
 }
 
 #email{
-    position: absolute;
+   
     top: 100px;
     left: 150px; 
     width: 400px;
@@ -302,4 +331,208 @@ object-fit: cover;
 }
 .rating_games {
     position: absolute;
+}
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 568px) {
+    header {
+        background-color: #333;
+        min-width: 100%;
+        height: 20%;
+        text-align: center;
+    }
+
+
+    .sidebar {
+       display: none;
+    }
+    .logo {
+        width: 100%;
+    }
+    
+    .site_content {
+        width: 100%;
+    }
+    
+    .menubar {
+        width: 100%;
+        height: 100%;
+    
+    }
+    .content {
+        width: 100%;
+        
+        text-align: center;
+    }
+
+    .site_content {
+        width: 100%;
+        text-align: center;
+    }
+
+    
+
+    footer {
+        display: none;
+    }
+    ul.menu {
+        float: none;
+    }
+
+    ul.menu li {
+        float: none;
+        margin: 0;
+        padding: 0;
+    }
+    .logo h1 {
+        font: normal 235% 'century gothic', arial, sans-serif;
+    }
+
+    .logo h2 {
+        font: normal 100% 'century gothic', arial, sans-serif;
+        color: white;
+    }
+
+    .content h1, h2 {
+        font: normal 110% 'century gothic', arial;
+    }
+
+    .films_block img {
+        width: 43%;
+    }
+    .posts_content p {
+        line-height: 1.5em;
+        padding: 3%;
+        text-align: left;
+    }
+    .sideba{
+        display: none;
+    }
+    .posts p {
+        font-size: 120%;
+    }
+
+    /* films page */
+    .info_film {
+        float: none;
+        height: 100%;
+    }
+
+    .info_film img {
+        width: 90%;
+        margin-bottom: 5%;
+    }
+
+    .button {
+        background-color: #333;
+        padding: 2%;
+        color: black;
+        border-radius: 5px;
+        float: right;
+        margin-top: 5%;
+        clear: both;
+        font-size: 0.8em;
+    }
+    .button a {
+        color:black ;
+    }
+    /* rating page */
+    table {
+        display: block;
+    }
+
+    th {
+        font-size: 75%;
+    }
+
+    td {
+        padding: 0;
+        margin: 0;
+        font-size: 95%;
+        text-align: left;
+    }
+
+    /* show page */
+    iframe {
+        width: 88%;
+        height: 100%;
+    }
+    .descriptions_film {
+        width: 90%;
+        text-align: left;
+        margin-left: 2%;
+    }
+
+    .descriptions_film img {
+        float: none;
+        width: 73%;
+        display: block;
+        margin: 0;
+        padding: 0;
+        margin-left: 11%;
+        margin-bottom: 7%;
+    }
+
+
+    .reviews {
+        text-align: left;
+        width: 96%;
+    }
+
+    .god_div{
+        display: none;
+    }
+
+    .god{
+        height: 1500px;
+        width: 500px;
+        margin: 0;
+        transform: translate(30%, -0%) }
+                           
+    
+    
+    .stari_god{
+        height: 1700px;
+        background-color: #1c1c1c;
+        width: 500px;
+    }
+    .stari_god img{
+        height: 400px;
+        width: 400px;
+    }
+    
+    .stari_god a{
+        font-size: 2em;
+    }
+    .center{
+        font-size: 1.5em;   
+    }
+.stari_god th{
+    font-size: 1.5em;
+    left: 100px;
+}
+#feedback{
+    font-size: 1.5em;
+    width: 600px;
+    height: 400px;
+    left: 150px;
+    top: 150px;
+}
+
+#name{
+    font-size: 1.5em;
+    top: 70px;
+    left: 150px; 
+    width: 600px;
+}
+
+#email{
+    font-size: 1.5em;
+    top: 100px;
+    left: 150px; 
+    width: 600px;
+}
+.sidebar_container {
+    text-align: center;
+}
 }

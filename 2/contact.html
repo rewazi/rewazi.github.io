@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header >
         <div class="logo">
             <div class="logo_text">
                 <h1><a href="index.html">ИгрыБаза</a></h1>
@@ -18,82 +18,84 @@
             </div>
         </div>
 
-        <nav class="menubar">
+        <nav   >
             <ul class="menu">
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="Games.html">Игры</a></li>
-      
                 <li><a href="rating.html">Рейтинг Игр</a></li>
                 <li class="selected"><a href="contact.html">Контакты</a></li>
-                <li class="selected"><a href="contact eng.html">eng</a></li>
+                <li><a href="contact eng.html">ENG</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="site_content">
-        <aside class="sidebar_container">
-            <section class="sidebar">
-                <h2>Поиск</h2>
-                <form method="post" action="#" id="search_form">
-                    <input type="search" name="search_field" placeholder="ваш запрос" required />
-                    <input type="submit" class="btn" value="Найти" />
-                </form>
-            </section>
-
-            <section class="sidebar">
-                <h2>Вход</h2>
-                <form method="post" action="#" id="login">
-                    <input type="text" name="login_field" placeholder="логин" required />
-                    <input type="password" name="password_field" placeholder="Пароль" required />
-                    <input type="submit" class="btn" value="Вход" />
-                    <div class="lables_passreg_text">
-                        <span><a href="#">Забыли пароль?</a></span> | <span><a href="#">Регистрация</a></span>
-                    </div>
-                </form>
-
-            </section>
+        <div class="god">
             <section class="contact">
                 <h1>Контакты</h1>
                 <p>Отправьте ваш отзыв о портале ИгрыБаза</p>
-    
                 <div class="send send_contact">
                     <form method="post" action="#" id="contact">
-                        <input id="name" type="text" name="review_name" placeholder="Ваше имя" required>
-                        <input id="email" type="email" name="review_email" placeholder="Ваша почта" required>
+                        <input id="name" type="text" name="review_name" placeholder="Ваше имя" required> <br>
+                        <input id="email" type="email" name="review_email" placeholder="Ваша почта" required><br>
                         <textarea id="feedback" name="review_text" placeholder="Ваш отзыв" required></textarea>
                         <input class="btn" type="submit" value="Send">
                     </form>
                 </div>
+                
             </section>
-            <section class="sidebar">
-                <h2>Новости</h2>
-                <span>31.02.2018</span>
-                <p>Мы запустили расширенный поиск</p>
-                <a href="#">Читать</a>
-            </section>
+        
+                <section class="sideba">
+                    <h2>Поиск</h2>
+                    <form method="post" action="#" id="search_form">
+                        <input type="search" name="search_field" placeholder="ваш запрос" required />
+                        <input type="submit" class="btn" value="Найти" />
+                    </form>
+                </section>
 
-            <section class="sidebar">
-                <h2>Рейтинг Игр</h2>
-                <ul>
-                    <li><a href="Cyberpank.html">Киберпанк</a><span class="rating_sidebar"> 8.1</span></li>
-                    <li><a href="smuta.html">Смута</a><span class="rating_sidebar"> 8.0</span></li>
-                    <li><a href="gtaV.html">Гта 5</a><span class="rating_sidebar"> 7.5</span></li>
-                    <li><a href="minecraft.html">Майнкрафт</a><span class="rating_sidebar"> 7.4</span></li>
-                </ul>
-            </section>
-        </aside>
+                <section class="sideba">
+                    <h2>Вход</h2>
+                    <form method="post" action="#" id="login">
+                        <input type="text" name="login_field" placeholder="логин" required />
+                        <input type="password" name="password_field" placeholder="Пароль" required />
+                        <input type="submit" class="btn" value="Вход" />
+                        <div class="lables_passreg_text">
+                            <span><a href="#">Забыли пароль?</a></span> | <span><a href="#">Регистрация</a></span>
+                        </div>
+                    </form>
+                   
+                </section>
 
-       
+                <section class="sideba">
+                    <h2>Новости</h2>
+                    <span>31.02.2018</span>
+                    <p>Мы запустили расширенный поиск</p>
+                    <a href="#">Читать</a>
+                </section>
+
+                <section class="sideba">
+                    <h2>Рейтинг Игр</h2>
+                    <ul>
+                        <li><a href="Cyberpank.html">Киберпанк</a><span class="rating_sidebar"> 8.1</span></li>
+                        <li><a href="smuta.html">Смута</a><span class="rating_sidebar"> 8.0</span></li>
+                        <li><a href="gtaV.html">Гта 5</a><span class="rating_sidebar"> 7.5</span></li>
+                        <li><a href="minecraft.html">Майнкрафт</a><span class="rating_sidebar"> 7.4</span></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+            <!-- Contact Section -->
+            
     </main>
 
-    <footer  >
+    <footer >
         <p>
             <a href="index.html">Главная</a> |
             <a href="Games.html">Игры</a> |
-          
             <a href="rating.html">Рейтинг Игр</a> |
             <a href="contact.html">Контакты</a>
         </p>
     </footer>
 </body>
+
 </html>

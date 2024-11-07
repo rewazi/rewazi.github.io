@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Contact</title>
-    <meta name="description" content="CineBase is a movie portal">
-    <meta name="keywords" content="movies, online movies, HD">
+    <title>Contacts</title>
+    <meta name="description" content="GameBase - a portal about games">
+    <meta name="keywords" content="Games, Online Games, HD">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,25 +14,37 @@
         <div class="logo">
             <div class="logo_text">
                 <h1><a href="index eng.html">GameBase</a></h1>
-                <h2>game are our passion!</h2>
+                <h2>Games are our passion!</h2>
             </div>
         </div>
 
-        <nav class="menubar">
+        <nav>
             <ul class="menu">
                 <li><a href="index eng.html">Home</a></li>
-                <li><a href="Games eng.html">games</a></li>
-                
-                <li><a href="rating eng.html">game Ratings</a></li>
-                <li class="selected"><a href="contact eng.html">Contact</a></li>
-                <li class="selected"><a href="contact.html">ru</a></li>
+                <li><a href="Games eng.html">Games</a></li>
+                <li><a href="rating eng.html">Game Ratings</a></li>
+                <li class="selected"><a href="contact eng.html">Contacts</a></li>
+                <li><a href="contact.html">ru</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="site_content">
-        <aside class="sidebar_container">
-            <section class="sidebar">
+        <div class="god">
+            <section class="contact">
+                <h1>Contacts</h1>
+                <p>Send us your feedback about GameBase</p>
+                <div class="send send_contact">
+                    <form method="post" action="#" id="contact">
+                        <input id="name" type="text" name="review_name" placeholder="Your Name" required> <br>
+                        <input id="email" type="email" name="review_email" placeholder="Your Email" required><br>
+                        <textarea id="feedback" name="review_text" placeholder="Your Feedback" required></textarea>
+                        <input class="btn" type="submit" value="Send">
+                    </form>
+                </div>
+            </section>
+
+            <section class="sideba">
                 <h2>Search</h2>
                 <form method="post" action="#" id="search_form">
                     <input type="search" name="search_field" placeholder="your query" required />
@@ -40,59 +52,45 @@
                 </form>
             </section>
 
-            <section class="sidebar">
+            <section class="sideba">
                 <h2>Login</h2>
                 <form method="post" action="#" id="login">
                     <input type="text" name="login_field" placeholder="username" required />
                     <input type="password" name="password_field" placeholder="Password" required />
                     <input type="submit" class="btn" value="Login" />
-                    <div class="labels_passreg_text">
-                        <span><a href="#">Forgot password?</a></span> | <span><a href="#">Register</a></span>
+                    <div class="lables_passreg_text">
+                        <span><a href="#">Forgot password?</a></span> | <span><a href="#">Sign up</a></span>
                     </div>
                 </form>
             </section>
-            <section class="contact">
-                <h1>Contact</h1>
-                <p>Send your feedback about the CineBase portal</p>
-    
-                <div class="send send_contact">
-                    <form method="post" action="#" id="contact">
-                        <input id="name" type="text" name="review_name" placeholder="Your Name" required>
-                        <input id="email" type="email" name="review_email" placeholder="Your Email" required>
-                        <textarea id="feedback" name="review_text" placeholder="Your Feedback" required></textarea>
-                        <input class="btn" type="submit" value="Send">
-                    </form>
-                </div>
-            </section>
-            <section class="sidebar">
+
+            <section class="sideba">
                 <h2>News</h2>
-                <span>31.02.2018</span>
-                <p>We launched an advanced search</p>
-                <a href="#">Read</a>
+                <span>02/31/2018</span>
+                <p>We have launched advanced search</p>
+                <a href="#">Read more</a>
             </section>
 
-            <section class="sidebar">
-                <h2>Movie Ratings</h2>
+            <section class="sideba">
+                <h2>Game Ratings</h2>
                 <ul>
-                    <li><a href="Cyberpank eng.html">cyberpunk</a><span class="rating_sidebar"> 8.1</span></li>
-                    <li><a href="minecraft eng.html">minecraft</a><span class="rating_sidebar"> 8.0</span></li>
-                    <li><a href="gtaV eng.html">gta5</a><span class="rating_sidebar"> 7.5</span></li>
-                    <li><a href="smuta eng.html">smuta</a><span class="rating_sidebar"> 7.4</span></li>
+                    <li><a href="Cyberpank eng.html">Cyberpunk</a><span class="rating_sidebar"> 8.1</span></li>
+                    <li><a href="smuta eng.html">Smuta</a><span class="rating_sidebar"> 8.0</span></li>
+                    <li><a href="gtaV eng.html">GTA 5</a><span class="rating_sidebar"> 7.5</span></li>
+                    <li><a href="minecraft eng.html">Minecraft</a><span class="rating_sidebar"> 7.4</span></li>
                 </ul>
             </section>
-        </aside>
-
-        
+        </div>
     </main>
 
-    <footer  >
+    <footer>
         <p>
             <a href="index eng.html">Home</a> |
-            <a href="Games eng.html">Movies</a> |
-           
-            <a href="rating eng.html">Movie Ratings</a> |
-            <a href="contact eng.html">Contact</a>
+            <a href="Games eng.html">Games</a> |
+            <a href="rating eng.html">Game Ratings</a> |
+            <a href="contact eng.html">Contacts</a>
         </p>
     </footer>
 </body>
+
 </html>
