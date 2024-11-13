@@ -535,4 +535,12 @@ and (max-device-width: 568px) {
 .sidebar_container {
     text-align: center;
 }
+.game_item img{
+    height: 400px;
+    width: 300px;
+}
+.game_item .button{
+    background-color: #444;
+    float:none;
+}
 }
