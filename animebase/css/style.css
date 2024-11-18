@@ -117,3 +117,14 @@ a:hover {
 body {
     background-color: black !important;
 }
+@media (max-width: 768px) {
+    .masonry-grid {
+      column-count: 2;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .masonry-grid {
+      column-count: 1;
+    }
+  }

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кинобаза</title>
+  <!-- Подключаем ваш стиль -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Подключаем Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Добавляем стили для масонской сетки -->
+  <style>
+    .masonry-grid {
+      column-count: 3;
+      column-gap: 1em;
+    }
+    .masonry-grid-item {
+      break-inside: avoid;
+      margin-bottom: 1em;
+    }
+    .masonry-grid-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .btn {
+      background-color: #28a745
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <nav role="navigation" class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Бренд -->
+                <a class="navbar-brand" href="index.html">
+                    <h1>Кинобаза</h1>
+                    <p>Кино - наша страсть!</p>
+                </a>
+                <!-- Кнопка для мобильного меню -->
+                <button type="button" data-toggle="collapse" data-target="#navbarCollapse" class="navbar-toggler">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Навигационное меню -->
+                <div id="navbarCollapse" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="films.html">аниме</a></li>
+                       
+                        <li class="nav-item"><a class="nav-link" href="rating.html">Рейтинг аниме</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="container py-5">
+      <div class="row">
+        <div class="col-md-6 d-flex align-items-center">
+          <div>
+            <h1>Создаём уют в вашем доме</h1>
+            <p>В нашем мире аниме — это больше, чем просто развлечение. Это маленькая магия, которая превращает каждый день в приключение! На нашем сайте вы можете смотреть уникальные аниме, которые наполняют ваш дом светом и радостью, превращая обычные моменты в теплые воспоминания. Приходите за частичкой волшебства, чтобы сделать ваш мир еще прекраснее!</p>
+            <button class="btn btn-custom">Лучшие аниме</button>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="masonry-grid">
+            <div class="masonry-grid-item">
+              <a href="dandan.html">
+                <img src="img/1.jpg" alt="Image 1">
+              </a>
+            </div>
+            <div class="masonry-grid-item">
+              <a href="codegeas.html">
+                <img src="img/2.jpg" alt="Image 2">
+              </a>
+            </div>
+            <div class="masonry-grid-item">
+              <a href="image3.jpg">
+                <img src="img/3.jpg" alt="Image 3">
+              </a>
+            </div>
+            <div class="masonry-grid-item">
+              <a href="image4.jpg">
+                <img src="img/4.jpg" alt="Image 4">
+              </a>
+            </div>
+            <div class="masonry-grid-item">
+              <a href="image5.jpg">
+                <img src="img/5.jpg" alt="Image 5">
+              </a>
+            </div>
+            <div class="masonry-grid-item">
+              <a href="image6.jpg">
+                <img src="img/6.jpg" alt="Image 6">
+              </a>
+            </div>
+            <!-- Добавленные изображения -->
+            <div class="masonry-grid-item">
+              <a href="image7.jpg">
+                <img src="img/7.png" alt="Image 7">
+              </a>
+            </div>
+            <div class="masonry-grid-item">
+              <a href="image8.jpg">
+                <img src="img/8.jpg" alt="Image 8">
+              </a>
+            </div>
+            <div class="masonry-grid-item">
+              <a href="image9.jpg">
+                <img src="img/9.jpg" alt="Image 9">
+              </a>
+            </div>
+            <div class="masonry-grid-item">
+              <a href="image10.jpg">
+                <img src="img/10.jpg" alt="Image 10">
+              </a>
+            </div>
+            <div class="masonry-grid-item">
+              <a href="image11.jpg">
+                <img src="img/11.jpg" alt="Image 11">
+              </a>
+            </div>
+            <div class="masonry-grid-item">
+              <a href="image12.jpg">
+                <img src="img/12.jpg" alt="Image 12">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+      <div class="container">
+          <p class="text-center"> <a href="index.html">animeBaza</a> </p>
+      </div>
+    </footer>
+
+    <!-- Подключение скриптов Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
