@@ -115,7 +115,7 @@ a:hover {
     filter: invert(1);
 }
 body {
-    background-color: black !important;
+    background-color: rgb(31, 30, 30) !important;
 }
 @media (max-width: 768px) {
     .masonry-grid {
