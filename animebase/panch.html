@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ванпанчмен / One Punch Man
-</title>
+  <title id="page-title">Ванпанчмен / One Punch Man</title>
   <!-- Подключаем Bootstrap -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -29,11 +28,11 @@
       border: none;
     }
 
-    .navbar-brand h1, .navbar-brand p, .nav-link {
+    .navbar-brand h1, .navbar-brand p, .nav-link, .translate-btn {
       color: #fff !important;
     }
 
-    .nav-link:hover {
+    .nav-link:hover, .translate-btn:hover {
       color: #ccc !important;
     }
 
@@ -122,6 +121,20 @@
     .review-form .btn:hover {
       background-color: #218838;
     }
+
+    /* Стили для кнопки перевода */
+    .translate-btn {
+      margin-left: 15px;
+      border: 1px solid #28a745;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      background-color: transparent;
+    }
+
+    .translate-btn:hover {
+      background-color: #28a745;
+    }
   </style>
 </head>
 <body>
@@ -130,8 +143,8 @@
             <div class="container-fluid">
                 <!-- Бренд -->
                 <a class="navbar-brand" href="index.html">
-                    <h1 class="h4">Анимебаза</h1>
-                    <p class="mb-0 small">Аниме - наша страсть!</p>
+                    <h1 id="brand-title" class="h4">Анимебаза</h1>
+                    <p id="brand-subtitle" class="mb-0 small">Аниме - наша страсть!</p>
                 </a>
                 <!-- Кнопка для мобильного меню -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
@@ -141,21 +154,24 @@
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     <!-- Навигационные ссылки -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Главная</a></li>
-                        <li class="nav-item"><a class="nav-link" href="anime.html">Аниме</a></li>
-                        
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+                        <li class="nav-item active"><a id="nav-home" class="nav-link" href="index.html">Главная</a></li>
+                        <li class="nav-item"><a id="nav-anime" class="nav-link" href="anime.html">Аниме</a></li>
+                        <li class="nav-item"><a id="nav-contact" class="nav-link" href="contact.html">Контакты</a></li>
                     </ul>
                     <!-- Форма входа -->
                     <form class="form-inline my-2 my-lg-0" method="post" action="#" id="login">
-                        <input class="form-control mr-sm-2" type="text" name="login_field" placeholder="Логин" aria-label="Логин">
-                        <input class="form-control mr-sm-2" type="password" name="password_field" placeholder="Пароль" aria-label="Пароль">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Вход</button>
+                        <input id="login-field" class="form-control mr-sm-2" type="text" name="login_field" placeholder="Логин" aria-label="Логин">
+                        <input id="password-field" class="form-control mr-sm-2" type="password" name="password_field" placeholder="Пароль" aria-label="Пароль">
+                        <button id="login-button" class="btn btn-outline-success my-2 my-sm-0" type="submit">Вход</button>
                     </form>
                     <!-- Ссылки "Забыли пароль?" и "Регистрация" -->
                     <div class="lables_passreg_text text-right ml-3">
-                        <span><a href="#">Забыли пароль?</a></span> | 
-                        <span><a href="#">Регистрация</a></span>
+                        <span><a href="#" id="forgot-password">Забыли пароль?</a></span> | 
+                        <span><a href="#" id="register">Регистрация</a></span>
+                    </div>
+                    <!-- Кнопка перевода -->
+                    <div id="translateButtons">
+                        <span class="translate-btn" id="translateButton">Translate to English</span>
                     </div>
                 </div>
             </div>
@@ -164,45 +180,46 @@
 
     <!-- Контейнер для плеера и описания -->
     <main class="video-container container my-4">
-        <h2 class="text-center mb-3">Ванпанчмен / One Punch Man
-        </h2>
+        <h2 class="text-center mb-3" id="title">Ванпанчмен / One Punch Man</h2>
         <!-- Описание аниме -->
         <div class="card mb-4 shadow-sm">
             <div class="card-body">
-                <p class="card-text text-center">
-                    Действия происходят в альтернативном мире, где супергероями и монстрами никого не удивить. В этом мире живёт самый обычный с виду парень по имени Сайтама. Однажды он решил оставить скучную жизнь офисного работника и начать спасать мир. За годы тренировок Сайтама обрёл нечеловеческую силу и теперь способен уничтожить любого врага всего лишь одним ударом. Однако со временем нашему герою наскучило быть самым непобедимым человеком на Земле и он хочет сразиться с соперником, который будет хотя бы равен ему по силе. Вместе со своим верным товарищем — киборгом Геносом, Сайтама будет побеждать монстров и надеяться вновь почувствовать радость сражения.
+                <p class="card-text text-center" id="description">
+                    В мире, где человек перестал быть самым опасным хищником, правят демоны. И пусть большинство смертных и не подозревают об их существовании - даже легенды о великом Рёмэне Сукуне, что в давние времена был побеждён с величайшим трудом, помнят немногие. Остатки демона были разбросаны по всему свету, и если найдётся демон, что сможет найти и поглотить все из них - он обретёт мощь, способную стереть человечество с лица земли.
+
+                    Эта история повествует о Юдзи Итадори, ученике старшей школы, отличающимся выдающейся физической силой. Каждый уважающий себя глава спортивного клуба пытается заполучить в свои ряды такого участника, но для Юдзи на первом месте стоят учёба и уход за больным дедушкой. Устав от постоянных приглашений, он предпочитает вступить в клуб окультных наук, что бы избавиться от назойливого внимания. Но в один прекрасный день главе клуба попадается в руки древний проклятный артефакт. И лучше бы им было к нему даже не прикасаться. Ибо кто знает, что именно там запечатано...
                 </p>
             </div>
         </div>
         <!-- Плеер -->
         <div class="embed-responsive embed-responsive-16by9 mb-4">
-            <iframe src="https://www.anilibria.tv/public/iframe.php?id=1210" type="text/html" width=840 height=515 frameborder="0" allowfullscreen></iframe>
+          <iframe src="//kodik.info/serial/15815/36e987ba71e254d00fc3ac1c181fc985/720p" width="607" height="360" frameborder="0" AllowFullScreen allow="autoplay *; fullscreen *"></iframe>
         </div>
 
         <!-- Раздел с отзывами -->
         <section class="reviews">
-            <h3 class="text-center">Отзывы</h3>
+            <h3 class="text-center" id="reviews-title">Отзывы</h3>
             <!-- Список отзывов -->
-            <div class="review-list mb-4">
+            <div class="review-list mb-4" id="review-list">
                 <div class="review-item">
-                    <p><strong>Алексей:</strong> Очень захватывающее аниме! Жду продолжения с нетерпением.</p>
+                    <p><strong id="review-nickname-1">Алексей:</strong> Очень захватывающее аниме! Жду продолжения с нетерпением.</p>
                 </div>
                 <div class="review-item">
-                    <p><strong>Мария:</strong> Интересный сюжет и отличная анимация. Рекомендую к просмотру.</p>
+                    <p><strong id="review-nickname-2">Мария:</strong> Интересный сюжет и отличная анимация. Рекомендую к просмотру.</p>
                 </div>
                 <!-- Добавьте дополнительные отзывы при необходимости -->
             </div>
             <!-- Форма для добавления нового отзыва -->
             <form class="review-form">
                 <div class="form-group">
-                    <label for="reviewName">Ваше имя</label>
+                    <label for="reviewName" id="review-name-label">Ваше имя</label>
                     <input type="text" class="form-control" id="reviewName" placeholder="Введите ваше имя">
                 </div>
                 <div class="form-group">
-                    <label for="reviewText">Ваш отзыв</label>
+                    <label for="reviewText" id="review-text-label">Ваш отзыв</label>
                     <textarea class="form-control" id="reviewText" rows="3" placeholder="Введите ваш отзыв"></textarea>
                 </div>
-                <button type="submit" class="btn btn-success">Оставить отзыв</button>
+                <button type="submit" class="btn btn-success" id="submit-review-button">Оставить отзыв</button>
             </form>
         </section>
     </main>
@@ -210,9 +227,114 @@
     <!-- Футер -->
     <footer class="py-3">
         <div class="container text-center">
-            <p class="mb-0"><a href="test.html">animeBaza</a></p>
+            <p class="mb-0"><a href="index.html" id="footer-text">animeBaza</a></p>
         </div>
     </footer>
+
+    <!-- Скрипт для перевода и сохранения выбранного языка -->
+    <script>
+        const texts = {
+            header: {
+                brandTitle: { ru: "Анимебаза", en: "AnimeBase" },
+                brandSubtitle: { ru: "Аниме - наша страсть!", en: "Anime is our passion!" },
+                nav: {
+                    home: { ru: "Главная", en: "Home" },
+                    anime: { ru: "Аниме", en: "Anime" },
+                    contact: { ru: "Контакты", en: "Contacts" }
+                },
+                login: {
+                    fieldPlaceholder: { ru: "Логин", en: "Username" },
+                    passwordPlaceholder: { ru: "Пароль", en: "Password" },
+                    button: { ru: "Вход", en: "Login" },
+                    forgotPassword: { ru: "Забыли пароль?", en: "Forgot password?" },
+                    register: { ru: "Регистрация", en: "Register" }
+                }
+            },
+            main: {
+                title: { 
+                    ru: "Ванпанчмен / One Punch Man", 
+                    en: "One Punch Man" 
+                },
+                description: {
+                    ru: `
+                        В мире, где человек перестал быть самым опасным хищником, правят демоны. И пусть большинство смертных и не подозревают об их существовании - даже легенды о великом Рёмэне Сукуне, что в давние времена был побеждён с величайшим трудом, помнят немногие. Остатки демона были разбросаны по всему свету, и если найдётся демон, что сможет найти и поглотить все из них - он обретёт мощь, способную стереть человечество с лица земли.
+
+                        Эта история повествует о Юдзи Итадори, ученике старшей школы, отличающимся выдающейся физической силой. Каждый уважающий себя глава спортивного клуба пытается заполучить в свои ряды такого участника, но для Юдзи на первом месте стоят учёба и уход за больным дедушкой. Устав от постоянных приглашений, он предпочитает вступить в клуб окультных наук, что бы избавиться от назойливого внимания. Но в один прекрасный день главе клуба попадается в руки древний проклятный артефакт. И лучше бы им было к нему даже не прикасаться. Ибо кто знает, что именно там запечатано...
+                    `,
+                    en: `
+                        In a world where humans are no longer the most dangerous predators, demons reign supreme. While most mortals are unaware of their existence, only a few remember the legends of the great Ryomen Sukuna, who was defeated with immense effort in ancient times. Demonic remnants are scattered across the globe, and if a demon can find and absorb all of them, it will gain the power to wipe humanity off the face of the earth.
+
+                        This story follows Yuji Itadori, a high school student with extraordinary physical strength. Every respected club president tries to recruit such a participant, but for Yuji, studying and taking care of his sick grandfather are top priorities. Tired of constant invitations, he prefers to join the Occult Club to escape the annoying attention. However, one day, the club president stumbles upon an ancient cursed artifact. It would have been better if they hadn't touched it, as who knows what exactly is sealed within...
+                    `
+                },
+                reviewsTitle: { ru: "Отзывы", en: "Reviews" },
+                reviewNameLabel: { ru: "Ваше имя", en: "Your Name" },
+                reviewTextLabel: { ru: "Ваш отзыв", en: "Your Review" },
+                submitReviewButton: { ru: "Оставить отзыв", en: "Submit Review" }
+            },
+            footer: {
+                text: { ru: "Анимебаза", en: "AnimeBase" }
+            }
+        };
+
+        function updateLanguage(lang) {
+            // Сохраняем выбранный язык
+            localStorage.setItem('selectedLanguage', lang);
+
+            // Обновляем текстовые элементы
+            document.getElementById('brand-title').textContent = texts.header.brandTitle[lang];
+            document.getElementById('brand-subtitle').textContent = texts.header.brandSubtitle[lang];
+            document.getElementById('nav-home').textContent = texts.header.nav.home[lang];
+            document.getElementById('nav-anime').textContent = texts.header.nav.anime[lang];
+            document.getElementById('nav-contact').textContent = texts.header.nav.contact[lang];
+
+            // Обновляем форму входа
+            document.getElementById('login-field').placeholder = texts.header.login.fieldPlaceholder[lang];
+            document.getElementById('password-field').placeholder = texts.header.login.passwordPlaceholder[lang];
+            document.getElementById('login-button').textContent = texts.header.login.button[lang];
+            document.getElementById('forgot-password').textContent = texts.header.login.forgotPassword[lang];
+            document.getElementById('register').textContent = texts.header.login.register[lang];
+
+            // Обновляем основной контент
+            document.getElementById('title').textContent = texts.main.title[lang];
+            document.getElementById('description').textContent = texts.main.description[lang];
+            document.getElementById('page-title').textContent = texts.main.title[lang];
+
+            // Обновляем раздел отзывов
+            document.getElementById('reviews-title').textContent = texts.main.reviewsTitle[lang];
+            document.getElementById('review-name-label').textContent = texts.main.reviewNameLabel[lang];
+            document.getElementById('reviewName').placeholder = texts.main.reviewNameLabel[lang];
+            document.getElementById('review-text-label').textContent = texts.main.reviewTextLabel[lang];
+            document.getElementById('reviewText').placeholder = texts.main.reviewTextLabel[lang];
+            document.getElementById('submit-review-button').textContent = texts.main.submitReviewButton[lang];
+
+            // Обновляем футер
+            document.getElementById('footer-text').textContent = texts.footer.text[lang];
+
+            // Обновляем кнопку перевода
+            const translateButton = document.getElementById('translateButton');
+            if (lang === 'ru') {
+                translateButton.textContent = 'Translate to English';
+                translateButton.onclick = () => updateLanguage('en');
+            } else {
+                translateButton.textContent = 'Перевести на русский';
+                translateButton.onclick = () => updateLanguage('ru');
+            }
+        }
+
+        // Инициализация языка при загрузке страницы
+        window.onload = () => {
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'ru';
+            updateLanguage(savedLanguage);
+        };
+
+        // Добавляем обработчик на кнопку перевода
+        document.getElementById('translateButton').onclick = () => {
+            const currentLang = localStorage.getItem('selectedLanguage') || 'ru';
+            const newLang = currentLang === 'ru' ? 'en' : 'ru';
+            updateLanguage(newLang);
+        };
+    </script>
 
     <!-- Подключение скриптов Bootstrap и jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

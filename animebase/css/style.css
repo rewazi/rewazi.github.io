@@ -110,10 +110,6 @@ a:hover {
     color: #cccccc;
 }
 
-/* Стили для кнопки мобильного меню */
-.navbar-toggler-icon {
-    filter: invert(1);
-}
 body {
     background-color: rgb(31, 30, 30) !important;
 }
@@ -126,6 +122,9 @@ body {
   @media (max-width: 576px) {
     .masonry-grid {
       column-count: 1;
+    }
+    body{
+      width: 100%;
     }
   }
   @media (max-width: 767.98px) {

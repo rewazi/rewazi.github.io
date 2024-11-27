@@ -7,299 +7,290 @@
     <!-- Обновлено значение viewport для правильной работы на мобильных устройствах -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Фильмы - Кинобаза</title>
+    <title id="page-title">Код Гиасс: Восстание Лелуша R1 — новый дубляж</title>
 
-    <!-- Bootstrap 4 CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
-
-    <!-- Main Style -->
+    <!-- Подключаем ваш основной стиль -->
     <link href="css/style.css" rel="stylesheet">
 
+    <!-- Подключаем Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Дополнительные стили -->
-     <style>
-    body {
-        background-color: #1a1a1a;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-    .navbar-toggler .navbar-toggler-icon {
-    filter: invert(1);
-}
-
-    main {
-        flex: 1 0 auto;
-    }
-
-    header, footer {
-        background-color: #222222;
-    }
-
-    .card {
-        background-color: #2c2c2c;
-        border: none;
-    }
-
-    .navbar-brand h1, .navbar-brand p, .nav-link {
-        color: #fff !important;
-    }
-
-    .nav-link:hover {
-        color: #ccc !important;
-    }
-
-    footer {
-        flex-shrink: 0;
-        padding: 10px 0; /* Уменьшаем отступы сверху и снизу */
-    }
-
-    footer p {
-        font-size: 14px; /* Уменьшаем размер шрифта */
-        margin: 0; /* Убираем отступы */
-    }
-
-    footer a {
-        color: #fff;
-        text-decoration: none;
-    }
-
-    footer a:hover {
-        color: #ccc;
-    }
-
-    /* Дополнительные стили для формы входа */
-  /* Начальные стили для кнопки мобильного меню */
-.navbar-toggler {
-    border-color: #28a745; /* Зеленая граница */
-    background-color: transparent; /* Прозрачный фон */
-}
-
-.navbar-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255%2C255%2C255%2C1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22 M4 15h22 M4 23h22'/%3E%3C/svg%3E");
-    /* Белая иконка */
-}
-
-/* Стили при активации меню (когда меню открыто) */
-.navbar-toggler:not(.collapsed) {
-    background-color: #28a745; /* Зеленый фон */
-    border-color: #28a745; /* Зеленая граница */
-}
-.navbar-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FFFFFF' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22 M4 15h22 M4 23h22'/%3E%3C/svg%3E");
-    /* Белая иконка */
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FFFFFF' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22 M4 15h22 M4 23h22'/%3E%3C/svg%3E");
-    /* Иконка остается белой */
-}
-
-
-    /* Стили для раздела отзывов */
-    .reviews {
-        background-color: #2c2c2c;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-    }
-
-    .reviews h3 {
-        margin-bottom: 20px;
-    }
-
-    .review-item {
-        border-bottom: 1px solid #444;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-    }
-
-    .review-item:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-    }
-
-    .review-form .form-control {
-        background-color: #1a1a1a;
-        border: 1px solid #444;
-        color: #fff;
-    }
-
-    .review-form .form-control::placeholder {
-        color: #ccc;
-    }
-
-    .review-form .btn {
-        background-color: #218838;
-        border: none;
-        color: #fff;
-    }
-
-    .review-form .btn:hover {
-        background-color: #1e7e34;
-    }
-
-    /* Стили для изображений фильмов */
-    .film-img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 5px;
-    }
-
-    /* Кастомный класс для кнопок */
-    .btn-custom {
-        background-color: #218838;
-        color: #fff;
-    }
-
-    .btn-custom:hover, .btn-custom:focus {
-        background-color: #1e7e34;
-        color: #fff;
-    }
-
-    /* Оптимизация для мобильных устройств */
-    @media (max-width: 767.98px) {
-        .carousel-item img {
-            height: 150px;
+    <style>
+        body {
+          background-color: #1a1a1a;
+          color: #fff;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
         }
-        .carousel-control-prev {
-            left: -30px;
+
+        .video-container {
+          flex: 1;
         }
-        .carousel-control-next {
-            right: -30px;
+
+        header, footer {
+          background-color: #222222;
         }
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            width: 30px;
-            height: 30px;
-            background-size: 30px 30px;
+
+        .card {
+          background-color: #2c2c2c;
+          border: none;
         }
-    }
 
-    /* Дополнительные стили для боковой панели */
-    .sidebar-header {
-        font-size: 1.25rem;
-        font-weight: bold;
-        color: #fff;
-        background-color: #343a40;
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-
-    /* Стили для секций боковой панели */
-    .sidebar-section {
-        background-color: #343a40;
-        padding: 15px;
-        border-radius: 5px;
-        margin-bottom: 20px;
-    }
-
-    /* Отступы между записями фильмов */
-    .film-entry {
-        margin-bottom: 2rem;
-    }
-
-    /* Стили для ссылок внутри боковой панели */
-    .sidebar-header a {
-        color: #fff;
-    }
-
-    .sidebar-header a:hover {
-        color: #ccc;
-    }
-
-    /* Стили для текста внутри секций боковой панели */
-    .sidebar-section p,
-    .sidebar-section a {
-        color: #fff;
-    }
-
-    .sidebar-section a:hover {
-        color: #ccc;
-    }
-
-    /* Стили для бейджей рейтинга */
-    .sidebar-section .badge-warning {
-        background-color: #208837;
-        color: #fff;
-    }
-
-    .sidepanel {
-        position: relative;
-        display: block;
-        padding: .75rem 1.25rem;
-        background-color: #292929;
-        border: 2px solid #292929;
-        border-radius: 10px;
-    }
-
-    #blac_sarch {
-        background-color: #2c2c2c;
-    }
-
-    /* Выравнивание боковой панели по правому краю на больших экранах */
-    @media (min-width: 992px) {
-        aside {
-            margin-left: auto;
+        .navbar-brand h1, .navbar-brand p, .nav-link {
+          color: #fff !important;
         }
-    }
 
-    /* Стили для кнопки мобильного меню */
-    .navbar-toggler {
-        border-color: #28a745; /* Зелёная граница */
-    }
+        .nav-link:hover {
+          color: #ccc !important;
+        }
 
+        footer a {
+          color: #fff;
+          text-decoration: none;
+        }
 
-    /* Меняем цвет кнопки и иконки при открытом меню */
-    .navbar-toggler:not(.collapsed) {
-        border-color: #28a745; /* Зелёная граница при активном меню */
-    }
+        footer a:hover {
+          color: #ccc;
+        }
 
-    .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5%29' ");
-    /* Иконка становится зелёной при активации */
+        /* Дополнительные стили для формы входа */
+        .navbar .form-control {
+          background-color: #2c2c2c;
+          border: 1px solid #444;
+          color: #fff;
+        }
+
+        .navbar .form-control::placeholder {
+          color: #ccc;
+        }
+
+        .navbar .btn {
+          color: #fff;
+          border-color: #28a745;
+        }
+
+        .navbar .btn:hover {
+          background-color: #28a745;
+          color: #fff;
+        }
+
+        .navbar .labels_passreg_text {
+          margin-top: 5px;
+          font-size: 0.85rem;
+        }
+
+        .navbar .labels_passreg_text a {
+          color: #fff;
+        }
+
+        .navbar .labels_passreg_text a:hover {
+          color: #ccc;
+        }
+
+        /* Стили для раздела отзывов */
+        .reviews {
+            background-color: #2c2c2c;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .reviews h3 {
+            margin-bottom: 20px;
+        }
+
+        .review-item {
+            border-bottom: 1px solid #444;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .review-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .review-form .form-control {
+            background-color: #1a1a1a;
+            border: 1px solid #444;
+            color: #fff;
+        }
+
+        .review-form .form-control::placeholder {
+            color: #ccc;
+        }
+
+        .review-form .btn {
+            background-color: #218838;
+            border: none;
+            color: #fff;
+        }
+
+        .review-form .btn:hover {
+            background-color: #1e7e34;
+        }
+
+        /* Стили для изображений аниме */
+        .anime-img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Кастомный класс для кнопок */
+        .btn-custom {
+            background-color: #218838;
+            color: #fff;
+        }
+
+        .btn-custom:hover, .btn-custom:focus {
+            background-color: #1e7e34;
+            color: #fff;
+        }
+
+        /* Оптимизация для мобильных устройств */
+        @media (max-width: 767.98px) {
+            .carousel-item img {
+                height: 150px;
+            }
+            .carousel-control-prev {
+                left: -30px;
+            }
+            .carousel-control-next {
+                right: -30px;
+            }
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 30px;
+                height: 30px;
+                background-size: 30px 30px;
+            }
+        }
+
+        /* Дополнительные стили для боковой панели */
+        .sidebar-header {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #343a40;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Стили для секций боковой панели */
+        .sidebar-section {
+            background-color: #343a40;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Отступы между записями аниме */
+        .anime-entry {
+            margin-bottom: 2rem;
+        }
+
+        /* Стили для ссылок внутри боковой панели */
+        .sidebar-header a {
+            color: #fff;
+        }
+
+        .sidebar-header a:hover {
+            color: #ccc;
+        }
+
+        /* Стили для бейджей рейтинга */
+        .sidebar-section .badge-warning {
+            background-color: #208837;
+            color: #fff;
+        }
+
+        .sidepanel {
+            position: relative;
+            display: block;
+            padding: .75rem 1.25rem;
+            background-color: #292929;
+            border: 2px solid #292929;
+            border-radius: 10px;
+        }
+
+        #blac_sarch {
+            background-color: #2c2c2c;
+        }
+
+        /* Стили для кнопки перевода */
+        .translate-btn {
+            margin-left: 15px;
+            border: 1px solid #28a745;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            background-color: transparent;
+            color: #fff;
+        }
+
+        .translate-btn:hover {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .sidepanel a{
+            color: white;  
+            font-weight: bold; 
+            text-decoration: none; 
+        }
+
+        .sidepanel a:hover{
+            color: gray;
+            
+        }
+        
+        .bg-warning {
+            --bs-bg-opacity: 1;
+            background-color: #28a745 !important;
 }
 
-    
-</style>
+    </style>
 </head>
 <body>
-
     <header>
-        <nav class="navbar navbar-expand-lg navbar-gray">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <!-- Бренд -->
                 <a class="navbar-brand" href="index.html">
-                    <h1 class="h4">Анимебаза</h1>
-                    <p class="mb-0 small">Аниме - наша страсть!</p>
+                    <h1 class="h4" id="headerBrand">Анимебаза</h1>
+                    <p class="mb-0 small" id="headerSubtitle">Аниме - наша страсть!</p>
                 </a>
                 <!-- Кнопка для мобильного меню -->
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Переключить навигацию">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
-                
                 <!-- Навигационное меню и форма входа -->
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     <!-- Навигационные ссылки -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Главная</a></li>
-                        <li class="nav-item"><a class="nav-link" href="anime.html">Аниме</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a id="navHome" class="nav-link" href="index.html">Главная</a></li>
+                        <li class="nav-item active"><a id="navAnime" class="nav-link" href="anime.html">Аниме</a></li>
+                        <li class="nav-item"><a id="navContact" class="nav-link" href="contact.html">Контакты</a></li>
                     </ul>
                     <!-- Форма входа -->
-                    <form class="form-inline my-2 my-lg-0" method="post" action="#" id="login">
-                        <input class="form-control mr-sm-2" type="text" name="login_field" placeholder="Логин" aria-label="Логин">
-                        <input class="form-control mr-sm-2" type="password" name="password_field" placeholder="Пароль" aria-label="Пароль">
-                        <button class="btn btn-custom my-2 my-sm-0" type="submit">Вход</button>
+                    <form class="d-flex me-3" method="post" action="#" id="login">
+                        <input id="loginField" class="form-control me-2" type="text" name="login_field" placeholder="Логин" aria-label="Логин">
+                        <input id="passwordField" class="form-control me-2" type="password" name="password_field" placeholder="Пароль" aria-label="Пароль">
+                        <button id="loginButton" class="btn btn-outline-success" type="submit">Вход</button>
                     </form>
                     <!-- Ссылки "Забыли пароль?" и "Регистрация" -->
-                    <div class="lables_passreg_text text-right ml-3">
-                        <span><a href="#">Забыли пароль?</a></span> | 
-                        <span><a href="#">Регистрация</a></span>
+                    <div class="labels_passreg_text text-end me-3">
+                        <span><a href="#" id="forgotPassword">Забыли пароль?</a></span> | 
+                        <span><a href="#" id="register">Регистрация</a></span>
+                    </div>
+                    <!-- Кнопка перевода -->
+                    <div id="translateButtons" class="me-3">
+                        <span class="translate-btn" id="toEnglish">Translate to English</span>
                     </div>
                 </div>
             </div>
@@ -308,241 +299,48 @@
 
     <main class="container my-5">
         <div class="row">
-            <!-- Основная статья с фильмами -->
+            <!-- Основная статья с аниме -->
             <article class="col-lg-9">
-                <h1>Фильмы</h1>
+                <h1 id="animeHeader">Аниме</h1>
                 <hr>
-
-                <!-- Пример записи фильма -->
-                <!-- Фильм 1 -->
-                <div class="row mb-4 film-entry">
-                    <div class="col-md-3 text-center">
-                        <img class="img-fluid film-img" src="img/1.jpg" alt="Фильм 1">
-                        <p class="mt-2 font-weight-bold">Дандадан / Dandadan</p>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            Ничто не вызывает такой живой интерес, как когда КТО-ТО НЕ ПРАВ. Ничто так не сближает, как хороший искренний СПОР ПО ПОВОДУ КАКОЙ-ТО ФИГНИ. Возьмём, например, Момо. Она выросла в семье медиумов и верит, что на свете есть призраки. А её знакомый Окарун верит в инопланетян. Двум диаметрально противоположным конспирологам не понять друг друга. И выяснять, кто существует на самом деле, инопланетяне или призраки, им придётся на практике.
-                        </p>
-                        <a href="dandan.html" class="btn btn-custom btn-lg float-right">Подробнее</a>
-                    </div>
+                <!-- Здесь будут загружены аниме -->
+                <div id="animeList">
+                    <!-- Аниме загружаются динамически через JavaScript -->
                 </div>
-
-                <!-- Фильм 2 -->
-                <div class="row mb-4 film-entry">
-                    <div class="col-md-3 text-center">
-                        <img class="img-fluid film-img" src="img/2.jpg" alt="Фильм 2">
-                        <p class="mt-2 font-weight-bold">Код Гиасс: Восстание Лелуша R1 — новый дубляж
-                            </p>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            Альтернативная вселенная, 2010 год. Великая Британская Империя захватила Японию. Её лишили свободы, прав и даже собственного названия. Зона 11. Эта цифра стала новым названием Японии. Страны, которая проиграла. Юный британец Лелуш встречает загадочную девушку, представившуюся коротким именем С.С. Получив от неё силу с названием "гиасс", Лелуш обретает то, что давно искал — возможность отомстить своему отцу, императору Великой Британской Империи.
-                        </p>
-                        <a href="codegeas.html" class="btn btn-custom btn-lg float-right">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Фильм 3 -->
-                <div class="row mb-4 film-entry">
-                    <div class="col-md-3 text-center">
-                        <img class="img-fluid film-img" src="img/3.jpg" alt="Фильм 3">
-                        <p class="mt-2 font-weight-bold">Клинок, рассекающий демонов</p>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            С древних времён, люди боятся демонов.
-                            После смерти своего отца Танжиро пришлось самому заботиться о своей маме и братьях с сёстрами. Несмотря на трагедию, их жизнь казалась счастливой. Но в один день счастью приходит конец. Семья Танжиро убита, а единственная выжившая сестра Нэзуко превратилась в демона. В довершение трагедии появляется охотник на демонов Томиока Гию. Он уже собирался прикончить Нэзуко, когда к его удивлению, брат с сестрой встали на защиту друг друга. Увидев навыки Танжиро и странность ситуации, Гию решает отправить ребят к своему старому учителю.
-                            Так начинается жизнь Танжиро в качестве охотника на демонов. Он отправляется на поиски способа вылечить свою сестру, а также не забывает о мести убийце своей семьи.
-                        </p>
-                        <a href="klinok.html" class="btn btn-custom btn-lg float-right">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Фильм 4 -->
-                <div class="row mb-4 film-entry">
-                    <div class="col-md-3 text-center">
-                        <img class="img-fluid film-img" src="img/4.jpg" alt="Фильм 4">
-                        <p class="mt-2 font-weight-bold">86 Восемьдесят-шесть</p>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            Республика Сан-Магнолия уже давно подвергается нападению со стороны Гиади́йской империи, которая создала серию беспилотных военных машин под названием «Легион». После многих лет кропотливых исследований, Республика, наконец, разработала автономные беспилотники, чтобы отразить атаку врага. Сан-Магнолии удалось превратить одностороннюю борьбу в войну без потерь. По крайней мере, так утверждало правительство.
-    Но как всем известно, не бывает войны без жертв. За пределами восьмидесяти пяти районов Республики имеется «несуществующий» восемьдесят шестой район. И именно тут каждый день происходили кровопролитные сражения. Юные парни и девушки из отряда, именуемого «восемьдесят шесть», не имея беспилотных машин отдавали свои жизни за родину. И эта история о них.
-                        </p>
-                        <a href="86.html" class="btn btn-custom btn-lg float-right">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Фильм 5 -->
-                <div class="row mb-4 film-entry">
-                    <div class="col-md-3 text-center">
-                        <img class="img-fluid film-img" src="img/5.jpg" alt="Фильм 5">
-                        <p class="mt-2 font-weight-bold">Ангельские ритмы!</p>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            Парень по имени Отонаси Юдзиру просыпается в полном беспямятстве и без понятия, что происходит. Казалось бы, обычная школа, но нет, здесь происходит настоящее безумие! Стрельба, взрывы - и всё это прямо на школьной территории. Группа людей ведёт бой против невероятно сильной и неубиваемой девушки, которую они называют Тенси, то есть "ангелом". И уже гораздо позже становится ясно, что здесь происходит. Между тем, Отонаси знакомится с разными людьми, истории жизни которых навевают грусть и тоску... Чем закончится эта история, кто все эти люди и кто же такая эта загадочная девушка Тенси...?
-                        </p>
-                        <a href="angel.html" class="btn btn-custom btn-lg float-right">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Фильм 6 -->
-                <div class="row mb-4 film-entry">
-                    <div class="col-md-3 text-center">
-                        <img class="img-fluid film-img" src="img/6.jpg" alt="Фильм 6">
-                        <p class="mt-2 font-weight-bold">Евангелион: 2.22 Ты (не) пройдёшь</p>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            Ангелы продолжают свои непрерывные атаки, а в NERV приходят два новых пилота: пилот павшего в первом же бою Евангелиона 05 Мари Илластриэс Макинами и пилот Евы-02, а позже Евы-03 Сикинами Аска Лэнгли.
-                            В тоже время Гендо Икари и SEELE приступают к секретному проекту, в котором задействованы Рей с Синдзи.
-                        </p>
-                        <a href="evangelion.html" class="btn btn-custom btn-lg float-right">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Фильм 7 -->
-                <div class="row mb-4 film-entry">
-                    <div class="col-md-3 text-center">
-                        <img class="img-fluid film-img" src="img/7.png" alt="Фильм 7">
-                        <p class="mt-2 font-weight-bold">Re: Жизнь в другом мире с нуля</p>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            Наш главный герой, Субару Нацуки, обычный ученик старшей школы на 3 году обучения, которому приспичило сгонять в магазин на ночь глядя. Казалось бы, с кем не бывает? Но на обратном пути из магазина он каким-то чудом попадает в другой мир. Оказывается чёрт знает где, так на него ещё и грабители нападают и избивают чуть ли не до потери пульса. Но от смерти Субару спасает очаровательная беловолосая заклинательница духов. В благодарность за спасение наш герой, конечно же, вызывается помочь незнакомке вернуть похищенную у неё вещь. Но, вот незадача. Как только им удается заполучить подсказку, их... убивают. Как же обмануть смерть и спасти невинную жизнь?
-                        </p>
-                        <a href="rezero.html" class="btn btn-custom btn-lg float-right">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Фильм 8 -->
-                <div class="row mb-4 film-entry">
-                    <div class="col-md-3 text-center">
-                        <img class="img-fluid film-img" src="img/8.jpg" alt="Фильм 8">
-                        <p class="mt-2 font-weight-bold">Одинокий рокер!</p>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            Забавная история об одинокой и до ужаса стеснительной школьнице Хитори Гото, которая, взяв в руки гитару, загорелась желанием создать в старшей школе собственную рок-группу. Да вот незадача — девушка настолько робкая и зажатая, что даже не смогла завести себе друзей, чего уж говорить о собственном музыкальном коллективе!
-                            Но сама судьба решает помочь Хитори: по её душу приходит одна неугомонная барабанщица, которая как раз подыскивает новую гитаристку в свою группу. Именно встреча с ней и перевернет жизнь нашей недотроги с ног на голову!
-                        </p>
-                        <a href="roker.html" class="btn btn-custom btn-lg float-right">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Фильм 9 -->
-                <div class="row mb-4 film-entry">
-                    <div class="col-md-3 text-center">
-                        <img class="img-fluid film-img" src="img/9.jpg" alt="Фильм 9">
-                        <p class="mt-2 font-weight-bold">Реинкарнация безработного: История о приключениях в другом мире</p>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            Жизнь безработного 34-летнего отаку заходит в тупик, и мужчина решает, что пора начать всё с чистого листа.
-                            Но вот незадача — его сбивает грузовик, и он попадает в магический мир! Бывший отаку перевоплощается в младенца под именем Ру́дэус Грэ́йрет, сохранив все воспоминания из прошлой жизни. Несмотря на все опасности и причуды нового мира, он воспылал намерением стать сильнейшим магом, который превзойдёт по силам даже самих богов!
-                        </p>
-                        <a href="renkor.html" class="btn btn-custom btn-lg float-right">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Фильм 10 -->
-                <div class="row mb-4 film-entry">
-                    <div class="col-md-3 text-center">
-                        <img class="img-fluid film-img" src="img/10.jpg" alt="Фильм 10">
-                        <p class="mt-2 font-weight-bold">Я хочу съесть твою поджелудочную</p>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            Одним прекрасным днём ученик старшей школы находит чей-то личный дневник, подписанный как «Дневник болезни». Вскоре выясняется, что дневник этот принадлежит Сакуре Ямаучи, однокласснице главного героя. Прочтя его, Харуки узнаёт, что девушка страдает смертельной болезнью — отказ поджелудочной железы. Чтобы поддержать её в этой нелёгкой ситуации, юноша решает подружиться с Сакурой, несмотря на их совершенно разные характеры.
-                        </p>
-                        <a href="pancreas.html" class="btn btn-custom btn-lg float-right">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Фильм 11 -->
-                <div class="row mb-4 film-entry">
-                    <div class="col-md-3 text-center">
-                        <img class="img-fluid film-img" src="img/11.jpg" alt="Фильм 11">
-                        <p class="mt-2 font-weight-bold">Ванпанчмен</p>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            Действия происходят в альтернативном мире, где супергероями и монстрами никого не удивить. В этом мире живёт самый обычный с виду парень по имени Сайтама. Однажды он решил оставить скучную жизнь офисного работника и начать спасать мир. За годы тренировок Сайтама обрёл нечеловеческую силу и теперь способен уничтожить любого врага всего лишь одним ударом. Однако со временем нашему герою наскучило быть самым непобедимым человеком на Земле и он хочет сразиться с соперником, который будет хотя бы равен ему по силе. Вместе со своим верным товарищем — киборгом Геносом, Сайтама будет побеждать монстров и надеяться вновь почувствовать радость сражения.
-                        </p>
-                        <a href="panch.html" class="btn btn-custom btn-lg float-right">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Фильм 12 -->
-                <div class="row mb-4 film-entry">
-                    <div class="col-md-3 text-center">
-                        <img class="img-fluid film-img" src="img/12.jpg" alt="Фильм 12">
-                        <p class="mt-2 font-weight-bold">Магическая битва / Jujutsu Kaisen</p>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            В мире, где человек перестал быть самым опасным хищником, правят демоны. И пусть большинство смертных и не подозревают об их существовании — даже легенды о великом Рёмэне Сукуне, что в давние времена был побеждён с величайшим трудом, помнят немногие. Остатки демона были разбросаны по всему свету, и если найдётся демон, что сможет найти и поглотить все из них — он обретёт мощь, способную стереть человечество с лица земли.
-
-                            Эта история повествует о Юдзи Итадори, ученике старшей школы, отличающимся выдающейся физической силой. Каждый уважающий себя глава спортивного клуба пытается заполучить в свои ряды такого участника, но для Юдзи на первом месте стоят учёба и уход за больным дедушкой. Устав от постоянных приглашений, он предпочитает вступить в клуб окультных наук, чтобы избавиться от назойливого внимания. Но в один прекрасный день главе клуба попадается в руки древний проклятый артефакт. И лучше бы им было к нему даже не прикасаться. Ибо кто знает, что именно там запечатано...
-                        </p>
-                        <a href="magic.html" class="btn btn-custom btn-lg float-right">Подробнее</a>
-                    </div>
-                </div>
-
             </article>
 
             <!-- Боковая панель -->
             <aside class="col-lg-3">
                 <!-- Поиск -->
                 <section class="mb-4 sidebar-section">
-                    <h2 class="sidebar-header">Поиск</h2>
+                    <h2 class="sidebar-header" id="searchHeader">Поиск</h2>
                     <form role="search">
                         <div class="input-group">
-                            <input id="blac_sarch" type="search" class="form-control form-control-lg" placeholder="Ваш запрос" aria-label="Поиск">
-                            <div class="input-group-append">
-                                <button class="btn btn-custom btn-lg" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
-                            </div>
+                            <input id="searchField" type="search" class="form-control form-control-lg" placeholder="Ваш запрос" aria-label="Поиск">
+                            <button class="btn btn-custom btn-lg" type="submit">
+                                <i class="bi bi-search"></i> <!-- Используем Bootstrap Icons -->
+                            </button>
                         </div>
                     </form>
                 </section>
 
                 <!-- Новости -->
                 <section class="mb-4 sidebar-section">
-                    <h2 class="sidebar-header">Новости</h2>
+                    <h2 class="sidebar-header" id="newsHeader">Новости</h2>
                     <div class="list-group">
                         <div class="sidepanel">
-                            <p class="mb-1"><strong>31.02.2017</strong></p>
-                            <p class="mb-0">Мы запустили новый сервис</p>
+                            <p class="mb-1"><strong id="newsDate">31.02.2017</strong></p>
+                            <p class="mb-0" id="newsText">Мы запустили новый сервис</p>
                         </div>
                         <!-- Добавьте дополнительные новости по аналогии -->
                     </div>
                 </section>
 
-                <!-- Рейтинг фильмов -->
-                <section class="mb-4 sidebar-section ">
-                    <h2 class="sidebar-header">Рейтинг фильмов</h2>
-                    <ul class="sidepanel">
-                        <li class=" d-flex justify-content-between align-items-center">
-                            <a href="dandan.html">Дандадан</a>
-                            <span class="badge badge-pill badge-warning">8.9</span>
-                        </li>
-                        <li class=" d-flex justify-content-between align-items-center">
-                            <a href="codegeas.html">Код Гиасс</a>
-                            <span class="badge badge-pill badge-warning">8.7</span>
-                        </li>
-                        <li class=" d-flex justify-content-between align-items-center">
-                            <a href="klinok.html">Клинок, рассекающий демонов</a>
-                            <span class="badge badge-pill badge-warning">8.5</span>
-                        </li>
-                        <li class=" d-flex justify-content-between align-items-center">
-                            <a href="86.html">86 Восемьдесят-шесть</a>
-                            <span class="badge badge-pill badge-warning">8.3</span>
-                        </li>
-                        <!-- Добавьте дополнительные фильмы по аналогии -->
+                <!-- Рейтинг аниме -->
+                <section class="mb-4 sidebar-section">
+                    <h2 class="sidebar-header" id="ratingHeader">Рейтинг аниме</h2>
+                    <ul class="list-unstyled sidepanel" id="ratingList">
+                        <!-- Рейтинг аниме загружается динамически -->
                     </ul>
                 </section>
             </aside>
@@ -551,29 +349,305 @@
 
     <footer class="bg-dark text-white py-2">
         <div class="container text-center">
-            <p><a href="index.html" class="text-white">KinoBaza</a></p>
+            <p><a href="index.html" class="text-white" id="footerText">Анимебаза</a></p>
         </div>
     </footer>
 
-    <!-- Bootstrap 4 JS и зависимости -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
-            crossorigin="anonymous"></script>
+    <!-- Скрипт для перевода и динамической загрузки контента -->
+    <script>
+        const translations = {
+            ru: {
+                headerBrand: "Анимебаза",
+                headerSubtitle: "Аниме - наша страсть!",
+                navHome: "Главная",
+                navAnime: "Аниме",
+                navContact: "Контакты",
+                loginPlaceholder: "Логин",
+                passwordPlaceholder: "Пароль",
+                loginButton: "Вход",
+                forgotPassword: "Забыли пароль?",
+                register: "Регистрация",
+                animeHeader: "Аниме",
+                searchHeader: "Поиск",
+                searchPlaceholder: "Ваш запрос",
+                newsHeader: "Новости",
+                newsDate: "31.02.2017",
+                newsText: "Мы запустили новый сервис",
+                ratingHeader: "Рейтинг аниме",
+                footerText: "Анимебаза",
+                moreDetails: "Подробнее",
+                anime: [
+                    {
+                        title: "Дандадан / Dandadan",
+                        description: "Ничто не вызывает такой живой интерес, как когда КТО-ТО НЕ ПРАВ. Ничто так не сближает, как хороший искренний СПОР ПО ПОВОДУ КАКОЙ-ТО ФИГНИ. Возьмём, например, Момо. Она выросла в семье медиумов и верит, что на свете есть призраки. А её знакомый Окарун верит в инопланетян. Двум диаметрально противоположным конспирологам не понять друг друга. И выяснять, кто существует на самом деле, инопланетяне или призраки, им придётся на практике.",
+                        image: "img/1.jpg",
+                        link: "dandan.html",
+                        rating: "8.9"
+                    },
+                    {
+                        title: "Код Гиасс: Восстание Лелуша R1 — новый дубляж",
+                        description: "Альтернативная вселенная, 2010 год. Великая Британская Империя захватила Японию. Её лишили свободы, прав и даже собственного названия. Зона 11. Эта цифра стала новым названием Японии. Страны, которая проиграла. Юный британец Лелуш встречает загадочную девушку, представившуюся коротким именем С.С. Получив от неё силу с названием \"гиасс\", Лелуш обретает то, что давно искал — возможность отомстить своему отцу, императору Великой Британской Империи.",
+                        image: "img/2.jpg",
+                        link: "codegeas.html",
+                        rating: "8.7"
+                    },
+                    {
+                        title: "Клинок, рассекающий демонов",
+                        description: "С древних времён люди боятся демонов. После смерти своего отца Танжиро пришлось самому заботиться о семье. Но однажды его семья убита, а сестра Нэзуко превращена в демона. Теперь Танжиро становится охотником на демонов, чтобы найти способ вылечить сестру и отомстить за семью.",
+                        image: "img/3.jpg",
+                        link: "klinok.html",
+                        rating: "8.5"
+                    },
+                    {
+                        title: "86 Восемьдесят-шесть",
+                        description: "Республика Сан-Магнолия воюет с Гиадийской империей, используя беспилотные машины. Но за пределами 85 районов есть 86-й, где юные парни и девушки сражаются и гибнут каждый день. Эта история о них.",
+                        image: "img/4.jpg",
+                        link: "86.html",
+                        rating: "8.3"
+                    },
+                    {
+                        title: "Ангельские ритмы!",
+                        description: "Отонаси Юдзиру просыпается без памяти в школе, где происходит настоящее безумие. Группа людей ведёт бой против загадочной девушки Тенси. Постепенно Отонаси узнаёт истории других и пытается понять, что происходит.",
+                        image: "img/5.jpg",
+                        link: "angel.html",
+                        rating: "8.2"
+                    },
+                    {
+                        title: "Евангелион: 2.22 Ты (не) пройдёшь",
+                        description: "Ангелы продолжают атаки, а в NERV приходят новые пилоты. Гендо Икари и SEELE приступают к секретному проекту, в котором задействованы Рей и Синдзи.",
+                        image: "img/6.jpg",
+                        link: "evangelion.html",
+                        rating: "8.0"
+                    },
+                    {
+                        title: "Re:Жизнь в другом мире с нуля",
+                        description: "Субару Нацуки попадает в другой мир, где его спасает загадочная девушка. В благодарность он помогает ей, но их убивают. Субару обнаруживает, что способен возвращаться во времени после смерти.",
+                        image: "img/7.png",
+                        link: "rezero.html",
+                        rating: "8.1"
+                    },
+                    {
+                        title: "Одинокий рокер!",
+                        description: "История о стеснительной школьнице Хитори Гото, мечтающей создать рок-группу. Судьба сводит её с барабанщицей, которая меняет её жизнь.",
+                        image: "img/8.jpg",
+                        link: "roker.html",
+                        rating: "8.4"
+                    },
+                    {
+                        title: "Реинкарнация безработного: История о приключениях в другом мире",
+                        description: "34-летний безработный отаку попадает в магический мир в теле младенца, сохранив воспоминания. Он решает стать сильнейшим магом.",
+                        image: "img/9.jpg",
+                        link: "renkor.html",
+                        rating: "8.6"
+                    },
+                    {
+                        title: "Я хочу съесть твою поджелудочную",
+                        description: "Ученик находит дневник одноклассницы Сакуры, страдающей смертельной болезнью. Он решает поддержать её, несмотря на разные характеры.",
+                        image: "img/10.jpg",
+                        link: "pancreas.html",
+                        rating: "8.5"
+                    },
+                    {
+                        title: "Ванпанчмен",
+                        description: "Сайтама — герой, способный победить любого врага одним ударом. Но ему наскучила жизнь без вызовов, и он ищет достойного соперника.",
+                        image: "img/11.jpg",
+                        link: "panch.html",
+                        rating: "8.8"
+                    },
+                    {
+                        title: "Магическая битва / Jujutsu Kaisen",
+                        description: "Юдзи Итадори сталкивается с проклятиями и вступает в мир магии, чтобы спасти других и разобраться в своих силах.",
+                        image: "img/12.jpg",
+                        link: "magic.html",
+                        rating: "8.7"
+                    }
+                ]
+            },
+            en: {
+                headerBrand: "AnimeBase",
+                headerSubtitle: "Anime is our passion!",
+                navHome: "Home",
+                navAnime: "Anime",
+                navContact: "Contacts",
+                loginPlaceholder: "Username",
+                passwordPlaceholder: "Password",
+                loginButton: "Login",
+                forgotPassword: "Forgot password?",
+                register: "Register",
+                animeHeader: "Anime",
+                searchHeader: "Search",
+                searchPlaceholder: "Your query",
+                newsHeader: "News",
+                newsDate: "02/31/2017",
+                newsText: "We launched a new service",
+                ratingHeader: "Anime Ratings",
+                footerText: "AnimeBase",
+                moreDetails: "More details",
+                anime: [
+                    {
+                        title: "Dandadan",
+                        description: "Nothing sparks such lively interest as when SOMEONE IS WRONG. Nothing brings people together like a good, honest ARGUMENT ABOUT SOME NONSENSE. Take Momo, for example. She grew up in a family of mediums and believes that ghosts exist. Her acquaintance Okarun believes in aliens. Two diametrically opposed conspiracy theorists cannot understand each other. To find out who actually exists—aliens or ghosts—they will have to do it in practice.",
+                        image: "img/1.jpg",
+                        link: "dandan.html",
+                        rating: "8.9"
+                    },
+                    {
+                        title: "Code Geass: Lelouch of the Rebellion R1 — New Dub",
+                        description: "Alternate universe, 2010. The Holy Britannian Empire has conquered Japan. Deprived of freedom, rights, and even their own name, they are now Area 11. Young Brit Lelouch meets a mysterious girl named C.C. Receiving the power called 'Geass' from her, Lelouch gains what he has long sought—the opportunity to avenge his father, the Emperor of the Holy Britannian Empire.",
+                        image: "img/2.jpg",
+                        link: "codegeas.html",
+                        rating: "8.7"
+                    },
+                    {
+                        title: "Demon Slayer",
+                        description: "Since ancient times, people have feared demons. After his father's death, Tanjiro cares for his family. One day, his family is killed, and his sister Nezuko is turned into a demon. Now Tanjiro becomes a demon slayer to find a way to cure his sister and avenge his family.",
+                        image: "img/3.jpg",
+                        link: "klinok.html",
+                        rating: "8.5"
+                    },
+                    {
+                        title: "86 Eighty-Six",
+                        description: "The Republic of San Magnolia fights the Giadian Empire using drones. But beyond the 85 districts lies the nonexistent 86th district, where young men and women fight and die daily. This is their story.",
+                        image: "img/4.jpg",
+                        link: "86.html",
+                        rating: "8.3"
+                    },
+                    {
+                        title: "Angel Beats!",
+                        description: "Otonashi Yuzuru wakes up with no memories in a school where chaos reigns. A group fights against a mysterious girl named Tenshi. Gradually, Otonashi learns others' stories and tries to understand what's happening.",
+                        image: "img/5.jpg",
+                        link: "angel.html",
+                        rating: "8.2"
+                    },
+                    {
+                        title: "Evangelion: 2.22 You Can (Not) Advance",
+                        description: "Angels continue their attacks, and new pilots arrive at NERV. Gendo Ikari and SEELE begin a secret project involving Rei and Shinji.",
+                        image: "img/6.jpg",
+                        link: "evangelion.html",
+                        rating: "8.0"
+                    },
+                    {
+                        title: "Re:ZERO -Starting Life in Another World-",
+                        description: "Subaru Natsuki is transported to another world, where he's saved by a mysterious girl. In gratitude, he helps her, but they are killed. Subaru discovers he can return by death.",
+                        image: "img/7.png",
+                        link: "rezero.html",
+                        rating: "8.1"
+                    },
+                    {
+                        title: "Bocchi the Rock!",
+                        description: "A story about the shy high school girl Hitori Goto, who dreams of forming a rock band. Fate brings her together with a drummer who changes her life.",
+                        image: "img/8.jpg",
+                        link: "roker.html",
+                        rating: "8.4"
+                    },
+                    {
+                        title: "Mushoku Tensei: Jobless Reincarnation",
+                        description: "A 34-year-old unemployed otaku is reincarnated into a magical world as a baby, retaining his memories. He decides to become the strongest mage.",
+                        image: "img/9.jpg",
+                        link: "renkor.html",
+                        rating: "8.6"
+                    },
+                    {
+                        title: "I Want to Eat Your Pancreas",
+                        description: "A high school boy finds a diary belonging to his classmate Sakura, who is terminally ill. He decides to support her despite their different personalities.",
+                        image: "img/10.jpg",
+                        link: "pancreas.html",
+                        rating: "8.5"
+                    },
+                    {
+                        title: "One Punch Man",
+                        description: "Saitama is a hero who can defeat any enemy with one punch. Bored with his unmatched strength, he seeks a worthy opponent.",
+                        image: "img/11.jpg",
+                        link: "panch.html",
+                        rating: "8.8"
+                    },
+                    {
+                        title: "Jujutsu Kaisen",
+                        description: "Yuji Itadori enters the world of curses and sorcery to save others and understand his newfound powers.",
+                        image: "img/12.jpg",
+                        link: "magic.html",
+                        rating: "8.7"
+                    }
+                ]
+            }
+        };
 
-<!-- Подключение jQuery (для работы JavaScript-компонентов Bootstrap) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        function updateLanguage(lang) {
+            // Сохраняем выбранный язык в localStorage
+            localStorage.setItem('selectedLanguage', lang);
 
-<!-- Подключение Popper.js (для работы выпадающих меню и подсказок) -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+            // Обновляем текстовые элементы
+            document.getElementById('headerBrand').textContent = translations[lang].headerBrand;
+            document.getElementById('headerSubtitle').textContent = translations[lang].headerSubtitle;
+            document.getElementById('navHome').textContent = translations[lang].navHome;
+            document.getElementById('navAnime').textContent = translations[lang].navAnime;
+            document.getElementById('navContact').textContent = translations[lang].navContact;
+            document.getElementById('loginField').placeholder = translations[lang].loginPlaceholder;
+            document.getElementById('passwordField').placeholder = translations[lang].passwordPlaceholder;
+            document.getElementById('loginButton').textContent = translations[lang].loginButton;
+            document.getElementById('forgotPassword').textContent = translations[lang].forgotPassword;
+            document.getElementById('register').textContent = translations[lang].register;
+            document.getElementById('animeHeader').textContent = translations[lang].animeHeader;
+            document.getElementById('searchHeader').textContent = translations[lang].searchHeader;
+            document.getElementById('searchField').placeholder = translations[lang].searchPlaceholder;
+            document.getElementById('newsHeader').textContent = translations[lang].newsHeader;
+            document.getElementById('newsDate').textContent = translations[lang].newsDate;
+            document.getElementById('newsText').textContent = translations[lang].newsText;
+            document.getElementById('ratingHeader').textContent = translations[lang].ratingHeader;
+            document.getElementById('footerText').textContent = translations[lang].footerText;
+            document.getElementById('page-title').textContent = translations[lang].animeHeader;
 
-<!-- Подключение JavaScript-файла Bootstrap -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            // Обновляем аниме
+            const animeList = document.getElementById('animeList');
+            animeList.innerHTML = '';
+            translations[lang].anime.forEach((anime) => {
+                const animeEntry = `
+                    <div class="row mb-4 anime-entry">
+                        <div class="col-md-3 text-center">
+                            <img class="img-fluid anime-img" src="${anime.image}" alt="${anime.title}">
+                            <p class="mt-2 font-weight-bold">${anime.title}</p>
+                        </div>
+                        <div class="col-md-9">
+                            <p>${anime.description}</p>
+                            <a href="${anime.link}" class="btn btn-custom btn-lg float-end">${translations[lang].moreDetails}</a>
+                        </div>
+                    </div>
+                `;
+                animeList.insertAdjacentHTML('beforeend', animeEntry);
+            });
 
-            
+            // Обновляем рейтинг аниме
+            const ratingList = document.getElementById('ratingList');
+            ratingList.innerHTML = '';
+            translations[lang].anime.forEach(anime => {
+                const ratingItem = `
+                    <li class="d-flex justify-content-between align-items-center mb-2">
+                        <a href="${anime.link}">${anime.title}</a>
+                        <span class="badge bg-warning rounded-pill">${anime.rating}</span>
+                    </li>
+                `;
+                ratingList.insertAdjacentHTML('beforeend', ratingItem);
+            });
 
+            // Обновляем кнопку перевода
+            const translateButtons = document.getElementById('translateButtons');
+            if (lang === "ru") {
+                translateButtons.innerHTML = '<span class="translate-btn" id="toEnglish">Translate to English</span>';
+                document.getElementById('toEnglish').addEventListener('click', () => updateLanguage('en'));
+            } else {
+                translateButtons.innerHTML = '<span class="translate-btn" id="toRussian">Перевести на русский</span>';
+                document.getElementById('toRussian').addEventListener('click', () => updateLanguage('ru'));
+            }
+        }
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" 
-            integrity="sha384-LtrjvnR4Twt/qOuYxFzN0kMUeZsJsVJk8r3gHpo6dW3S9R1PibqJJgSyAaJ3M1G" 
-            crossorigin="anonymous"></script>
+        // Инициализация языка при загрузке страницы
+        window.onload = () => {
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'ru';
+            updateLanguage(savedLanguage);
+        };
+    </script>
+
+    <!-- Подключение Bootstrap 5 JS Bundle (включает Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
