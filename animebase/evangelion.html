@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Евангелион: 2.22 Ты (не) пройдёшь
-    Evangelion: 2.22 You Can (Not) Advance</title>
-  <!-- Подключаем Bootstrap -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title id="page-title">Евангелион: 2.22 Ты (не) пройдёшь</title>
+  <!-- Подключаем Bootstrap 5 через CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       background-color: #1a1a1a;
@@ -29,11 +28,11 @@
       border: none;
     }
 
-    .navbar-brand h1, .navbar-brand p, .nav-link {
+    .navbar-brand h1, .navbar-brand p, .nav-link, .translate-btn {
       color: #fff !important;
     }
 
-    .nav-link:hover {
+    .nav-link:hover, .translate-btn:hover {
       color: #ccc !important;
     }
 
@@ -47,22 +46,22 @@
     }
 
     /* Дополнительные стили для формы входа */
-    .navbar .form-inline .form-control {
+    .navbar .form-control {
       background-color: #2c2c2c;
       border: 1px solid #444;
       color: #fff;
     }
 
-    .navbar .form-inline .form-control::placeholder {
+    .navbar .form-control::placeholder {
       color: #ccc;
     }
 
-    .navbar .form-inline .btn {
+    .navbar .btn {
       color: #fff;
       border-color: #28a745;
     }
 
-    .navbar .form-inline .btn:hover {
+    .navbar .btn:hover {
       background-color: #28a745;
       color: #fff;
     }
@@ -122,101 +121,214 @@
     .review-form .btn:hover {
       background-color: #218838;
     }
+
+    /* Стили для кнопки перевода */
+    .translate-btn {
+      margin-left: 15px;
+      border: 1px solid #28a745;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      background-color: transparent;
+    }
+
+    .translate-btn:hover {
+      background-color: #28a745;
+    }
+
+    #description {
+      color: #fff;
+    }
   </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <!-- Бренд -->
-                <a class="navbar-brand" href="index.html">
-                    <h1 class="h4">Анимебаза</h1>
-                    <p class="mb-0 small">Аниме - наша страсть!</p>
-                </a>
-                <!-- Кнопка для мобильного меню -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Навигационное меню и форма входа -->
-                <div id="navbarCollapse" class="collapse navbar-collapse">
-                    <!-- Навигационные ссылки -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Главная</a></li>
-                        <li class="nav-item"><a class="nav-link" href="anime.html">Аниме</a></li>
-                        
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
-                    </ul>
-                    <!-- Форма входа -->
-                    <form class="form-inline my-2 my-lg-0" method="post" action="#" id="login">
-                        <input class="form-control mr-sm-2" type="text" name="login_field" placeholder="Логин" aria-label="Логин">
-                        <input class="form-control mr-sm-2" type="password" name="password_field" placeholder="Пароль" aria-label="Пароль">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Вход</button>
-                    </form>
-                    <!-- Ссылки "Забыли пароль?" и "Регистрация" -->
-                    <div class="lables_passreg_text text-right ml-3">
-                        <span><a href="#">Забыли пароль?</a></span> | 
-                        <span><a href="#">Регистрация</a></span>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Контейнер для плеера и описания -->
-    <main class="video-container container my-4">
-        <h2 class="text-center mb-3">Евангелион: 2.22 Ты (не) пройдёшь
-            Evangelion: 2.22 You Can (Not) Advance</h2>
-        <!-- Описание аниме -->
-        <div class="card mb-4 shadow-sm">
-            <div class="card-body">
-                <p class="card-text text-center">
-                    Ангелы продолжают свои непрерывные атаки, а в NERV приходят два новых пилота: пилот павшего в первом же бою Евангелиона 05 Мари Илластриэс Макинами и пилот Евы-02, а позже Евы-03 Сикинами Аска Лэнгли.
-В тоже время Гендо Икари и SEELE приступают к секретному проекту, в котором задействованы Рей с Синдзи.
-                </p>
-            </div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <!-- Бренд -->
+        <a class="navbar-brand" href="index.html">
+          <h1 id="brand-title" class="h4">Анимебаза</h1>
+          <p id="brand-subtitle" class="mb-0 small">Аниме - наша страсть!</p>
+        </a>
+        <!-- Кнопка для мобильного меню -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Навигационное меню и форма входа -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+          <!-- Навигационные ссылки -->
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a id="nav-home" class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a id="nav-anime" class="nav-link" href="anime.html">Аниме</a></li>
+            <li class="nav-item"><a id="nav-contact" class="nav-link" href="contact.html">Контакты</a></li>
+          </ul>
+          <!-- Форма входа -->
+          <form class="d-flex" method="post" action="#" id="login">
+            <input id="login-field" class="form-control me-2" type="text" name="login_field" placeholder="Логин" aria-label="Логин">
+            <input id="password-field" class="form-control me-2" type="password" name="password_field" placeholder="Пароль" aria-label="Пароль">
+            <button id="login-button" class="btn btn-outline-success" type="submit">Вход</button>
+          </form>
+          <!-- Ссылки "Забыли пароль?" и "Регистрация" -->
+          <div class="lables_passreg_text text-end ms-3">
+            <span><a href="#" id="forgot-password">Забыли пароль?</a></span> | 
+            <span><a href="#" id="register">Регистрация</a></span>
+          </div>
+          <!-- Кнопка перевода -->
+          <div id="translateButtons" class="ms-3">
+            <span class="translate-btn" id="translateButton">Translate to English</span>
+          </div>
         </div>
-        <!-- Плеер -->
-        <div class="embed-responsive embed-responsive-16by9 mb-4">
-            <iframe src="https://www.anilibria.tv/public/iframe.php?id=9148" type="text/html" width=840 height=515 frameborder="0" allowfullscreen></iframe>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Контейнер для плеера и описания -->
+  <main class="video-container container my-4">
+    <h2 class="text-center mb-3" id="title">Евангелион: 2.22 Ты (не) пройдёшь</h2>
+    <!-- Описание аниме -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-body">
+        <p class="card-text text-center" id="description">
+          Ангелы продолжают свои непрерывные атаки, а в NERV приходят два новых пилота: пилот павшего в первом же бою Евангелиона 05 Мари Илластриэс Макинами и пилот Евы-02, а позже Евы-03 Сикинами Аска Лэнгли.
+          В то же время Гендо Икари и SEELE приступают к секретному проекту, в котором задействованы Рей с Синдзи.
+        </p>
+      </div>
+    </div>
+    <!-- Плеер -->
+    <div class="ratio ratio-16x9 mb-4">
+      <iframe src="//kodik.info/serial/5877/c366b8af7a1a826bf38e9a158f213624/720p" allowfullscreen></iframe>
+    </div>
+
+    <!-- Раздел с отзывами -->
+    <section class="reviews">
+      <h3 class="text-center" id="reviews-title">Отзывы</h3>
+      <!-- Список отзывов -->
+      <div class="review-list mb-4" id="review-list">
+        <div class="review-item">
+          <p><strong>Алексей:</strong> Очень захватывающее аниме! Жду продолжения с нетерпением.</p>
         </div>
-
-        <!-- Раздел с отзывами -->
-        <section class="reviews">
-            <h3 class="text-center">Отзывы</h3>
-            <!-- Список отзывов -->
-            <div class="review-list mb-4">
-                <div class="review-item">
-                    <p><strong>Алексей:</strong> Очень захватывающее аниме! Жду продолжения с нетерпением.</p>
-                </div>
-                <div class="review-item">
-                    <p><strong>Мария:</strong> Интересный сюжет и отличная анимация. Рекомендую к просмотру.</p>
-                </div>
-                <!-- Добавьте дополнительные отзывы при необходимости -->
-            </div>
-            <!-- Форма для добавления нового отзыва -->
-            <form class="review-form">
-                <div class="form-group">
-                    <label for="reviewName">Ваше имя</label>
-                    <input type="text" class="form-control" id="reviewName" placeholder="Введите ваше имя">
-                </div>
-                <div class="form-group">
-                    <label for="reviewText">Ваш отзыв</label>
-                    <textarea class="form-control" id="reviewText" rows="3" placeholder="Введите ваш отзыв"></textarea>
-                </div>
-                <button type="submit" class="btn btn-success">Оставить отзыв</button>
-            </form>
-        </section>
-    </main>
-
-    <!-- Футер -->
-    <footer class="py-3">
-        <div class="container text-center">
-            <p class="mb-0"><a href="test.html">animeBaza</a></p>
+        <div class="review-item">
+          <p><strong>Мария:</strong> Интересный сюжет и отличная анимация. Рекомендую к просмотру.</p>
         </div>
-    </footer>
+        <!-- Добавьте дополнительные отзывы при необходимости -->
+      </div>
+      <!-- Форма для добавления нового отзыва -->
+      <form class="review-form">
+        <div class="mb-3">
+          <label for="reviewName" id="review-name-label" class="form-label">Ваше имя</label>
+          <input type="text" class="form-control" id="reviewName" placeholder="Введите ваше имя">
+        </div>
+        <div class="mb-3">
+          <label for="reviewText" id="review-text-label" class="form-label">Ваш отзыв</label>
+          <textarea class="form-control" id="reviewText" rows="3" placeholder="Введите ваш отзыв"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success" id="submit-review-button">Оставить отзыв</button>
+      </form>
+    </section>
+  </main>
 
-    <!-- Подключение скриптов Bootstrap и jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Футер -->
+  <footer class="py-3">
+    <div class="container text-center">
+      <p class="mb-0"><a href="index.html" id="footer-text">Анимебаза</a></p>
+    </div>
+  </footer>
+
+  <!-- Скрипт для перевода и сохранения выбранного языка -->
+  <script>
+    const texts = {
+      header: {
+        brandTitle: { ru: "Анимебаза", en: "AnimeBase" },
+        brandSubtitle: { ru: "Аниме - наша страсть!", en: "Anime is our passion!" },
+        nav: {
+          home: { ru: "Главная", en: "Home" },
+          anime: { ru: "Аниме", en: "Anime" },
+          contact: { ru: "Контакты", en: "Contacts" }
+        },
+        login: {
+          fieldPlaceholder: { ru: "Логин", en: "Username" },
+          passwordPlaceholder: { ru: "Пароль", en: "Password" },
+          button: { ru: "Вход", en: "Login" },
+          forgotPassword: { ru: "Забыли пароль?", en: "Forgot password?" },
+          register: { ru: "Регистрация", en: "Register" }
+        }
+      },
+      main: {
+        title: { 
+          ru: "Евангелион: 2.22 Ты (не) пройдёшь", 
+          en: "Evangelion: 2.22 You Can (Not) Advance" 
+        },
+        description: {
+          ru: `
+            Ангелы продолжают свои непрерывные атаки, а в NERV приходят два новых пилота: пилот павшего в первом же бою Евангелиона 05 Мари Илластриэс Макинами и пилот Евы-02, а позже Евы-03 Сикинами Аска Лэнгли.
+            В то же время Гендо Икари и SEELE приступают к секретному проекту, в котором задействованы Рей с Синдзи.
+          `,
+          en: `
+            Angels continue their relentless attacks, and two new pilots join NERV: Mari Illustrious Makinami, pilot of the Evangelion Unit-05 that fell in its first battle, and Asuka Langley Shikinami, pilot of Eva Unit-02 and later Eva Unit-03.
+            Meanwhile, Gendo Ikari and SEELE begin a secret project involving Rei and Shinji.
+          `
+        },
+        reviewsTitle: { ru: "Отзывы", en: "Reviews" },
+        reviewNameLabel: { ru: "Ваше имя", en: "Your Name" },
+        reviewTextLabel: { ru: "Ваш отзыв", en: "Your Review" },
+        submitReviewButton: { ru: "Оставить отзыв", en: "Submit Review" }
+      },
+      footer: {
+        text: { ru: "Анимебаза", en: "AnimeBase" }
+      }
+    };
+
+    function updateLanguage(lang) {
+      localStorage.setItem('selectedLanguage', lang);
+
+      document.getElementById('brand-title').textContent = texts.header.brandTitle[lang];
+      document.getElementById('brand-subtitle').textContent = texts.header.brandSubtitle[lang];
+      document.getElementById('nav-home').textContent = texts.header.nav.home[lang];
+      document.getElementById('nav-anime').textContent = texts.header.nav.anime[lang];
+      document.getElementById('nav-contact').textContent = texts.header.nav.contact[lang];
+
+      document.getElementById('login-field').placeholder = texts.header.login.fieldPlaceholder[lang];
+      document.getElementById('password-field').placeholder = texts.header.login.passwordPlaceholder[lang];
+      document.getElementById('login-button').textContent = texts.header.login.button[lang];
+      document.getElementById('forgot-password').textContent = texts.header.login.forgotPassword[lang];
+      document.getElementById('register').textContent = texts.header.login.register[lang];
+
+      document.getElementById('title').textContent = texts.main.title[lang];
+      document.getElementById('description').textContent = texts.main.description[lang];
+      document.getElementById('page-title').textContent = texts.main.title[lang];
+
+      document.getElementById('reviews-title').textContent = texts.main.reviewsTitle[lang];
+      document.getElementById('review-name-label').textContent = texts.main.reviewNameLabel[lang];
+      document.getElementById('reviewName').placeholder = texts.main.reviewNameLabel[lang];
+      document.getElementById('review-text-label').textContent = texts.main.reviewTextLabel[lang];
+      document.getElementById('reviewText').placeholder = texts.main.reviewTextLabel[lang];
+      document.getElementById('submit-review-button').textContent = texts.main.submitReviewButton[lang];
+
+      document.getElementById('footer-text').textContent = texts.footer.text[lang];
+
+      const translateButton = document.getElementById('translateButton');
+      if (lang === 'ru') {
+        translateButton.textContent = 'Translate to English';
+        translateButton.onclick = () => updateLanguage('en');
+      } else {
+        translateButton.textContent = 'Перевести на русский';
+        translateButton.onclick = () => updateLanguage('ru');
+      }
+    }
+
+    window.onload = () => {
+      const savedLanguage = localStorage.getItem('selectedLanguage') || 'ru';
+      updateLanguage(savedLanguage);
+    };
+
+    document.getElementById('translateButton').onclick = () => {
+      const currentLang = localStorage.getItem('selectedLanguage') || 'ru';
+      const newLang = currentLang === 'ru' ? 'en' : 'ru';
+      updateLanguage(newLang);
+    };
+  </script>
+
+  <!-- Подключение скриптов Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
