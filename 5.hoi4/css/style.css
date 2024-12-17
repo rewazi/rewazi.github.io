@@ -852,6 +852,7 @@ html {
 .footer__language{
     width:100px;
     height: 100px;
+    list-style: none;
     marker{
         opacity: 0;
     }
