@@ -1,0 +1,294 @@
+/* СБРОС */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ОСНОВНЫЕ НАСТРОЙКИ ТЕМЫ WARHAMMER 40K */
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #0c0c0c, #1a1a1a);
+    color: #e2d8b0; /* Золотистый для текста */
+    overflow-x: hidden;
+  }
+  
+  /* ШАПКА (HEADER) */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: #111111;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+  }
+  .header__logo {
+    display: flex;
+    align-items: center;
+  }
+  .header__logo img {
+    max-height: 50px;
+    margin-right: 10px;
+  }
+  .header__tagline {
+    color: #e2d8b0;
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 5px rgba(255, 0, 0, 0.5);
+  }
+  .header__login-btn {
+    background: #b22222; /* Тёмно-красный */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .header__login-btn:hover {
+    background: #ff4500; /* Ярко-красный */
+  }
+  
+  /* HERO */
+  .hero {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+  .hero__image {
+    width: 100%;
+    height: 1200px;
+    object-fit: cover;
+    filter: brightness(0.7);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* ВИДЕО (TRAILER) */
+  .video {
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+    background: #111;
+  }
+  .video__container {
+    max-width: 100%;
+  }
+  .video__iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border: 2px solid #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* ---------------------
+       СЛАЙДЕРЫ 
+  ----------------------*/
+  /* Контейнер-лента */
+  .slider-container {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease;
+    overflow: hidden; /* Прячет "уехавшие" за край элементы */
+    width: 100%;
+  }
+  
+  /* Каждый элемент-слайд (benefits__item, features__item, etc.) */
+  .slide-item {
+    flex-shrink: 0;       /* чтобы не сжимался */
+    width: 100%;          /* один блок = ширина экрана (по умолчанию) */
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  
+  /* Кнопки-стрелочки в стиле Warhammer */
+  .warhammer-arrow {
+    background: #b22222;  /* Тёмно-красный */
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 5px;
+    min-width: 50px;
+  }
+  .warhammer-arrow:hover {
+    background: #ff4500;
+  }
+  
+  /* Блоки управления слайдером */
+  .slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  /* ---------------------
+       БЛОКИ - BENEFITS 
+  ----------------------*/
+  .benefits {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #0c0c0c);
+  }
+  .benefits h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #b22222;
+    text-shadow: 0 2px 5px rgba(255, 0, 0, 0.8);
+  }
+  .benefits__item {
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  }
+  .benefits__item h3 {
+    color: #e2d8b0;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 5px rgba(255, 0, 0, 0.5);
+  }
+  
+  /* ---------------------
+       БЛОКИ - TESTIMONIALS 
+  ----------------------*/
+  .testimonials {
+    padding: 40px 20px;
+    background: #0c0c0c;
+    text-align: center;
+  }
+  .testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #b22222;
+    text-shadow: 0 2px 5px rgba(255, 0, 0, 0.8);
+  }
+  .testimonials__item {
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+    text-align: center;
+  }
+  .testimonials__item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #b22222;
+  }
+  
+  /* ---------------------
+       БЛОКИ - FEATURES 
+  ----------------------*/
+  .features {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #0c0c0c);
+  }
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #b22222;
+    text-shadow: 0 2px 5px rgba(255, 0, 0, 0.8);
+  }
+  .features__item {
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  }
+  .features__item h3 {
+    color: #e2d8b0;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 5px rgba(255, 0, 0, 0.5);
+  }
+  
+  /* ---------------------
+       ФОРМА ПОДПИСКИ (SIGNUP) 
+  ----------------------*/
+  .signup {
+    background: linear-gradient(135deg, #333, #1a1a1a);
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #444;
+  }
+  .signup h2 {
+    font-size: 2rem;
+    color: #b22222;
+    margin-bottom: 20px;
+    text-shadow: 0px 2px 5px rgba(255, 0, 0, 0.8);
+  }
+  .signup__form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .signup__form input {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #444;
+    color: #e2d8b0;
+    outline: none;
+  }
+  .signup__form button {
+    background: #b22222;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .signup__form button:hover {
+    background: #ff4500;
+  }
+  
+  /* ---------------------
+       ПОДВАЛ (FOOTER) 
+  ----------------------*/
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #0c0c0c;
+    color: #aaa;
+  }
+  .footer__menu, .footer__social {
+    display: flex;
+    gap: 15px;
+  }
+  .footer__menu a, .footer__social a {
+    color: #b22222;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .footer__menu a:hover, .footer__social a:hover {
+    color: #e2d8b0;
+  }
+  
+  /* ---------------------
+       АДАПТИВНОСТЬ
+  ----------------------*/
+  
+  /* На большой ширине (≥900px) показываем 3 карточки одновременно.
+     Если хотите, чтобы и на десктопе был классический «слайдер»,
+     просто уберите этот медиа-запрос. */
+  @media (min-width: 900px) {
+    .slide-item {
+      width: calc(100% / 3);
+    }
+  }
+  #bog{
+    height: 50px;
+    width: 50px;
+  }
