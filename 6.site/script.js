@@ -1,51 +1,96 @@
-document.addEventListener('DOMContentLoaded', () => {
-  /**
-   * Функция инициализирует слайдер.
-   * @param {string} sliderSelector - селектор контейнера слайдов
-   * @param {string} prevBtnSelector - селектор кнопки «Назад»
-   * @param {string} nextBtnSelector - селектор кнопки «Вперёд»
-   */
-  function initSlider(sliderSelector, prevBtnSelector, nextBtnSelector) {
-    const slider = document.querySelector(sliderSelector);
-    if (!slider) return;
+// Получаем кнопку переключения темы по ID
+const themeToggleBtn = document.getElementById('themeToggleBtn');
 
-    // Все слайды внутри данного контейнера
-    const slides = slider.querySelectorAll('.slide-item');
-    const prevBtn = document.querySelector(prevBtnSelector);
-    const nextBtn = document.querySelector(nextBtnSelector);
+// Получаем кнопку "Вход" по ID
+const loginBtn = document.getElementById('loginBtn');
 
-    let currentSlide = 0;
+// Получаем модальное окно по ID и инициализируем его с помощью Bootstrap Modal API
+const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
 
-    // Обновляем позицию контейнера в зависимости от currentSlide
-    function updateSlider() {
-      const slideWidth = slider.offsetWidth; 
-      slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+// Проверяем, существует ли кнопка переключения темы
+if (themeToggleBtn) {
+  // Получаем текущее значение темы из localStorage, если оно есть
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+  // Функция для обновления текста кнопки в зависимости от темы
+  const updateButtonText = (theme) => {
+    if (theme === 'light-theme') {
+      themeToggleBtn.textContent = 'Тёмная тема'; // Устанавливаем текст кнопки для светлой темы
+      themeToggleBtn.setAttribute('aria-label', 'Переключить на тёмную тему'); // Обновляем атрибут aria-label
+    } else {
+      themeToggleBtn.textContent = 'Светлая тема'; // Устанавливаем текст кнопки для тёмной темы
+      themeToggleBtn.setAttribute('aria-label', 'Переключить на светлую тему'); // Обновляем атрибут aria-label
     }
+  };
 
-    // Клики по кнопкам
-    nextBtn.addEventListener('click', () => {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        updateSlider();
-      }
-    });
-
-    prevBtn.addEventListener('click', () => {
-      if (currentSlide > 0) {
-        currentSlide--;
-        updateSlider();
-      }
-    });
-
-    // Если меняется размер окна — пересчитываем ширину
-    window.addEventListener('resize', updateSlider);
-
-    // Начальная позиция
-    updateSlider();
+  // Применяем сохранённую тему при загрузке страницы
+  if (currentTheme) {
+    document.body.classList.add(currentTheme); // Добавляем класс темы к body
+    updateButtonText(currentTheme); // Обновляем текст кнопки
+  } else {
+    // Если тема не сохранена, устанавливаем тёмную тему по умолчанию
+    updateButtonText('dark-theme'); // Устанавливаем текст кнопки для тёмной темы
   }
 
-  // Инициализация каждого слайдера
-  initSlider('#benefitsSlider', '.benefits__prevBtn', '.benefits__nextBtn');
-  initSlider('#testimonialsSlider', '.testimonials__prevBtn', '.testimonials__nextBtn');
-  initSlider('#featuresSlider', '.features__prevBtn', '.features__nextBtn');
-});
+  // Добавляем обработчик события для переключения темы при клике
+  themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme'); // Переключаем класс темы
+
+    if (document.body.classList.contains('light-theme')) {
+      // Если сейчас светлая тема, переключаемся на тёмную
+      updateButtonText('light-theme'); // Обновляем текст кнопки
+      localStorage.setItem('theme', 'light-theme'); // Сохраняем выбранную тему в localStorage
+    } else {
+      // Если сейчас тёмная тема, переключаемся на светлую
+      updateButtonText('dark-theme'); // Обновляем текст кнопки
+      localStorage.setItem('theme', 'dark-theme'); // Сохраняем выбранную тему в localStorage
+    }
+  });
+} else {
+  // Выводим ошибку в консоль, если кнопка переключения темы не найдена
+  console.error("Кнопка переключения темы с ID 'themeToggleBtn' не найдена.");
+}
+
+// Проверяем, существует ли кнопка "Вход"
+if (loginBtn) {
+  // Добавляем обработчик события для открытия модального окна при клике на кнопку "Вход"
+  loginBtn.addEventListener('click', () => {
+    loginModal.show(); // Показываем модальное окно
+  });
+} else {
+  // Выводим ошибку в консоль, если кнопка "Вход" не найдена
+  console.error("Кнопка 'Вход' с ID 'loginBtn' не найдена.");
+}
+
+// Получаем форму входа по ID
+const loginForm = document.getElementById('loginForm');
+
+// Проверяем, существует ли форма входа
+if (loginForm) {
+  // Добавляем обработчик события отправки формы
+  loginForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Предотвращаем стандартное поведение формы (перезагрузка страницы)
+    
+    // Получаем значения полей формы
+    const email = document.getElementById('loginEmail').value; // Значение email
+    const password = document.getElementById('loginPassword').value; // Значение пароля
+    const phone = document.getElementById('loginPhone').value; // Значение номера телефона
+
+    // Здесь можно добавить логику проверки логина, пароля и номера телефона
+    // Например, отправка данных на сервер или валидация
+
+    // Для демонстрации выводим данные в консоль
+    console.log('Email:', email);
+    console.log('Password:', password);
+    console.log('Phone:', phone);
+
+    // Закрываем модальное окно после отправки
+    loginModal.hide();
+    
+    // Очищаем форму
+    loginForm.reset();
+  });
+} else {
+  // Выводим ошибку в консоль, если форма входа не найдена
+  console.error("Форма входа с ID 'loginForm' не найдена.");
+}

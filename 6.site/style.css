@@ -1,122 +1,245 @@
 /* Универсальные стили */
 *, *::before, *::after {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Устанавливаем box-sizing для всех элементов */
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Без горизонтального скролла */
-  /* Используем шрифты с готическим настроением */
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  margin: 0; /* Убираем отступы по умолчанию */
+  padding: 0; /* Убираем внутренние отступы по умолчанию */
+  overflow-x: hidden; /* Убираем горизонтальный скролл */
+  /* Шрифт в стиле Warhammer 40k */
+  font-family: 'Russo One', 'Trajan Pro', 'Times New Roman', serif;
   /* Тёмное фоновое оформление с намёком на космическую тьму */
   background: radial-gradient(circle, #0b0b0b, #1a1a1a 70%);
   color: #e2d8b0; /* Золотистый акцент */
+  transition: background 0.3s ease, color 0.3s ease; /* Плавные переходы для фона и текста */
 }
 
 p {
-  font-size: 2rem;
+  font-size: 1.2rem; /* Размер шрифта для параграфов */
+  margin: 0; /* Убираем отступы у параграфов */
+}
+
+h2 {
+  font-size: 2rem; /* Размер шрифта для заголовков h2 */
+  margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Светлая тема */
+.light-theme {
+  background: radial-gradient(circle, #e0e0e0, #c0c0c0 70%); /* Серый градиент */
+  color: #333333; /* Тёмный текст */
 }
 
 /****************************************
  * ШАПКА (HEADER)
  ****************************************/
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
-  background: #0d0d0d;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+  display: flex; /* Используем flexbox для расположения элементов */
+  align-items: center; /* Вертикальное выравнивание по центру */
+  justify-content: space-between; /* Распределяем пространство между элементами */
+  padding: 15px 20px; /* Внутренние отступы */
+  background: #0d0d0d; /* Фон шапки */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9); /* Тень под шапкой */
+  transition: background 0.3s ease; /* Плавный переход фона */
 }
-.header__logo img {
-  height: 50px;
+
+.light-theme .header {
+  background: #f0f0f0; /* Фон шапки в светлой теме */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень под шапкой в светлой теме */
 }
+
+.header__logo-title {
+  display: flex; /* Используем flexbox для логотипа и названия */
+  align-items: center; /* Вертикальное выравнивание по центру */
+}
+
+.header__logo-img {
+  height: 50px; /* Высота логотипа */
+  margin-right: 15px; /* Отступ справа от логотипа */
+}
+
+.header__game-title {
+  font-size: 1.8rem; /* Размер шрифта для названия игры */
+  color: #e2d8b0; /* Цвет текста */
+  text-shadow: 1px 1px 5px rgba(139, 0, 0, 0.7); /* Текстовая тень */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавные переходы для цвета и тени */
+}
+
+.light-theme .header__game-title {
+  color: #333333; /* Цвет текста в светлой теме */
+  text-shadow: none; /* Убираем текстовую тень в светлой теме */
+}
+
 .header__tagline {
-  color: #e2d8b0;
-  font-size: 1.4rem;
-  text-shadow: 2px 2px 8px rgba(139, 0, 0, 0.8);
+  color: #e2d8b0; /* Цвет слогана */
+  font-size: 1.4rem; /* Размер шрифта слогана */
+  text-shadow: 2px 2px 8px rgba(139, 0, 0, 0.8); /* Текстовая тень слогана */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавные переходы для цвета и тени */
 }
+
+.light-theme .header__tagline {
+  color: #555555; /* Цвет слогана в светлой теме */
+  text-shadow: none; /* Убираем текстовую тень слогана в светлой теме */
+}
+
+.header__buttons {
+  display: flex; /* Используем flexbox для расположения кнопок */
+  align-items: center; /* Вертикальное выравнивание по центру */
+  gap: 10px; /* Промежуток между кнопками */
+}
+
 .header__login-btn {
-  background: #8b0000; /* Кроваво-красный */
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  background: #8b0000; /* Кроваво-красный фон кнопки "Вход" */
+  color: #fff; /* Белый текст */
+  border: none; /* Убираем рамку */
+  padding: 10px 20px; /* Внутренние отступы */
+  font-size: 1rem; /* Размер шрифта */
+  border-radius: 5px; /* Скругление углов */
+  cursor: pointer; /* Курсор при наведении */
+  transition: background 0.3s ease; /* Плавный переход фона */
 }
+
 .header__login-btn:hover {
-  background: #ff4500;
+  background: #ff4500; /* Фон кнопки при наведении */
+}
+
+.light-theme .header__login-btn {
+  background: #b22222; /* Фон кнопки "Вход" в светлой теме */
+}
+
+.light-theme .header__login-btn:hover {
+  background: #ff6347; /* Фон кнопки при наведении в светлой теме */
+}
+
+/* Кнопка переключения темы */
+.theme-toggle-btn {
+  background: none; /* Прозрачный фон */
+  border: 2px solid #e2d8b0; /* Рамка кнопки */
+  color: #e2d8b0; /* Цвет текста */
+  padding: 8px 12px; /* Внутренние отступы */
+  font-size: 1rem; /* Размер шрифта */
+  border-radius: 5px; /* Скругление углов */
+  cursor: pointer; /* Курсор при наведении */
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Плавные переходы для фона, рамки и цвета */
+}
+
+.theme-toggle-btn:hover {
+  background: #e2d8b0; /* Фон кнопки при наведении */
+  color: #0b0b0b; /* Цвет текста при наведении */
+}
+
+.light-theme .theme-toggle-btn {
+  border-color: #555555; /* Цвет рамки в светлой теме */
+  color: #555555; /* Цвет текста в светлой теме */
+}
+
+.light-theme .theme-toggle-btn:hover {
+  background: #555555; /* Фон кнопки при наведении в светлой теме */
+  color: #ffffff; /* Цвет текста при наведении в светлой теме */
 }
 
 /****************************************
  * HERO (Большой баннер)
  ****************************************/
 .hero {
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%; /* Полная ширина */
+  height: 400px; /* Высота баннера */
+  overflow: hidden; /* Скрываем переполнение */
+  background: #000; /* Фон баннера */
+  display: flex; /* Используем flexbox */
+  align-items: center; /* Вертикальное выравнивание по центру */
+  justify-content: center; /* Горизонтальное выравнивание по центру */
+  transition: background 0.3s ease; /* Плавный переход фона */
 }
+
+.light-theme .hero {
+  background: #f0f0f0; /* Фон баннера в светлой теме */
+}
+
 .hero__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.6);
+  width: 100%; /* Полная ширина изображения */
+  height: 100%; /* Полная высота изображения */
+  object-fit: cover; /* Масштабирование изображения */
+  filter: brightness(0.6); /* Осветление изображения */
 }
 
 /****************************************
  * ВИДЕО (TRAILER)
  ****************************************/
 .video {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+  width: 100%; /* Полная ширина */
+  margin: 0; /* Убираем отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  overflow: hidden; /* Скрываем переполнение */
 }
+
 .video__iframe {
-  width: 100%;
-  max-width: 100%;
-  height: 900px;
-  display: block;
-  border: 2px solid #222;  /* Исходное значение */
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  width: 100%; /* Полная ширина iframe */
+  max-width: 100%; /* Максимальная ширина */
+  height: 900px; /* Высота iframe */
+  display: block; /* Блочный элемент */
+  border: 2px solid #222; /* Рамка iframe */
+  border-radius: 10px; /* Скругление углов */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Тень под iframe */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Плавные переходы для рамки и тени */
+}
+
+.light-theme .video__iframe {
+  border-color: #cccccc; /* Цвет рамки в светлой теме */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Тень под iframe в светлой теме */
 }
 
 /****************************************
  * АВАТАРКИ (Отзывы)
  ****************************************/
 .warhammer-avatar {
-  width: 80px;
-  height: 80px;
-  object-fit: cover; 
-  border-radius: 50%;
+  width: 80px; /* Ширина аватара */
+  height: 80px; /* Высота аватара */
+  object-fit: cover; /* Масштабирование изображения */
+  border-radius: 50%; /* Круглая форма аватара */
   border: 2px solid #8b0000; /* Кроваво-красная обводка */
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Отступ снизу */
+  transition: border-color 0.3s ease; /* Плавный переход цвета рамки */
+}
+
+.light-theme .warhammer-avatar {
+  border-color: #cccccc; /* Цвет рамки в светлой теме */
 }
 
 /* Пример оформления блока отзыва (если используется класс .testimonial) */
 .testimonial {
-  border: 1px solid grey;
-  background-color: #2a2a2a;
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 10px;
-  width: 100%;
-  font-size: 1.2rem;
+  border: 1px solid grey; /* Рамка блока отзыва */
+  background-color: #2a2a2a; /* Фон блока отзыва */
+  border-radius: 5px; /* Скругление углов */
+  padding: 15px; /* Внутренние отступы */
+  margin-bottom: 10px; /* Отступ снизу */
+  width: 100%; /* Полная ширина */
+  font-size: 1.2rem; /* Размер шрифта */
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Плавные переходы для фона, рамки и цвета */
+}
+
+.light-theme .testimonial {
+  background-color: #ffffff; /* Фон блока отзыва в светлой теме */
+  border-color: #cccccc; /* Цвет рамки блока отзыва в светлой теме */
+  color: #333333; /* Цвет текста в блоке отзыва в светлой теме */
 }
 
 /* Секция комментариев (отзывов) растянута на всю ширину */
 .testimonials {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  width: 100%; /* Полная ширина */
+  margin: 0; /* Убираем отступы */
+  padding: 0; /* Убираем внутренние отступы */
+}
+
+/* Отступ слева для содержимого отзывов, чтобы избежать перекрытия со стрелкой */
+.carousel-item-content {
+  margin-left: 200px; /* Отступ слева */
+  transition: margin-left 0.3s ease; /* Плавный переход отступа */
+}
+
+.light-theme .carousel-item-content {
+  margin-left: 200px; /* Отступ слева в светлой теме */
 }
 
 /****************************************
@@ -124,166 +247,283 @@ p {
  ****************************************/
 /* Заголовки секций */
 section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
+  font-size: 2rem; /* Размер шрифта заголовков секций */
+  margin-bottom: 20px; /* Отступ снизу */
+  text-align: center; /* Центрирование текста */
   color: #8b0000;  /* Кроваво-красный акцент */
-  text-shadow: 0 2px 5px rgba(139, 0, 0, 0.8);
+  text-shadow: 0 2px 5px rgba(139, 0, 0, 0.8); /* Текстовая тень */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавные переходы для цвета и тени */
+}
+
+.light-theme section h2 {
+  color: #555555; /* Цвет заголовков в светлой теме */
+  text-shadow: none; /* Убираем текстовую тень заголовков в светлой теме */
 }
 
 /* Преимущества */
 /* Мобильная версия (карусель) */
 .benefits .carousel-item {
-  max-width: 2000px;
-  width: 100%;
-  background: #1a1a1a;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  max-width: 2000px; /* Максимальная ширина слайда */
+  width: 100%; /* Полная ширина слайда */
+  background: #1a1a1a; /* Фон слайда */
+  border-radius: 10px; /* Скругление углов */
+  padding: 20px; /* Внутренние отступы */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8); /* Тень под слайдом */
+  transition: background 0.3s ease, box-shadow 0.3s ease; /* Плавные переходы для фона и тени */
 }
+
+.light-theme .benefits .carousel-item {
+  background: #cccccc; /* Фон слайда в светлой теме */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Тень под слайдом в светлой теме */
+}
+
 .benefits .carousel-item h3 {
-  color: #e2d8b0;
-  margin-bottom: 10px;
-  text-shadow: 0 1px 5px rgba(139, 0, 0, 0.7);
+  color: #e2d8b0; /* Цвет заголовков в слайдах */
+  margin-bottom: 10px; /* Отступ снизу */
+  text-shadow: 0 1px 5px rgba(139, 0, 0, 0.7); /* Текстовая тень заголовков */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавные переходы для цвета и тени */
+}
+
+.light-theme .benefits .carousel-item h3 {
+  color: #333333; /* Цвет заголовков в слайдах в светлой теме */
+  text-shadow: none; /* Убираем текстовую тень заголовков в светлой теме */
 }
 
 /* Десктопная версия преимуществ */
 .benefits {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.benefits .desktop-blocks {
-  display: flex;
-  gap: 30px;    /* Промежуток между блоками */
-  flex-wrap: nowrap;
-  justify-content: center;
-  max-width: 100%;
-}
-.desktop-block {
-  flex: 0 0 calc((100% - 60px) / 3 * 3);
-  max-width: calc((100% - 60px) / 3 * 3);
-  margin: 0 auto;
-  /* Бордеры и фон в стиле Warhammer */
-  border: 2px solid grey;
-  border-radius: 10px;
-  padding: 15px;
-  background-color: #2a2a2a;
-}
-.desktop-block h3 {
-  font-size: 2rem;  /* Увеличенный размер шрифта для заголовков */
-  margin-bottom: 10px;
-  text-shadow: 0 1px 5px rgba(139, 0, 0, 0.8);
-}
-.desktop-block p {
-  font-size: 1.5rem; /* Увеличенный размер шрифта для основного текста */
+  padding-left: 15px; /* Внутренний отступ слева */
+  padding-right: 15px; /* Внутренний отступ справа */
 }
 
-/* Особенности (выравниваем блоки по левому краю) */
-.features {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.features .desktop-blocks {
-  display: flex;
-  gap: 30px;
-  flex-wrap: nowrap;
+.benefits .desktop-blocks {
+  display: flex; /* Используем flexbox для расположения блоков */
+  gap: 20px;    /* Промежуток между блоками */
+  flex-wrap: nowrap; /* Запрещаем перенос строк */
   justify-content: flex-start;  /* Выравнивание блоков по левому краю */
-  max-width: 100%;
+  box-sizing: border-box; /* Устанавливаем box-sizing */
+  max-width: 100%; /* Максимальная ширина */
 }
+
+.desktop-block {
+  min-height: 200px; /* Минимальная высота блока */
+  /* Для 3 блоков: вычитаем общий gap 40px и применяем коэффициент 3 */
+  flex: 0 0 calc((100% - 40px) / 3 * 3); 
+  max-width: calc((100% - 40px) / 3 * 3);
+  box-sizing: border-box; /* Устанавливаем box-sizing */
+  margin: 0 auto; /* Центрируем блок */
+  /* Бордеры и фон в стиле Warhammer */
+  border: 2px solid grey; /* Рамка блока */
+  border-radius: 10px; /* Скругление углов блока */
+  padding: 15px; /* Внутренние отступы блока */
+  background-color: #2a2a2a; /* Фон блока */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Плавные переходы для фона и рамки */
+}
+
+.light-theme .desktop-block {
+  background-color: #cccccc; /* Фон блока в светлой теме */
+  border-color: #999999; /* Цвет рамки блока в светлой теме */
+}
+
+.desktop-block h3 {
+  font-size: 2rem;  /* Увеличенный размер шрифта для заголовков */
+  margin-bottom: 10px; /* Отступ снизу */
+  text-shadow: 0 1px 5px rgba(139, 0, 0, 0.8); /* Текстовая тень заголовков */
+  transition: text-shadow 0.3s ease, color 0.3s ease; /* Плавные переходы для тени и цвета */
+}
+
+.light-theme .desktop-block h3 {
+  text-shadow: none; /* Убираем текстовую тень заголовков в светлой теме */
+  color: #333333; /* Цвет текста заголовков в светлой теме */
+}
+
+.desktop-block p {
+  font-size: 1.5rem; /* Увеличенный размер шрифта для основного текста */
+  transition: color 0.3s ease; /* Плавный переход для цвета текста */
+}
+
+.light-theme .desktop-block p {
+  color: #333333; /* Цвет текста в блоке в светлой теме */
+}
+
+/* Особенности (выравниваем блоки по левому краю на десктопе и по центру на мобильных) */
+.features {
+  padding-left: 15px; /* Внутренний отступ слева */
+  padding-right: 15px; /* Внутренний отступ справа */
+}
+
+.features .desktop-blocks {
+  display: flex; /* Используем flexbox для расположения блоков */
+  gap: 20px;    /* Промежуток между блоками */
+  flex-wrap: nowrap; /* Запрещаем перенос строк */
+  justify-content: flex-start;  /* Выравнивание блоков по левому краю */
+  box-sizing: border-box; /* Устанавливаем box-sizing */
+  max-width: 100%; /* Максимальная ширина */
+}
+
 .features .desktop-block {
-  flex: 0 0 calc((100% - 60px) / 3 * 3);
-  max-width: calc((100% - 60px) / 3 * 3);
-  margin: 0 auto;
-  border: 2px solid grey;
-  border-radius: 10px;
-  padding: 15px;
-  background-color: #2a2a2a;
+  min-height: 250px; /* Минимальная высота блока */
+  flex: 0 0 calc((100% - 40px) / 3 * 3); /* Ширина блока */
+  max-width: calc((100% - 40px) / 3 * 3); /* Максимальная ширина блока */
+  margin: 0 auto; /* Центрируем блок */
+  border: 2px solid grey; /* Рамка блока */
+  border-radius: 10px; /* Скругление углов блока */
+  padding: 15px; /* Внутренние отступы блока */
+  background-color: #2a2a2a; /* Фон блока */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Плавные переходы для фона и рамки */
 }
+
+.light-theme .features .desktop-block {
+  background-color: #cccccc; /* Фон блока в светлой теме */
+  border-color: #999999; /* Цвет рамки блока в светлой теме */
+}
+
 .features .desktop-block h3 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  text-shadow: 0 1px 5px rgba(139, 0, 0, 0.8);
+  font-size: 2rem; /* Размер шрифта заголовков */
+  margin-bottom: 10px; /* Отступ снизу */
+  text-shadow: 0 1px 5px rgba(139, 0, 0, 0.8); /* Текстовая тень заголовков */
+  transition: text-shadow 0.3s ease, color 0.3s ease; /* Плавные переходы для тени и цвета */
 }
+
+.light-theme .features .desktop-block h3 {
+  text-shadow: none; /* Убираем текстовую тень заголовков в светлой теме */
+  color: #333333; /* Цвет текста заголовков в светлой теме */
+}
+
 .features .desktop-block p {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Размер шрифта основного текста */
+  transition: color 0.3s ease; /* Плавный переход для цвета текста */
+}
+
+.light-theme .features .desktop-block p {
+  color: #333333; /* Цвет текста в светлой теме */
 }
 
 /****************************************
  * ФОРМА ПОДПИСКИ (SIGNUP)
  ****************************************/
 .signup {
-  background: linear-gradient(135deg, #333, #1a1a1a);
-  text-align: center;
-  border-top: 1px solid #444;
-  padding: 30px 20px;
+  background: linear-gradient(135deg, #333, #1a1a1a); /* Градиентный фон */
+  text-align: center; /* Центрирование текста */
+  border-top: 1px solid #444; /* Верхняя рамка */
+  padding: 30px 20px; /* Внутренние отступы */
+  transition: background 0.3s ease, border-color 0.3s ease; /* Плавные переходы для фона и рамки */
 }
+
+.light-theme .signup {
+  background: linear-gradient(135deg, #cccccc, #b0b0b0); /* Градиентный фон в светлой теме */
+  border-top: 1px solid #999999; /* Верхняя рамка в светлой теме */
+}
+
 .signup__form {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
+  display: flex; /* Используем flexbox для формы */
+  flex-direction: row; /* Горизонтальное расположение элементов */
+  gap: 30px; /* Промежуток между элементами формы */
+  width: 100%; /* Полная ширина формы */
+  max-width: 100%; /* Максимальная ширина формы */
+  margin: 0 auto; /* Центрируем форму */
 }
+
 .signup__form input {
-  flex: 1;
-  padding: 12px 15px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 5px;
-  background: #444;
-  color: #e2d8b0;
-  outline: none;
+  flex: 1; /* Растягиваем поле ввода */
+  padding: 12px 15px; /* Внутренние отступы */
+  font-size: 1.1rem; /* Размер шрифта */
+  border: none; /* Убираем рамку */
+  border-radius: 5px; /* Скругление углов */
+  background: #444; /* Фон поля ввода */
+  color: #e2d8b0; /* Цвет текста */
+  outline: none; /* Убираем обводку при фокусе */
+  transition: background 0.3s ease, color 0.3s ease; /* Плавные переходы для фона и текста */
 }
+
+.light-theme .signup__form input {
+  background: #dddddd; /* Фон поля ввода в светлой теме */
+  color: #333333; /* Цвет текста в светлой теме */
+}
+
+/* Устанавливаем размеры логотипа в мобильной версии */
+#war{
+  height: 60px; /* Высота логотипа */
+  width: 200px; /* Ширина логотипа */
+}
+
 .signup__form button {
-  background: #b22222;
-  color: #fff;
-  padding: 16px 30px;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-  border: none;
-  cursor: pointer;
+  background: #b22222; /* Фон кнопки */
+  color: #fff; /* Цвет текста кнопки */
+  padding: 16px 30px; /* Внутренние отступы */
+  font-size: 1.2rem; /* Размер шрифта */
+  border-radius: 5px; /* Скругление углов */
+  transition: background 0.3s ease; /* Плавный переход фона */
+  border: none; /* Убираем рамку */
+  cursor: pointer; /* Курсор при наведении */
 }
+
 .signup__form button:hover {
-  background: #ff4500;
+  background: #ff4500; /* Фон кнопки при наведении */
+}
+
+.light-theme .signup__form button {
+  background: #555555; /* Фон кнопки в светлой теме */
+}
+
+.light-theme .signup__form button:hover {
+  background: #777777; /* Фон кнопки при наведении в светлой теме */
 }
 
 /****************************************
  * FOOTER (с кликабельными иконками соцсетей)
  ****************************************/
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: #0c0c0c;
-  color: #aaa;
+  display: flex; /* Используем flexbox для расположения элементов */
+  justify-content: space-between; /* Распределяем пространство между элементами */
+  align-items: center; /* Вертикальное выравнивание по центру */
+  padding: 20px; /* Внутренние отступы */
+  background: #0c0c0c; /* Фон подвала */
+  color: #aaa; /* Цвет текста */
+  transition: background 0.3s ease, color 0.3s ease; /* Плавные переходы для фона и текста */
 }
+
+.light-theme .footer {
+  background: #f0f0f0; /* Фон подвала в светлой теме */
+  color: #333333; /* Цвет текста в светлой теме */
+}
+
 .footer__menu {
-  display: flex;
-  gap: 15px;
+  display: flex; /* Используем flexbox для меню */
+  gap: 15px; /* Промежуток между ссылками */
 }
+
 .footer__menu a {
-  color: #b22222;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  color: #b22222; /* Цвет ссылок */
+  text-decoration: none; /* Убираем подчеркивание */
+  transition: color 0.3s ease; /* Плавный переход цвета */
 }
+
 .footer__menu a:hover {
-  color: #e2d8b0;
+  color: #e2d8b0; /* Цвет ссылок при наведении */
 }
+
+.light-theme .footer__menu a {
+  color: #333333; /* Цвет ссылок в светлой теме */
+}
+
+.light-theme .footer__menu a:hover {
+  color: #555555; /* Цвет ссылок при наведении в светлой теме */
+}
+
 .footer__social {
-  display: flex;
-  gap: 15px;
+  display: flex; /* Используем flexbox для социальных иконок */
+  gap: 15px; /* Промежуток между иконками */
 }
+
 .social-icon {
-  width: 30px;
-  height: 30px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  width: 30px; /* Ширина иконки */
+  height: 30px; /* Высота иконки */
+  object-fit: cover; /* Масштабирование изображения */
+  transition: transform 0.3s ease; /* Плавный переход трансформации */
 }
+
 .social-icon:hover {
-  transform: scale(1.2);
+  transform: scale(1.2); /* Увеличение иконки при наведении */
 }
 
 /****************************************
@@ -291,36 +531,69 @@ section h2 {
  ****************************************/
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: transparent;
-  width: 50px;
-  height: 50px;
-  background: radial-gradient(circle at 50% 50%, #b22222 0%, #e2d8b0 70%);
-  border-radius: 50%;
-  position: relative;
+  background-color: transparent; /* Прозрачный фон */
+  width: 50px; /* Ширина стрелки */
+  height: 50px; /* Высота стрелки */
+  background: radial-gradient(circle at 50% 50%, #b22222 0%, #e2d8b0 70%); /* Градиентный фон */
+  border-radius: 50%; /* Круглая форма стрелки */
+  position: relative; /* Относительное позиционирование */
+  transition: background 0.3s ease; /* Плавный переход фона */
 }
+
+.light-theme .carousel-control-prev-icon,
+.light-theme .carousel-control-next-icon {
+  background: radial-gradient(circle at 50% 50%, #555555 0%, #777777 70%); /* Градиентный фон в светлой теме */
+}
+
 .carousel-control-prev-icon::after,
 .carousel-control-next-icon::after {
-  content: "" !important;
+  content: "" !important; /* Убираем стандартные иконки */
 }
+
 .carousel-control-prev-icon::before {
-  content: "◄";
-  color: #000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.5rem;
-  font-weight: bold;
+  content: "◄"; /* Символ левой стрелки */
+  color: #000; /* Цвет символа */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 50%; /* Центрирование по вертикали */
+  left: 50%; /* Центрирование по горизонтали */
+  transform: translate(-50%, -50%); /* Центрирование с учетом размера */
+  font-size: 1.5rem; /* Размер шрифта символа */
+  font-weight: bold; /* Жирный шрифт символа */
 }
+
 .carousel-control-next-icon::before {
-  content: "►";
-  color: #000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.5rem;
-  font-weight: bold;
+  content: "►"; /* Символ правой стрелки */
+  color: #000; /* Цвет символа */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 50%; /* Центрирование по вертикали */
+  left: 50%; /* Центрирование по горизонтали */
+  transform: translate(-50%, -50%); /* Центрирование с учетом размера */
+  font-size: 1.5rem; /* Размер шрифта символа */
+  font-weight: bold; /* Жирный шрифт символа */
+}
+
+/****************************************
+ * МОДАЛЬНОЕ ОКНО ВХОДА
+ ****************************************/
+/* Устанавливаем чёрный цвет текста внутри модального окна */
+.modal-content {
+  color: #000000; /* Чёрный текст */
+  background-color: #ffffff; /* Белый фон для лучшей читаемости */
+}
+
+.light-theme .modal-content {
+  background-color: #ffffff; /* Белый фон в светлой теме */
+  color: #000000; /* Чёрный текст в светлой теме */
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+  /* Можно добавить дополнительные стили при необходимости */
+}
+
+.modal-body a {
+  color: #0000EE; /* Цвет ссылок внутри модального окна */
 }
 
 /****************************************
@@ -329,63 +602,48 @@ section h2 {
 @media (max-width: 575.98px) {
   /* Преимущества: уменьшаем отступы и шрифты */
   .benefits {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 5px; /* Уменьшаем внутренний отступ слева */
+    padding-right: 5px; /* Уменьшаем внутренний отступ справа */
   }
   .benefits .carousel-item {
-    padding: 15px;
+    padding: 15px; /* Уменьшаем внутренний отступ слайда */
   }
   .benefits h2 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Уменьшаем размер шрифта заголовка */
   }
   .benefits .carousel-item h3 {
-    font-size: 1.4rem;
+    font-size: 1.4rem; /* Уменьшаем размер шрифта заголовков слайдов */
   }
   .benefits .carousel-item p {
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Уменьшаем размер шрифта текста слайдов */
   }
   
-  /* Особенности: растягиваем от края до края */
-  .features {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .features .desktop-blocks {
-    gap: 10px;
-    justify-content: flex-start;
-  }
-  .features .desktop-block {
-    margin: 0 5px;
-  }
-  .features h2 {
-    font-size: 1.8rem;
-  }
-  .features .desktop-block h3 {
-    font-size: 1.5rem;
-  }
-  .features .desktop-block p {
-    font-size: 1.2rem;
+  /* Изменяем размер логотипа для мобильных устройств */
+  #war{
+    height: 30px; /* Уменьшаем высоту логотипа */
+    width: 100px; /* Уменьшаем ширину логотипа */
   }
   
   /* Регистрация: поле ввода и кнопка по вертикали */
   .signup {
-    padding: 20px 5px;
+    padding: 20px 5px; /* Уменьшаем внутренние отступы */
   }
   .signup__form {
-    flex-direction: column;
-    gap: 30px;
-    max-width: 100%;
-    margin: 0 auto;
+    flex-direction: column; /* Располагаем элементы по вертикали */
+    gap: 30px; /* Промежуток между элементами */
+    max-width: 100%; /* Максимальная ширина формы */
+    width: 100%; /* Полная ширина формы */
+    margin: 0 auto; /* Центрируем форму */
   }
   .signup__form input {
-    padding: 10px 12px;
-    font-size: 1rem;
-    width: 100%;
+    padding: 10px 12px; /* Уменьшаем внутренние отступы поля ввода */
+    font-size: 1rem; /* Уменьшаем размер шрифта */
+    width: 100%; /* Полная ширина поля ввода */
   }
   .signup__form button {
-    padding: 14px 20px;
-    font-size: 1.1rem;
-    width: 100%;
+    padding: 14px 20px; /* Уменьшаем внутренние отступы кнопки */
+    font-size: 1.1rem; /* Уменьшаем размер шрифта */
+    width: 100%; /* Полная ширина кнопки */
   }
   
   /* Адаптация стрелок карусели для телефонов: */
@@ -397,11 +655,20 @@ section h2 {
   }
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
-    width: 30px;
-    height: 30px;
+    width: 30px; /* Уменьшаем ширину стрелок */
+    height: 30px; /* Уменьшаем высоту стрелок */
   }
   .carousel-control-prev-icon::before,
   .carousel-control-next-icon::before {
-    font-size: 1rem;
+    font-size: 1rem; /* Уменьшаем размер шрифта символов стрелок */
+  }
+
+  /* Отступ слева для содержимого отзывов на мобильных */
+  .carousel-item-content {
+    margin-left: 20px; /* Меньший отступ слева */
+  }
+
+  .light-theme .carousel-item-content {
+    margin-left: 20px; /* Меньший отступ слева в светлой теме */
   }
 }

@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <!-- Устанавливаем кодировку документа -->
   <meta charset="UTF-8" />
+  
+  <!-- Настраиваем viewport для адаптивности на мобильных устройствах -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Заголовок страницы -->
   <title>Warhammer 40k Landing Page</title>
 
-  <!-- Подключаем Bootstrap 5 (CDN) -->
+  <!-- Подключаем Bootstrap 5 CSS через CDN -->
   <link 
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
     rel="stylesheet" 
   />
-<link rel="stylesheet" href="style.css">
- 
+
+  <!-- Импортируем шрифт Russo One из Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+  <!-- Подключаем основной CSS файл -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ====== ШАПКА ====== -->
+  <!-- ====== ШАПКА (HEADER) ====== -->
   <header class="header">
-    <div class="header__logo">
-      <!-- Логотип -->
-      <img src="image/logo.webp" alt="Game Logo" height="50"/>
-      <span class="header__tagline">Warhammer 40k</span>
+    <!-- Контейнер для логотипа и названия игры -->
+    <div class="header__logo-title d-flex align-items-center">
+      <!-- Логотип игры -->
+      <img src="image/logo.webp" alt="Warhammer Logo" id="war" />
+      
+      <!-- Название игры -->
+      <h1 class="header__game-title">Warhammer 40k</h1>
     </div>
-    <button class="header__login-btn">Войти</button>
+
+    <!-- Контейнер для кнопок "Вход" и переключения темы -->
+    <div class="header__buttons">
+      <!-- Кнопка "Вход", при нажатии будет открываться модальное окно -->
+      <button class="header__login-btn" id="loginBtn">Вход</button>
+      
+      <!-- Кнопка переключения темы -->
+      <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Переключить тему">
+        Светлая тема
+      </button>
+    </div>
   </header>
 
-  <!-- ====== HERO ====== -->
+  <!-- ====== HERO (Большой баннер) ====== -->
   <section class="hero">
+    <!-- Изображение баннера -->
     <img
       src="image/batle.jpg"
       alt="Hero Image"
@@ -36,6 +59,7 @@
 
   <!-- ====== ВИДЕО (TRAILER) ====== -->
   <section class="video">
+    <!-- Встроенное видео с YouTube -->
     <iframe
       class="video__iframe"
       src="https://www.youtube.com/embed/5zcJKGdb0a8?si=fo6N6IGMW4TvjLiN"
@@ -45,185 +69,187 @@
     </iframe>
   </section>
 
-<!-- Мобильная версия: Карусель "Преимущества" (видна только на устройствах < md) -->
-<section class="benefits py-5">
-  <h2>Преимущества</h2>
-  <div id="benefitsCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="carousel-item-content">
+  <!-- Мобильная версия: Карусель "Преимущества" (видна только на устройствах < md) -->
+  <section class="benefits py-5">
+    <!-- Заголовок секции -->
+    <h2>Преимущества</h2>
+    
+    <!-- Карусель для мобильных устройств -->
+    <div id="benefitsCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Первый слайд, активный по умолчанию -->
+        <div class="carousel-item active">
+          <div class="carousel-item-content">
+            <h3>Непоколебимая вера</h3>
+            <p>Ощутите мощь космодесанта в борьбе за священную Терру.</p>
+          </div>
+        </div>
+        
+        <!-- Второй слайд -->
+        <div class="carousel-item">
+          <div class="carousel-item-content">
+            <h3>Тёмная атмосфера</h3>
+            <p>Погрузитесь в бесконечную войну 41-го тысячелетия.</p>
+          </div>
+        </div>
+        
+        <!-- Третий слайд -->
+        <div class="carousel-item">
+          <div class="carousel-item-content">
+            <h3>Разнообразие фракций</h3>
+            <p>Командуйте силами Астра Милитарум или примите путь Хаоса.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Кнопка предыдущего слайда -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#benefitsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Предыдущий</span>
+      </button>
+      
+      <!-- Кнопка следующего слайда -->
+      <button class="carousel-control-next" type="button" data-bs-target="#benefitsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Следующий</span>
+      </button>
+    </div>
+
+    <!-- Десктопная версия (видна только на устройствах ≥ md) -->
+    <div class="row desktop-blocks d-none d-md-flex">
+      <div class="col-md-4">
+        <div class="desktop-block">
           <h3>Непоколебимая вера</h3>
           <p>Ощутите мощь космодесанта в борьбе за священную Терру.</p>
         </div>
       </div>
-      <div class="carousel-item">
-        <div class="carousel-item-content">
+      <div class="col-md-4">
+        <div class="desktop-block">
           <h3>Тёмная атмосфера</h3>
           <p>Погрузитесь в бесконечную войну 41-го тысячелетия.</p>
         </div>
       </div>
-      <div class="carousel-item">
-        <div class="carousel-item-content">
+      <div class="col-md-4">
+        <div class="desktop-block">
           <h3>Разнообразие фракций</h3>
           <p>Командуйте силами Астра Милитарум или примите путь Хаоса.</p>
         </div>
       </div>
     </div>
-    <!-- Стрелки карусели -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#benefitsCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Предыдущий</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#benefitsCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Следующий</span>
-    </button>
-  </div>
-
-  <!-- Десктопная версия (видна только на устройствах ≥ md) -->
-  <div class="row desktop-blocks d-none d-md-flex">
-    <div class="col-md-4">
-      <div class="desktop-block">
-        <h3>Непоколебимая вера</h3>
-        <p>Ощутите мощь космодесанта в борьбе за священную Терру.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="desktop-block">
-        <h3>Тёмная атмосфера</h3>
-        <p>Погрузитесь в бесконечную войну 41-го тысячелетия.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="desktop-block">
-        <h3>Разнообразие фракций</h3>
-        <p>Командуйте силами Астра Милитарум или примите путь Хаоса.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- ====== ОТЗЫВЫ (Testimonials) ====== -->
-<section class="testimonials container py-5">
-  <h2>Отзывы</h2>
-  <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <!-- Слайд 1 -->
-      <div class="carousel-item active">
-        <div class="carousel-item-content d-flex align-items-center">
-          <img src="image/kar.jpg" alt="Avatar 1" class="warhammer-avatar me-3" />
-          <div>
-            <p>«ЧТО ТАКОЕ ФИЖМА!?!?»</p>
-            <span>- fiZma</span>
+  <section class="testimonials py-5">
+    <!-- Заголовок секции -->
+    <h2>Отзывы</h2>
+    
+    <!-- Карусель отзывов -->
+    <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Первый слайд, активный по умолчанию -->
+        <div class="carousel-item active">
+          <div class="carousel-item-content d-flex align-items-center">
+            <!-- Аватар пользователя -->
+            <img src="image/kar.jpg" alt="Avatar 1" class="warhammer-avatar me-3" />
+            
+            <!-- Текст отзыва -->
+            <div>
+              <p>«ЧТО ТАКОЕ ФИЖМА!?!?»</p>
+              <span>- fiZma</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Второй слайд -->
+        <div class="carousel-item">
+          <div class="carousel-item-content d-flex align-items-center">
+            <img src="image/don_don.jpg" alt="Avatar 2" class="warhammer-avatar me-3" />
+            <div>
+              <p>«В мрачной тьме далёкого будущего нет ничего кроме войны!»</p>
+              <span>- Don Karleon</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Третий слайд -->
+        <div class="carousel-item">
+          <div class="carousel-item-content d-flex align-items-center">
+            <img src="image/venom.jpg" alt="Avatar 3" class="warhammer-avatar me-3" />
+            <div>
+              <p>«Ехал venom через venom, видит venom в реке venom...»</p>
+              <span>- Venom</span>
+            </div>
           </div>
         </div>
       </div>
-      <!-- Слайд 2 -->
-      <div class="carousel-item">
-        <div class="carousel-item-content d-flex align-items-center">
-          <img src="image/don_don.jpg" alt="Avatar 2" class="warhammer-avatar me-3" />
-          <div>
-            <p>«В мрачной тьме далёкого будущего нет ничего кроме войны!»</p>
-            <span>- Don Karleon</span>
-          </div>
-        </div>
-      </div>
-      <!-- Слайд 3 -->
-      <div class="carousel-item">
-        <div class="carousel-item-content d-flex align-items-center">
-          <img src="image/venom.jpg" alt="Avatar 3" class="warhammer-avatar me-3" />
-          <div>
-            <p>«Ехал venom через venom, видит venom в реке venom...»</p>
-            <span>- Venom</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Стрелки карусели -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</section>
 
-    <!-- Сетка (десктоп)
-    <div class="row d-none d-md-block">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="desktop-block">
-            <img src="image/kar.jpg" alt="Avatar 1" class="warhammer-avatar"/>
-            <p>«ЧТО ТАКОЕ ФИЖМА!?!?»</p>
-            <span>- fiZma</span>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="desktop-block">
-            <img src="image/don_don.jpg" alt="Avatar 2" class="warhammer-avatar"/>
-            <p>«В мрачной тьме далёкого будущего нет ничего кроме войны!»</p>
-            <span>- Don Karleon</span>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="desktop-block">
-            <img src="image/venom.jpg" alt="Avatar 3" class="warhammer-avatar"/>
-            <p>«Ехал venom через venom, видит venom в реке venom...»</p>
-            <span>- Venom</span>
-          </div>
-        </div>
-      </div>
+      <!-- Кнопка предыдущего отзыва -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Предыдущий</span>
+      </button>
+      
+      <!-- Кнопка следующего отзыва -->
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Следующий</span>
+      </button>
     </div>
-  </section> -->
+  </section>
 
-  
-<!-- Особенности располагаются от левого до правого края -->
-<section class="features container-fluid py-5">
-  <h2>Особенности</h2>
-  <div class="row">
-    <div class="col-md-4">
-      <div class="desktop-block">
-        <h3>Эпические сражения</h3>
-        <p>Комбинируйте отряды космодесантников, машины-демоны и оружие Империи.</p>
+  <!-- ====== Особенности ====== -->
+  <section class="features container-fluid py-5">
+    <!-- Заголовок секции -->
+    <h2>Особенности</h2>
+    
+    <!-- Блоки особенностей -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="desktop-block">
+          <h3>Эпические сражения</h3>
+          <p>Комбинируйте отряды космодесантников, машины-демоны и оружие Империи.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="desktop-block">
+          <h3>Глобальная галактическая карта</h3>
+          <p>Исследуйте варп-пространство и вступайте в ожесточённые конфликты.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="desktop-block">
+          <h3>Прокачка легиона</h3>
+          <p>Открывайте реликты и улучшения, дающие преимущество над врагами.</p>
+        </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="desktop-block">
-        <h3>Глобальная галактическая карта</h3>
-        <p>Исследуйте варп-пространство и вступайте в ожесточённые конфликты.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="desktop-block">
-        <h3>Прокачка легиона</h3>
-        <p>Открывайте реликты и улучшения, дающие преимущество над врагами.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+  </section>
 
   <!-- ====== SIGNUP (форма подписки) ====== -->
   <section class="signup py-5">
+    <!-- Заголовок секции -->
     <h2>Присоединяйтесь и начните играть!</h2>
+    
+    <!-- Форма подписки -->
     <form class="signup__form">
+      <!-- Поле для ввода email -->
       <input type="email" placeholder="Ваш Email" required />
+      
+      <!-- Кнопка отправки формы -->
       <button type="submit">Зарегистрироваться</button>
     </form>
   </section>
 
   <!-- ====== FOOTER (подвал с иконками соцсетей) ====== -->
   <footer class="footer">
+    <!-- Меню подвала -->
     <nav class="footer__menu">
       <a href="#">Главная</a>
       <a href="#">О нас</a>
       <a href="#">Контакты</a>
     </nav>
+    
+    <!-- Социальные иконки -->
     <div class="footer__social">
       <!-- VK -->
       <a href="https://vk.com/" target="_blank">
@@ -252,9 +278,56 @@
     </div>
   </footer>
 
-  <!-- Подключаем Bootstrap JS -->
+  <!-- ====== МОДАЛЬНОЕ ОКНО ВХОДА ====== -->
+  <!-- Используем Bootstrap Modal компонент -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Заголовок модального окна -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Вход</h5>
+          <!-- Кнопка закрытия модального окна -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <!-- Тело модального окна -->
+        <div class="modal-body">
+          <!-- Форма входа -->
+          <form id="loginForm">
+            <!-- Поле для ввода логина -->
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email адрес</label>
+              <input type="email" class="form-control" id="loginEmail" placeholder="Введите ваш email" required>
+            </div>
+            <!-- Поле для ввода пароля -->
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Пароль</label>
+              <input type="password" class="form-control" id="loginPassword" placeholder="Введите ваш пароль" required>
+            </div>
+            <!-- Поле для ввода номера телефона -->
+            <div class="mb-3">
+              <label for="loginPhone" class="form-label">Номер телефона</label>
+              <input type="tel" class="form-control" id="loginPhone" placeholder="Введите ваш номер телефона" pattern="^\+?[0-9]{7,15}$" required>
+              <small class="form-text text-muted">Формат: +1234567890</small>
+            </div>
+            <!-- Кнопка отправки формы -->
+            <button type="submit" class="btn btn-primary">Войти</button>
+          </form>
+          <!-- Контактный номер телефона -->
+          <div class="mt-4">
+            <p><strong>Свяжитесь с нами:</strong></p>
+            <p>Телефон: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Подключаем Bootstrap JS через CDN -->
   <script 
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
   </script>
+
+  <!-- Подключаем основной JavaScript файл -->
+  <script src="script.js"></script>
 </body>
 </html>
