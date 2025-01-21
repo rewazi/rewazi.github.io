@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>О компании — Warhammer 40k</title>
+  
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+  />
+  
+  <!-- Шрифт Russo One -->
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" 
+    rel="stylesheet"
+  >
+  
+  <!-- Ваш общий CSS со стилями (включая .light-theme, если нужен) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ====== HEADER (Шапка) ====== -->
+<header class="header">
+    <div class="header__logo-title">
+      <img src="image/logo.webp" alt="Warhammer Logo" id="war" />
+      <h1 class="header__game-title">Warhammer 40k</h1>
+    </div>
+  
+    <nav class="footer__menu">
+      <a href="#">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="cart.html">Купить</a>
+    </nav>
+  
+    <div class="header__buttons">
+
+      <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Переключить тему">
+        Светлая тема
+      </button>
+    </div>
+  </header>
+  
+
+<!-- ====== MAIN (Основной контент) ====== -->
+<main>
+  <section class="py-5">
+    <div class="container">
+      <h2>О нашей компании</h2>
+      <p>
+        Мы являемся официальными представителями Warhammer 40,000 —
+        предлагаем лучшие коллекционные фигурки, уникальный мерч и многое другое.
+      </p>
+      
+      <!-- Пример встроенного видео -->
+      <div class="about-video mt-4 d-flex justify-content-center">
+        <iframe  width="1200" height="750" src="https://www.youtube.com/embed/6_8i9_VOJvc?si=y6MdV0daZJHkqIOg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      
+      <!-- Второй блок: карусель, добавленная в основной контент -->
+      <div class="mt-5">
+        <h3>Наша внутренняя галерея</h3>
+        <div 
+          id="aboutCarousel" 
+          class="carousel slide" 
+          data-bs-ride="carousel"
+          data-bs-interval="4000"
+        >
+          <div class="carousel-inner">
+            <!-- Слайд 1 (активный) -->
+            <div class="carousel-item active">
+              <img 
+                src="image/about-carousel1.jpg" 
+                class="d-block w-100" 
+                alt="about-carousel1"
+              />
+            </div>
+            <!-- Слайд 2 -->
+            <div class="carousel-item">
+              <img 
+                src="image/about-carousel2.jpg" 
+                class="d-block w-100" 
+                alt="about-carousel2"
+              />
+            </div>
+            <!-- Слайд 3 -->
+            <div class="carousel-item">
+              <img 
+                src="image/about-carousel3.jpg" 
+                class="d-block w-100" 
+                alt="about-carousel3"
+              />
+            </div>
+          </div>
+          <!-- Можно добавить кнопки переключения, если нужно -->
+          <button 
+            class="carousel-control-prev" 
+            type="button" 
+            data-bs-target="#aboutCarousel" 
+            data-bs-slide="prev"
+          >
+            <span 
+              class="carousel-control-prev-icon" 
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Предыдущий</span>
+          </button>
+          <button 
+            class="carousel-control-next" 
+            type="button" 
+            data-bs-target="#aboutCarousel" 
+            data-bs-slide="next"
+          >
+            <span 
+              class="carousel-control-next-icon" 
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Следующий</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Пример фото, эффекты, анимация IntersectionObserver -->
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <img 
+            src="image/about1.jpg" 
+            alt="about1" 
+            class="img-fluid animate-card" 
+          />
+        </div>
+        <div class="col-md-6">
+          <img 
+            src="image/about2.jpg" 
+            alt="about2" 
+            class="img-fluid animate-card" 
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ====== FOOTER (Подвал) ====== -->
+<footer class="footer py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <nav class="footer__menu">
+      <a href="index.html">Главная</a>
+      <a href="about.html" class="ms-3">О нас</a>
+      <a href="cart.html" class="ms-3">Корзина</a>
+    </nav>
+    <div class="footer__social">
+      <!-- Иконки соцсетей (при необходимости) -->
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS (bundle) -->
+<script 
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<!-- Подключаем ваш script.js 
+     (ГДЕ логика смены темы .light-theme, логика каруселей, 
+      и IntersectionObserver для animate-card) -->
+<script src="script.js"></script>
+
+</body>
+</html>

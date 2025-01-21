@@ -34,14 +34,16 @@ h2 {
 /****************************************
  * ШАПКА (HEADER)
  ****************************************/
-.header {
+ .header {
   display: flex; /* Используем flexbox для расположения элементов */
   align-items: center; /* Вертикальное выравнивание по центру */
   justify-content: space-between; /* Распределяем пространство между элементами */
-  padding: 15px 20px; /* Внутренние отступы */
+  padding: 10px 20px; /* Внутренние отступы */
   background: #0d0d0d; /* Фон шапки */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9); /* Тень под шапкой */
   transition: background 0.3s ease; /* Плавный переход фона */
+  height: 100px; /* Ограничиваем высоту хедера */
+  max-height: 100px; /* Максимальная высота хедера */
 }
 
 .light-theme .header {
@@ -49,16 +51,22 @@ h2 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень под шапкой в светлой теме */
 }
 
-.header__logo-title {
-  display: flex; /* Используем flexbox для логотипа и названия */
-  align-items: center; /* Вертикальное выравнивание по центру */
-}
-
 .header__logo-img {
-  height: 50px; /* Высота логотипа */
+  height: 60px; /* Высота логотипа */
   margin-right: 15px; /* Отступ справа от логотипа */
 }
 
+.header__game-title {
+  font-size: 1.8rem; /* Размер шрифта для названия игры */
+  color: #e2d8b0; /* Цвет текста */
+  text-shadow: 1px 1px 5px rgba(139, 0, 0, 0.7); /* Текстовая тень */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавные переходы для цвета и тени */
+}
+
+.light-theme .header__game-title {
+  color: #333333; /* Цвет текста в светлой теме */
+  text-shadow: none; /* Убираем текстовую тень в светлой теме */
+}
 .header__game-title {
   font-size: 1.8rem; /* Размер шрифта для названия игры */
   color: #e2d8b0; /* Цвет текста */
@@ -276,6 +284,12 @@ section h2 {
   background: #cccccc; /* Фон слайда в светлой теме */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Тень под слайдом в светлой теме */
 }
+.carousel-section .carousel-inner img {
+  max-height: 900px;
+  object-fit: cover;
+  width: 100%;
+}
+
 
 .benefits .carousel-item h3 {
   color: #e2d8b0; /* Цвет заголовков в слайдах */
@@ -671,4 +685,130 @@ section h2 {
   .light-theme .carousel-item-content {
     margin-left: 20px; /* Меньший отступ слева в светлой теме */
   }
+}
+/* Пример дополнительных стилей для карточек */
+
+.card.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+/* Пример стиля для текста описания товара/услуги (card-text) */
+.card-text {
+  opacity: 0.8; /* Слегка более прозрачный текст */
+  transition: opacity 0.3s ease;
+}
+
+.card-text:hover {
+  opacity: 1; /* При наведении мышью текст становится полностью непрозрачным */
+}
+/* Стили для анимации карточек при появлении на экране */
+.animate-card {
+  opacity: 0;                 /* Сначала прозрачность 0 */
+  transform: translateY(50px);/* Смещение вниз на 50px */
+  transition: 0.6s ease;      /* Плавный переход 0.6с */
+}
+
+.animate-card.in-view {
+  opacity: 1;                 /* Становится видимой */
+  transform: translateY(0);   /* Возвращаем на место */
+}
+/* Контейнер для спинера */
+.infinity-spinner {
+  display: inline-block;     /* Или block, если нужно на отдельной строке */
+  margin: 0 auto;            /* Центрирование, если нужно */
+}
+
+/* Само SVG может масштабироваться при необходимости: */
+.infinity-spinner svg {
+  width: 100px;    /* Задаём итоговый размер спинера (ширину). */
+  height: auto;    /* Высота автоматически по пропорции */
+  display: block;  /* Сбрасываем лишние отступы */
+}
+
+/* Анимация бегающей линии по контуру */
+.infinity-spinner path {
+  stroke-dasharray: 500;   /* Длина контура */
+  stroke-dashoffset: 500;  /* Начинаем с конца dasharray */
+  animation: dash 2s linear infinite; /* 2 секунды, линейно, бесконечно */
+}
+
+/* Ключевые кадры: dashoffset от 500 до 0, создаёт эффект бегущей волны */
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.infinity-spinner path {
+  filter: drop-shadow(0 0 8px #ff4500); /* Тёплый оранжевый подсвет */
+
+}
+/* Фон в хедере */
+.header {
+  position: relative;
+  min-height: 60px; /* Высота хедера по желанию */
+  overflow: hidden;
+}
+
+/* Сам фон */
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* обрезаем по центру */
+  z-index: 1;
+}
+
+/* Полупрозрачная накладка */
+.header-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* чёрный с 40% прозрачностью */
+  z-index: 2;
+}
+
+/* Контент хедера */
+.header-content {
+  position: relative;
+  z-index: 3; /* выше, чем .header-bg и .header-overlay */
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+
+
+/* Заголовок */
+.header__game-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+
+
+/* Для навигации по центру */
+.footer__menu a {
+  color: #fff; /* или другой цвет */
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.footer__menu a:hover {
+  text-decoration: underline;
+}
+
+/* Пример, если active нужна стилизация */
+.footer__menu .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#headerCarousel{
+  max-width: 60%
 }

@@ -34,11 +34,17 @@
       <!-- Название игры -->
       <h1 class="header__game-title">Warhammer 40k</h1>
     </div>
-
+ 
+    <nav class="footer__menu">
+      <a href="#">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="cart.html">Купить</a>
+    </nav>
     <!-- Контейнер для кнопок "Вход" и переключения темы -->
     <div class="header__buttons">
       <!-- Кнопка "Вход", при нажатии будет открываться модальное окно -->
       <button class="header__login-btn" id="loginBtn">Вход</button>
+      
       
       <!-- Кнопка переключения темы -->
       <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Переключить тему">
@@ -224,6 +230,88 @@
       </div>
     </div>
   </section>
+   <!-- ====== БЛОК С КАРТОЧКАМИ ====== -->
+   <section class="cards-section container py-5">
+    <h2>Наши товары / услуги</h2>
+    <div class="row g-4">
+      <!-- Карточка 1 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card card-custom h-100 text-center animate-card">
+          <!-- Спинер-анимация (Bootstrap spinner) сверху над изображением -->
+          <div class=" text-danger mx-auto my-3" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <img src="image/gal1.webp" class="card-img-top mx-auto d-block" alt="Card 1" />
+          <div class="card-body">
+            <h5 class="card-title">Фигурка JoyToy Warhammer: 40,000 - Имперские рыцари</h5>
+            <p class="card-text">Окунитесь в впечатляющий мир вселенной Warhammer 40,000 с потрясающей фигуркой Террина Найт Паладина от JoyToy.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Карточка 2 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card card-custom h-100 text-center animate-card">
+          <div class=" text-danger mx-auto my-3" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <img src="image/gal2.webp" class="card-img-top mx-auto d-block" alt="Card 2" />
+          <div class="card-body">
+            <h5 class="card-title">Warhammer 40000: Rogue Trader Collector's Edition</h5>
+            <p class="card-text">Эта великолепная коллекционная коробка включает в себя раскрашенную Кассией фигурку размером 8 дюймов (20 см), артбук в твердом переплете, торговую гарантию, которую вы можете персонализировать своим именем, баннер вольного торговца и набор наклеек.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Карточка 3 -->
+      <div class="col-md-4 col-sm-6">
+        <div class=" card card-custom h-100 text-center animate-card ">
+          <div class=" text-danger mx-auto my-3" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <img src="image/gal3.webp" class="card-img-top mx-auto d-block" alt="Card 3" />
+          <div class="card-body">
+            <h5 class="card-title">Warhammer 40,000: Space Marine 2 Titus Poster</h5>
+            <p class="card-text">
+              Официальный плакат Warhammer 40,000: Space Marine 2 с Титом.</p>
+          </div>
+        </div>
+      </div>
+      <!-- При необходимости добавляйте больше карточек -->
+    </div>
+  </section>
+
+  <!-- ====== КАРУСЕЛЬ С 5 КАРТИНКАМИ ====== -->
+  <section class="carousel-section py-5">
+    <h2 class="text-center">Галерея</h2>
+    <div id="autoCarousel" 
+    class="carousel slide" 
+    data-bs-ride="carousel" 
+    data-bs-interval="4000">
+      <div class="carousel-inner">
+        <!-- Слайд 1 (активный) -->
+        <div class="carousel-item active"  data-bs-interval="4000" >
+          <img src="image/slide1.jpg" class="d-block w-100" alt="gal1" />
+        </div>
+        <!-- Слайд 2 -->
+        <div class="carousel-item"  data-bs-interval="4000" >
+          <img src="image/slide2.webp" class="d-block w-100" alt="gal2" />
+        </div>
+        <!-- Слайд 3 -->
+        <div class="carousel-item"  data-bs-interval="4000" >
+          <img src="image/slide3.jpg" class="d-block w-100" alt="gal3" />
+        </div>
+        <!-- Слайд 4 -->
+        <div class="carousel-item"  data-bs-interval="4000">
+          <img src="image/slide4.png" class="d-block w-100" alt="gal4" />
+        </div>
+        <!-- Слайд 5 -->
+        <div class="carousel-item"  data-bs-interval="4000">
+          <img src="image/slide5.avif" class="d-block w-100" alt="gal5" />
+        </div>
+      </div>
+     
+    </div>
+  </section>
+
 
   <!-- ====== SIGNUP (форма подписки) ====== -->
   <section class="signup py-5">
@@ -241,14 +329,9 @@
   </section>
 
   <!-- ====== FOOTER (подвал с иконками соцсетей) ====== -->
-  <footer class="footer">
-    <!-- Меню подвала -->
-    <nav class="footer__menu">
-      <a href="#">Главная</a>
-      <a href="#">О нас</a>
-      <a href="#">Контакты</a>
-    </nav>
-    
+
+ 
+</div>
     <!-- Социальные иконки -->
     <div class="footer__social">
       <!-- VK -->
@@ -276,6 +359,34 @@
         />
       </a>
     </div>
+       <!-- Контейнер для спинера "бесконечность" -->
+<div class="infinity-spinner">
+  <!-- Само SVG. Размеры можно менять (width="..."), либо задать в CSS -->
+  <svg 
+    version="1.1" 
+    width="100" 
+    height="50" 
+    viewBox="0 0 200 100" 
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <!-- Путь в форме бесконечности -->
+    <path 
+      d="
+        M 20,50 
+          C 20,20 60,20 60,50
+          C 60,80 20,80 20,50
+        M 60,50
+          C 60,20 100,20 100,50
+          C 100,80 60,80 60,50
+      
+      " 
+      fill="none"               /* Без заливки */
+      stroke="#b22222"          /* Тёмно-красный контур */
+      stroke-width="8"          /* Толщина линии */
+      stroke-linecap="round"    /* Круглые концы */
+      stroke-linejoin="round"   /* Скруглённые углы (если будут) */
+    />
+  </svg>
   </footer>
 
   <!-- ====== МОДАЛЬНОЕ ОКНО ВХОДА ====== -->
@@ -289,6 +400,7 @@
           <!-- Кнопка закрытия модального окна -->
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
+        
         <!-- Тело модального окна -->
         <div class="modal-body">
           <!-- Форма входа -->
@@ -324,7 +436,7 @@
 
   <!-- Подключаем Bootstrap JS через CDN -->
   <script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
   </script>
 
   <!-- Подключаем основной JavaScript файл -->
