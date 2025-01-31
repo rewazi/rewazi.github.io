@@ -24,34 +24,91 @@
 </head>
 <body>
 
-  <!-- ====== ШАПКА (HEADER) ====== -->
-  <header class="header">
-    <!-- Контейнер для логотипа и названия игры -->
-    <div class="header__logo-title d-flex align-items-center">
-      <!-- Логотип игры -->
-      <img src="image/logo.webp" alt="Warhammer Logo" id="war" />
-      
-      <!-- Название игры -->
-      <h1 class="header__game-title">Warhammer 40k</h1>
+<!-- ====== HEADER (Хедер) ====== -->
+<header class="header">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    
+    <!-- Левая часть: Логотип (виден всегда) -->
+    <div class="d-flex align-items-center">
+      <!-- Логотип и название игры -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="image/logo.webp" alt="Warhammer Logo" id="war" />
+        <span class="header__game-title ms-2">Warhammer 40k</span>
+      </a>
     </div>
- 
-    <nav class="footer__menu">
-      <a href="#">Главная</a>
-      <a href="about.html">О нас</a>
-      <a href="cart.html">Купить</a>
-    </nav>
-    <!-- Контейнер для кнопок "Вход" и переключения темы -->
-    <div class="header__buttons">
-      <!-- Кнопка "Вход", при нажатии будет открываться модальное окно -->
-      <button class="header__login-btn" id="loginBtn">Вход</button>
-      
-      
-      <!-- Кнопка переключения темы -->
-      <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Переключить тему">
+    
+    <!-- 
+      1) Кнопки-навигации (ТОЛЬКО для десктопной версии)
+      d-none d-lg-flex —> скрыто на мобильных, flex на lg и выше 
+    -->
+    <div class="d-none d-lg-flex align-items-center ms-4">
+      <button 
+        class="btn btn-primary me-2" 
+        onclick="window.location.href='index.html'">
+        Главная
+      </button>
+      <button 
+        class="btn btn-primary me-2" 
+        onclick="window.location.href='about.html'">
+        О нас
+      </button>
+      <button 
+        class="btn btn-primary" 
+        onclick="window.location.href='cart.html'">
+        Корзина
+      </button>
+    </div>
+    
+    <!-- 
+      2) Гамбургер-меню (ТОЛЬКО для мобильной версии)
+      d-block d-lg-none —> видно на мобильных, скрыто на lg и выше 
+    -->
+    <div class="d-block d-lg-none">
+      <nav class="navbar navbar-dark bg-transparent">
+        <!-- Кнопка гамбургер-меню для мобильных устройств -->
+        <button 
+          class="navbar-toggler" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarNav" 
+          aria-controls="navbarNav" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Ссылки навигации (мобильная версия в выпадающем списке) -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">Корзина</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    
+    <!-- Правая часть: Кнопки "Вход" и "Светлая тема" (видна на lg и выше) -->
+    <div class="d-none d-lg-flex align-items-center">
+      <button class="btn header__login-btn me-2" id="loginBtn">Вход</button>
+      <button class="btn theme-toggle-btn" id="themeToggleBtn" aria-label="Переключить тему">
         Светлая тема
       </button>
     </div>
-  </header>
+    
+  </div> <!-- /container-fluid -->
+</header>
+
+
+
+
 
   <!-- ====== HERO (Большой баннер) ====== -->
   <section class="hero">
@@ -238,46 +295,81 @@
       <div class="col-md-4 col-sm-6">
         <div class="card card-custom h-100 text-center animate-card">
           <!-- Спинер-анимация (Bootstrap spinner) сверху над изображением -->
-          <div class=" text-danger mx-auto my-3" role="status">
+          <div class="text-danger mx-auto my-3" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
-          <img src="image/gal1.webp" class="card-img-top mx-auto d-block" alt="Card 1" />
-          <div class="card-body">
+          <img src="image/gal1.webp" class="card-img-top mx-auto d-block" alt="Фигурка JoyToy Warhammer: 40,000 - Имперские рыцари" />
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Фигурка JoyToy Warhammer: 40,000 - Имперские рыцари</h5>
             <p class="card-text">Окунитесь в впечатляющий мир вселенной Warhammer 40,000 с потрясающей фигуркой Террина Найт Паладина от JoyToy.</p>
+            <div class="mt-auto">
+              <p class="card-text"><strong>Цена: 2500 €</strong></p>
+              <button class="btn btn-primary add-to-cart" 
+                      data-name="Фигурка JoyToy Warhammer: 40,000 - Имперские рыцари" 
+                      data-price="2500" 
+                      data-image="image/gal1.webp">
+                Добавить в корзину
+              </button>
+            </div>
           </div>
         </div>
       </div>
+      
       <!-- Карточка 2 -->
       <div class="col-md-4 col-sm-6">
         <div class="card card-custom h-100 text-center animate-card">
-          <div class=" text-danger mx-auto my-3" role="status">
+          <!-- Спинер-анимация (Bootstrap spinner) сверху над изображением -->
+          <div class="text-danger mx-auto my-3" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
-          <img src="image/gal2.webp" class="card-img-top mx-auto d-block" alt="Card 2" />
-          <div class="card-body">
+          <img src="image/gal2.webp" class="card-img-top mx-auto d-block" alt="Warhammer 40000: Rogue Trader Collector's Edition" />
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Warhammer 40000: Rogue Trader Collector's Edition</h5>
-            <p class="card-text">Эта великолепная коллекционная коробка включает в себя раскрашенную Кассией фигурку размером 8 дюймов (20 см), артбук в твердом переплете, торговую гарантию, которую вы можете персонализировать своим именем, баннер вольного торговца и набор наклеек.</p>
+            <p class="card-text">
+              Эта великолепная коллекционная коробка включает в себя раскрашенную Кассией фигурку размером 8 дюймов (20 см), артбук в твердом переплете, торговую гарантию, которую вы можете персонализировать своим именем, баннер вольного торговца и набор наклеек.
+            </p>
+            <div class="mt-auto">
+              <p class="card-text"><strong>Цена: 4500 €</strong></p>
+              <button class="btn btn-primary add-to-cart" 
+                      data-name="Warhammer 40000: Rogue Trader Collector's Edition" 
+                      data-price="4500" 
+                      data-image="image/gal2.webp">
+                Добавить в корзину
+              </button>
+            </div>
           </div>
         </div>
       </div>
+      
       <!-- Карточка 3 -->
       <div class="col-md-4 col-sm-6">
-        <div class=" card card-custom h-100 text-center animate-card ">
-          <div class=" text-danger mx-auto my-3" role="status">
+        <div class="card card-custom h-100 text-center animate-card">
+          <!-- Спинер-анимация (Bootstrap spinner) сверху над изображением -->
+          <div class="text-danger mx-auto my-3" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
-          <img src="image/gal3.webp" class="card-img-top mx-auto d-block" alt="Card 3" />
-          <div class="card-body">
+          <img src="image/gal3.webp" class="card-img-top mx-auto d-block" alt="Warhammer 40,000: Space Marine 2 Titus Poster" />
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Warhammer 40,000: Space Marine 2 Titus Poster</h5>
-            <p class="card-text">
-              Официальный плакат Warhammer 40,000: Space Marine 2 с Титом.</p>
+            <p class="card-text">Официальный плакат Warhammer 40,000: Space Marine 2 с Титом.</p>
+            <div class="mt-auto">
+              <p class="card-text"><strong>Цена: 1500 €</strong></p>
+              <button class="btn btn-primary add-to-cart" 
+                      data-name="Warhammer 40,000: Space Marine 2 Titus Poster" 
+                      data-price="1500" 
+                      data-image="image/gal3.webp">
+                Добавить в корзину
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <!-- При необходимости добавляйте больше карточек -->
+      
+      <!-- Дополнительные карточки товаров... -->
+      
     </div>
   </section>
+  
 
   <!-- ====== КАРУСЕЛЬ С 5 КАРТИНКАМИ ====== -->
   <section class="carousel-section py-5">
@@ -328,66 +420,61 @@
     </form>
   </section>
 
-  <!-- ====== FOOTER (подвал с иконками соцсетей) ====== -->
-
- 
-</div>
-    <!-- Социальные иконки -->
-    <div class="footer__social">
-      <!-- VK -->
-      <a href="https://vk.com/" target="_blank">
-        <img 
-          src="image/vk.png" 
-          alt="VK" 
-          class="social-icon"
-        />
-      </a>
-      <!-- Instagram -->
-      <a href="https://instagram.com/" target="_blank">
-        <img 
-          src="image/inst.jpg" 
-          alt="Instagram" 
-          class="social-icon"
-        />
-      </a>
-      <!-- YouTube -->
-      <a href="https://youtube.com/" target="_blank">
-        <img 
-          src="image/you.png" 
-          alt="YouTube" 
-          class="social-icon"
-        />
-      </a>
+  <footer class="footer py-3">
+    <div class="container-fluid px-0">
+      <div class="row align-items-center gx-0">
+        
+        <!-- Пустая левая колонка -->
+        <div class="col-4"></div>
+        
+        <!-- Средняя колонка: SVG-спиннер по центру -->
+        <div class="col-4 d-flex justify-content-center">
+          <div class="infinity-spinner">
+            <!-- Ваш SVG "бесконечность" -->
+          <svg 
+          version="1.1" 
+          width="100" 
+          height="50" 
+          viewBox="0 0 200 100" 
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <path 
+            d="
+              M 20,50 
+                C 20,20 60,20 60,50
+                C 60,80 20,80 20,50
+              M 60,50
+                C 60,20 100,20 100,50
+                C 100,80 60,80 60,50
+            " 
+            fill="none"        
+            stroke="#b22222"   
+            stroke-width="8"   
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+          />
+        </svg>
+      </div>
     </div>
-       <!-- Контейнер для спинера "бесконечность" -->
-<div class="infinity-spinner">
-  <!-- Само SVG. Размеры можно менять (width="..."), либо задать в CSS -->
-  <svg 
-    version="1.1" 
-    width="100" 
-    height="50" 
-    viewBox="0 0 200 100" 
-    preserveAspectRatio="xMidYMid meet"
-  >
-    <!-- Путь в форме бесконечности -->
-    <path 
-      d="
-        M 20,50 
-          C 20,20 60,20 60,50
-          C 60,80 20,80 20,50
-        M 60,50
-          C 60,20 100,20 100,50
-          C 100,80 60,80 60,50
-      
-      " 
-      fill="none"               /* Без заливки */
-      stroke="#b22222"          /* Тёмно-красный контур */
-      stroke-width="8"          /* Толщина линии */
-      stroke-linecap="round"    /* Круглые концы */
-      stroke-linejoin="round"   /* Скруглённые углы (если будут) */
-    />
-  </svg>
+  
+        <!-- Правая колонка: соц. иконки прижаты к краю -->
+        <div class="col-4 d-flex justify-content-end">
+          <a href="https://vk.com/" target="_blank">
+            <img src="image/vk.png" alt="VK" class="social-icon" />
+          </a>
+          <a href="https://instagram.com/" target="_blank">
+            <img src="image/inst.jpg" alt="Instagram" class="social-icon" />
+          </a>
+          <a href="https://youtube.com/" target="_blank">
+            <img src="image/you.png" alt="YouTube" class="social-icon" />
+          </a>
+        </div>
+        
+      </div>
+    </div>
   </footer>
+  
+  
 
   <!-- ====== МОДАЛЬНОЕ ОКНО ВХОДА ====== -->
   <!-- Используем Bootstrap Modal компонент -->

@@ -42,8 +42,8 @@ h2 {
   background: #0d0d0d; /* Фон шапки */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9); /* Тень под шапкой */
   transition: background 0.3s ease; /* Плавный переход фона */
-  height: 100px; /* Ограничиваем высоту хедера */
-  max-height: 100px; /* Максимальная высота хедера */
+  height: 150px; /* Ограничиваем высоту хедера */
+  max-height: 150px; /* Максимальная высота хедера */
 }
 
 .light-theme .header {
@@ -614,6 +614,7 @@ section h2 {
  * АДАПТИВНЫЕ СТИЛИ ДЛЯ ТЕЛЕФОНОВ (до 576px)
  ****************************************/
 @media (max-width: 575.98px) {
+
   /* Преимущества: уменьшаем отступы и шрифты */
   .benefits {
     padding-left: 5px; /* Уменьшаем внутренний отступ слева */
@@ -812,3 +813,624 @@ section h2 {
 #headerCarousel{
   max-width: 60%
 }
+/* =========================================
+   Адаптивные стили для хедера
+   ========================================= */
+@media (max-width: 767.98px) {
+  /* Уменьшаем размер логотипа и названия игры на планшетах и мобильных */
+  #war {
+    height: 25px; /* Уменьшаем высоту логотипа */
+    width: 25px; /* Автоматическая ширина для сохранения пропорций */
+  }
+
+  .header__game-title {
+    font-size: 1.5rem; /* Уменьшаем размер шрифта названия игры */
+  }
+
+  .footer__menu a {
+    font-size: 0.9rem; /* Уменьшаем размер шрифта ссылок */
+    margin-right: 0.5rem; /* Уменьшаем отступ справа от ссылок */
+  }
+
+  .header__login-btn, .theme-toggle-btn {
+    padding: 6px 12px; /* Уменьшаем внутренние отступы кнопок */
+    font-size: 0.9rem; /* Уменьшаем размер шрифта кнопок */
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Дополнительные изменения для мобильных устройств */
+
+  /* Центрирование логотипа и названия игры */
+  .navbar-brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header__game-title {
+    margin-left: 0;
+    margin-top: 5px;
+    font-size: 1.3rem; /* Дополнительное уменьшение размера шрифта */
+  }
+
+  /* Изменяем расположение кнопок */
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0; /* Уменьшаем внутренние отступы ссылок */
+    font-size: 1rem; /* Оставляем размер шрифта */
+  }
+
+  .header__login-btn, .theme-toggle-btn {
+    width: 100%; /* Кнопки занимают всю ширину контейнера */
+    text-align: left; /* Выравнивание текста по левому краю */
+    margin-top: 10px; /* Отступ сверху */
+  }
+}
+/* =========================================
+   Универсальные стили
+   ========================================= */
+*, *::before, *::after {
+  box-sizing: border-box; /* Устанавливаем box-sizing для всех элементов */
+}
+
+html, body {
+  margin: 0; /* Убираем отступы по умолчанию */
+  padding: 0; /* Убираем внутренние отступы по умолчанию */
+  overflow-x: hidden; /* Убираем горизонтальный скролл */
+  /* Шрифт в стиле Warhammer 40k */
+  font-family: 'Russo One', 'Trajan Pro', 'Times New Roman', serif;
+  /* Тёмное фоновое оформление с намёком на космическую тьму */
+  background: radial-gradient(circle, #0b0b0b, #1a1a1a 70%);
+  color: #e2d8b0; /* Золотистый акцент */
+  transition: background 0.3s ease, color 0.3s ease; /* Плавные переходы для фона и текста */
+}
+
+p {
+  font-size: 1.2rem; /* Размер шрифта для параграфов */
+  margin: 0; /* Убираем отступы у параграфов */
+}
+
+h2 {
+  font-size: 2rem; /* Размер шрифта для заголовков h2 */
+  margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Светлая тема */
+.light-theme {
+  background: radial-gradient(circle, #e0e0e0, #c0c0c0 70%); /* Серый градиент */
+  color: #333333; /* Тёмный текст */
+}
+
+/* =========================================
+   Шапка (HEADER)
+   ========================================= */
+.header {
+  background: #0d0d0d; /* Фон шапки */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9); /* Тень под шапкой */
+  transition: background 0.3s ease; /* Плавный переход фона */
+}
+
+.light-theme .header {
+  background: #f0f0f0; /* Фон шапки в светлой теме */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень под шапкой в светлой теме */
+}
+
+/* Логотип */
+#war {
+  height: 60px; /* Высота логотипа */
+  width: auto; /* Автоматическая ширина для сохранения пропорций */
+  object-fit: contain; /* Масштабирование логотипа */
+}
+
+/* Название игры */
+.header__game-title {
+  font-size: 1.8rem; /* Размер шрифта для названия игры */
+  color: #e2d8b0; /* Цвет текста */
+  text-shadow: 1px 1px 5px rgba(139, 0, 0, 0.7); /* Текстовая тень */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавные переходы для цвета и тени */
+}
+
+.light-theme .header__game-title {
+  color: #333333; /* Цвет текста в светлой теме */
+  text-shadow: none; /* Убираем текстовую тень в светлой теме */
+}
+
+/* Навигация */
+.footer__menu a {
+  color: #b22222; /* Цвет ссылок */
+  text-decoration: none; /* Убираем подчеркивание */
+  margin-right: 1rem; /* Отступ справа от ссылок */
+  font-size: 1rem; /* Размер шрифта */
+  transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+.footer__menu a:hover {
+  color: #e2d8b0; /* Цвет ссылок при наведении */
+}
+
+.light-theme .footer__menu a {
+  color: #333333; /* Цвет ссылок в светлой теме */
+}
+
+.light-theme .footer__menu a:hover {
+  color: #555555; /* Цвет ссылок при наведении в светлой теме */
+}
+
+/* Кнопки */
+.header__login-btn {
+  background: #8b0000; /* Кроваво-красный фон кнопки "Вход" */
+  color: #fff; /* Белый текст */
+  border: none; /* Убираем рамку */
+  padding: 8px 16px; /* Внутренние отступы */
+  font-size: 1rem; /* Размер шрифта */
+  border-radius: 5px; /* Скругление углов */
+  cursor: pointer; /* Курсор при наведении */
+  transition: background 0.3s ease; /* Плавный переход фона */
+}
+
+.header__login-btn:hover {
+  background: #ff4500; /* Фон кнопки при наведении */
+}
+
+.light-theme .header__login-btn {
+  background: #b22222; /* Фон кнопки "Вход" в светлой теме */
+}
+
+.light-theme .header__login-btn:hover {
+  background: #ff6347; /* Фон кнопки при наведении в светлой теме */
+}
+
+/* Кнопка переключения темы */
+.theme-toggle-btn {
+  background: none; /* Прозрачный фон */
+  border: 2px solid #e2d8b0; /* Рамка кнопки */
+  color: #e2d8b0; /* Цвет текста */
+  padding: 6px 12px; /* Внутренние отступы */
+  font-size: 1rem; /* Размер шрифта */
+  border-radius: 5px; /* Скругление углов */
+  cursor: pointer; /* Курсор при наведении */
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Плавные переходы для фона, рамки и цвета */
+}
+
+.theme-toggle-btn:hover {
+  background: #e2d8b0; /* Фон кнопки при наведении */
+  color: #0b0b0b; /* Цвет текста при наведении */
+}
+
+.light-theme .theme-toggle-btn {
+  border-color: #555555; /* Цвет рамки в светлой теме */
+  color: #555555; /* Цвет текста в светлой теме */
+}
+
+.light-theme .theme-toggle-btn:hover {
+  background: #555555; /* Фон кнопки при наведении в светлой теме */
+  color: #ffffff; /* Цвет текста при наведении в светлой теме */
+}
+
+
+/* =========================================
+   Универсальные стили
+   ========================================= */
+   *, *::before, *::after {
+    box-sizing: border-box; /* Устанавливаем box-sizing для всех элементов */
+  }
+  
+  html, body {
+    margin: 0; /* Убираем отступы по умолчанию */
+    padding: 0; /* Убираем внутренние отступы по умолчанию */
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+    /* Шрифт в стиле Warhammer 40k */
+    font-family: 'Russo One', 'Trajan Pro', 'Times New Roman', serif;
+    /* Тёмное фоновое оформление с намёком на космическую тьму */
+    background: radial-gradient(circle, #0b0b0b, #1a1a1a 70%);
+    color: #e2d8b0; /* Золотистый акцент */
+    transition: background 0.3s ease, color 0.3s ease; /* Плавные переходы для фона и текста */
+  }
+  
+  p {
+    font-size: 1.2rem; /* Размер шрифта для параграфов */
+    margin: 0; /* Убираем отступы у параграфов */
+  }
+  
+  h2 {
+    font-size: 2rem; /* Размер шрифта для заголовков h2 */
+    margin-bottom: 20px; /* Отступ снизу */
+  }
+  
+  /* Светлая тема */
+  .light-theme {
+    background: radial-gradient(circle, #e0e0e0, #c0c0c0 70%); /* Серый градиент */
+    color: #333333; /* Тёмный текст */
+  }
+  
+  .light-theme .header {
+    background: #f0f0f0; /* Фон шапки в светлой теме */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень под шапкой в светлой теме */
+  }
+  
+  .light-theme .header__game-title {
+    color: #000000; /* Чёрный цвет текста в светлой теме */
+    text-shadow: none; /* Убираем текстовую тень в светлой теме */
+  }
+  
+  .light-theme .footer__menu a {
+    color: #000000; /* Чёрный цвет ссылок в светлой теме */
+  }
+  
+  .light-theme .footer__menu a:hover {
+    color: #555555; /* Цвет ссылок при наведении в светлой теме */
+  }
+  
+  .light-theme .footer {
+    background: #333333; /* Фон футера в светлой теме */
+    color: #ffffff; /* Цвет текста футера в светлой теме */
+  }
+  
+  /* =========================================
+     Шапка (HEADER) Стили
+     ========================================= */
+  
+  /* Увеличение высоты шапки */
+  .header {
+    padding-top: 20px; /* Верхний отступ */
+    padding-bottom: 20px; /* Нижний отступ */
+    background: #0d0d0d; /* Фон шапки */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9); /* Тень под шапкой */
+    transition: background 0.3s ease; /* Плавный переход фона */
+  }
+  
+  /* Увеличение размера логотипа */
+  #war {
+    height: 80px; /* Увеличенная высота логотипа */
+    width: auto; /* Автоматическая ширина для сохранения пропорций */
+    object-fit: contain; /* Масштабирование логотипа */
+  }
+  
+  /* Увеличение размера названия игры */
+  .header__game-title {
+    font-size: 2.5rem; /* Увеличенный размер шрифта */
+    color: #e2d8b0; /* Цвет текста */
+    text-shadow: 1px 1px 5px rgba(139, 0, 0, 0.7); /* Текстовая тень */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавные переходы для цвета и тени */
+  }
+  
+  /* Адаптивность шапки на планшетах и десктопах */
+  @media (min-width: 992px) {
+    .header {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  
+    #war {
+      height: 90px;
+    }
+  
+    .header__game-title {
+      font-size: 3rem;
+    }
+  }
+  
+  /* =========================================
+     Адаптивные Стили для Шапки
+     ========================================= */
+  @media (max-width: 767.98px) {
+    /* Уменьшаем размер логотипа и названия игры на мобильных */
+    #war {
+      height: 60px; /* Уменьшаем высоту логотипа */
+    }
+  
+    .header__game-title {
+      font-size: 1.8rem; /* Уменьшаем размер шрифта названия игры */
+    }
+  
+    /* Центрирование логотипа и названия игры */
+    .navbar-brand {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header__game-title {
+      margin-left: 0;
+      margin-top: 5px;
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    /* Дополнительные изменения для маленьких экранов */
+    #war {
+      height: 50px; /* Ещё больше уменьшаем высоту логотипа */
+    }
+  
+    .header__game-title {
+      font-size: 1.5rem; /* Ещё больше уменьшаем размер шрифта */
+    }
+  
+    /* Изменяем расположение кнопок */
+    .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-nav .nav-link {
+      padding: 0.5rem 0; /* Уменьшаем внутренние отступы ссылок */
+      font-size: 1rem; /* Оставляем размер шрифта */
+    }
+  
+    .header__login-btn,
+    .theme-toggle-btn {
+      width: 100%; /* Кнопки занимают всю ширину контейнера */
+      text-align: left; /* Выравнивание текста по левому краю */
+      margin-top: 10px; /* Отступ сверху */
+    }
+  }
+  
+  /* =========================================
+     Кнопки "Очистить корзину" и "Оформить заказ" одинаковые по размеру
+     ========================================= */
+  .btn-cart-action {
+    min-width: 150px; /* Минимальная ширина кнопки */
+    height: 50px; /* Фиксированная высота кнопки */
+  }
+  
+  /* Адаптивные размеры кнопок на мобильных устройствах */
+  @media (max-width: 575.98px) {
+    .btn-cart-action {
+      min-width: 100px;
+      height: 40px;
+      font-size: 0.9rem; /* Уменьшенный размер шрифта */
+    }
+  
+    /* Уменьшаем размеры изображений в корзине */
+    .cart-item-image {
+      width: 60px;
+      height: 60px;
+    }
+  
+    /* Центрируем кнопки на мобильных */
+    .d-flex.gap-2 {
+      flex-direction: column;
+    }
+  
+    .d-flex.gap-2 .btn-cart-action {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* =========================================
+     Стили для страницы корзины
+     ========================================= */
+  
+  /* Таблица корзины */
+  .table th, .table td {
+    vertical-align: middle;
+  }
+  
+  /* Изображения товаров в корзине */
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Кнопки удаления товара */
+  .cart-remove-btn {
+    background: none;
+    border: none;
+    color: #dc3545; /* Bootstrap danger color */
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .cart-remove-btn:hover {
+    color: #a71d2a;
+  }
+  
+  /* Поле для количества */
+  .cart-quantity-input {
+    width: 60px;
+    text-align: center;
+  }
+  
+  /* Сообщение о пустой корзине */
+  #empty-cart-message {
+    display: none; /* Скрыто по умолчанию */
+  }
+  
+  /* Светлая тема для таблицы */
+  .light-theme .table {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .light-theme .table th {
+    background-color: #f8f9fa;
+  }
+  
+  .light-theme .cart-remove-btn {
+    color: #dc3545;
+  }
+  
+  .light-theme .cart-remove-btn:hover {
+    color: #a71d2a;
+  }
+  
+  /* Стили для формы добавления товара */
+  #add-product-form input {
+    border-radius: 5px;
+  }
+  
+  #add-product-form button {
+    border-radius: 5px;
+  }
+  
+  /* =========================================
+     Адаптивные стили для таблицы корзины
+     ========================================= */
+  @media (max-width: 575.98px) {
+    /* Сделать таблицу блочным элементом */
+    .table {
+      display: block;
+      width: 100%;
+      overflow-x: hidden; /* Убираем прокрутку */
+    }
+  
+    /* Скрыть заголовки таблицы */
+    .table thead {
+      display: none;
+    }
+  
+    /* Отобразить строки таблицы как блоки */
+    .table tbody, .table tr, .table td {
+      display: block;
+      width: 100%;
+    }
+  
+    /* Отобразить заголовки ячеек перед содержимым */
+    .table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+  
+    /* Отступы и стили для ячеек */
+    .table td {
+      padding: 10px;
+      border-bottom: 1px solid #dee2e6;
+    }
+  
+    /* Стили для кнопок */
+    .btn-cart-action {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* =========================================
+     Общие Стили
+     ========================================= */
+  /* Фон и цвет текста для светлой темы */
+  .light-theme {
+    background: radial-gradient(circle, #e0e0e0, #c0c0c0 70%); /* Серый градиент */
+    color: #333333; /* Тёмный текст */
+  }
+  
+  .light-theme .header {
+    background: #f0f0f0; /* Фон шапки в светлой теме */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень под шапкой в светлой теме */
+  }
+  
+  .light-theme .header__game-title {
+    color: #000000; /* Чёрный цвет текста в светлой теме */
+    text-shadow: none; /* Убираем текстовую тень в светлой теме */
+  }
+  
+  .light-theme .footer__menu a {
+    color: #000000; /* Чёрный цвет ссылок в светлой теме */
+  }
+  
+  .light-theme .footer__menu a:hover {
+    color: #555555; /* Цвет ссылок при наведении в светлой теме */
+  }
+  
+  .light-theme .footer {
+    background: #333333; /* Фон футера в светлой теме */
+    color: #ffffff; /* Цвет текста футера в светлой теме */
+  }
+  
+  /* Футер */
+  .footer {
+    background: #0d0d0d; /* Фон футера */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.9); /* Тень над футером */
+    transition: background 0.3s ease; /* Плавный переход фона */
+  }
+  
+  .footer a {
+    color: #b22222; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    margin-right: 1rem; /* Отступ справа от ссылок */
+    font-size: 1rem; /* Размер шрифта */
+    transition: color 0.3s ease; /* Плавный переход цвета */
+  }
+  
+  .footer a:hover {
+    color: #e2d8b0; /* Цвет ссылок при наведении */
+  }
+  
+  /* Социальные иконки */
+  .social-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+  }
+  
+  /* =========================================
+     Адаптивные стили для футера
+     ========================================= */
+  @media (max-width: 575.98px) {
+    .social-icon {
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+    }
+  
+    .footer__menu a {
+      margin-right: 0.5rem; /* Уменьшаем отступ справа от ссылок */
+    }
+  }
+  
+  /* =========================================
+     Прилепление футера к низу экрана на десктопах
+     ========================================= */
+  @media (min-width: 992px) {
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+  
+    main {
+      flex: 1;
+    }
+  
+    .footer {
+      margin-top: auto;
+    }
+  }
+  
+/* Кнопки "Очистить корзину" и "Оформить заказ" одинаковые по размеру */
+.btn {
+  min-width: 150px; /* Минимальная ширина кнопки */
+  height: 50px; /* Фиксированная высота кнопки */
+}
+
+/* Адаптивные размеры кнопок на мобильных устройствах */
+@media (max-width: 575.98px) {
+  .btn {
+    min-width: 100px;
+    height: 40px;
+    font-size: 0.9rem; /* Уменьшенный размер шрифта */
+  }
+}
+/* =========================================
+   Увеличение высоты хедера на мобильных устройствах
+========================================= */
+
+/* Мобильные устройства: ширина экрана менее 992px */
+@media (max-width: 991.98px) {
+
+  
+  .logo-img {
+    width: 50px; /* Увеличиваем размер логотипа на мобильных */
+  }
+  
+  .header__game-title {
+    font-size: 1rem; /* Увеличиваем размер шрифта названия игры */
+  }}
